@@ -56,7 +56,7 @@ Pour obtenir :
 
 * Un dossier **pagesWeb** avec une démo 
 
-* <del>un fichier *.tex prêt à compiler dans le dossier **tex_a_compiler**</del> Je peux remettre ailleur pour overleaf par exemple.
+* un fichier *.tex prêt à compiler dans le dossier **tex_a_compiler**
 
 * un fichier pdf compilé dans le dossier **exercices_corrections_pdf**
 

@@ -16,7 +16,7 @@ pip3 install pdoc3
     
 La procédure a été testé sous **Linux** uniquement.
 
-* Cloner ce [dépot github](){:target="_blank"} ou télécharger [cette archive](){:target="_blank"}.
+* Cloner ce [dépot github](https://github.com/slozano54/projetDNB){:target="_blank"} ou télécharger [cette archive](https://github.com/slozano54/projetDNB/archive/master.zip){:target="_blank"}.
 
 
 * À la racine du projet, lancer le script python **generate_all_files.py**.

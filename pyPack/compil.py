@@ -8,6 +8,8 @@ pass
 # On fait les imports nécessaires selon le contexte
 # Pour générer la documentation, les répertoires, ...
 import os
+# Pour les expressions régulières
+import re
 # Pour mesurer le temps de traitement du script
 from datetime import datetime 
 
@@ -126,7 +128,7 @@ def cutTex2Ex(file : str,source : str)->list:
 
     for i in range(len(source_lines)):
         # Selon les années la commande pour le style des exos n'est pas la même
-        if ("\textbf{Exercice" in source_lines[i] or "\textbf{\textsc{Exercice" in source_lines[i]):
+        if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i]):
             indices.append(i)
     indices.append(len(source_lines)) 
     
@@ -136,7 +138,7 @@ def cutTex2Ex(file : str,source : str)->list:
     
     for i in range(len(indices)-1):
         # On ouvre le fichier dans lequel on va écrire
-        myTex = open("./exercices_corrections_tex/"+file+"_ex"+str(i+1)+".tex","w")
+        myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+".tex","w")
         # On ajoute les lignes
         myTex.writelines(source_lines[indices[i]:indices[i+1]])
         myTex.close()
@@ -196,6 +198,8 @@ def generateFileName(source_ex : str)->str:
     ]
     # On passe le nom du fichier en minuscules
     cleanSource = source_ex.lower()
+    # On supprime les underscores
+    cleanSource = re.sub('[_]', '', cleanSource)
     # On récupère le lieu
     for centre in centres:
         if (centre in cleanSource):
@@ -229,8 +233,10 @@ if __name__ == "__main__":
 
 #    main()
     # Test 
-    #cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
+    cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
+    cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")
     print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
+    print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
     
 
     # On évalue le temps de traitement

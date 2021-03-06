@@ -102,7 +102,7 @@ def cleanPath():
     os.system("rm *.out")
     os.system("rm *.png")
     os.system("rm *.ps")
-    os.system("rm *.tex")
+    #os.system("rm *.tex")
     os.system("rm *.pdf")
     # On se remet à la racine du projet
     os.chdir("../")

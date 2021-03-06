@@ -45,7 +45,7 @@ Pour obtenir :
 
 * La documentation des fonctions du projet dans le dossier **docs/pyPack**
 
-* Un dossier **pagesWeb** avec une démo NON FONCTIONNELLE AU NIVEAU DE LA COMPILATION OVERLEAF
+* Un dossier **pagesWeb** avec une démo 
 
 * <del>un fichier *.tex prêt à compiler dans le dossier **tex_a_compiler**</del> Je peux remettre ailleur pour overleaf par exemple.
 

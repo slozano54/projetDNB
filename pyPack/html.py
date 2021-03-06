@@ -36,7 +36,7 @@ def main():
         os.mkdir("./pagesWeb/")
 
     # On ouvre en écriture le fichier html qui va recevoir le code
-    indexHTML = open("./pagesWeb/index.html", "w")
+    indexHTML = open("./pagesWeb/index.html", "w")    
     
     # On ajoute le doctype et le head
     for elt in docTypeHeadStyle:
@@ -64,10 +64,11 @@ def main():
         <h3> Installation et utilisation </h3>        
         <p>La procédure a été testé sous <b>Linux</b> uniquement.
         <ul>
-        <li>Télécharger cette <a href="../archive.zip"> archive zip</a></li>
-        <li>Décompresser l'archive</li>        
-        <li>Lancer le script python <b>generate_all_files.py</b> à la racine du projet.</li>
-        <li>Sous <b>Visual Studio Code</b> lancer Live server et aller dans le dossier <b>PagesWeb</b></li>
+        <li>Télécharger cette <a href="https://github.com/slozano54/projetDNB/archive/master.zip"> archive zip</a></li>
+        <li>Décompresser l'archive</li>
+        <li>Déposer un sujet au format *.tex dans le dossier <b>sujets_corrections_tex</b></li>        
+        <li>Lancer le script python <b>programmePrincipal.py</b> à la racine du projet.</li>
+        <li>Sous <b>Visual Studio Code</b> lancer Live server et aller dans le dossier <b>PagesWeb</b> et lancer index.html</li>
         </ul>
         </p>          
 
@@ -75,12 +76,12 @@ def main():
         <p>
         Les fichiers de la documentations sont générés dans le dossier <b>docs/pyPack</b><br><br>
         Les fichiers HTML sont générés dans le dossier <b>pagesWeb</b><br><br>
-        <a class="navButton" href="../exercices_corrections_pdf/test.pdf" target="_blank"><span>voir fichier pdf</span></a>
-        <a class="navButton" href="../exercices_corrections_pdf_crop/test-crop.pdf" target="_blank"><span>voir fichier pdf ajusté</span></a>
-        <a class="navButton" href="../exercices_corrections_png_jpg/test.png" target="_blank"><span>voir fichier png ajusté</span></a>
-        <br>
-        <a class="navButton" href="https://www.overleaf.com/docs?snip_uri=https://mathslozano.fr/dnbmathalea/tex_a_compiler/test.tex&engine=latex_dvipdf" target="_blank"><span>compiler le fichier tex sur overleaf</span></a>
-        <a class="navButton" href="https://mathslozano.fr/dnbmathalea/tex_a_compiler/test.tex" target="_blank"><span>télécharger le fichier tex </span></a>
+        <a class="navButton" href="../exercices_corrections_pdf/" target="_blank"><span>voir les fichiers pdf</span></a>
+        <a class="navButton" href="../exercices_corrections_pdf_crop/" target="_blank"><span>voir les fichiers pdf ajustés</span></a>
+        <a class="navButton" href="../exercices_corrections_png_jpg/" target="_blank"><span>voir les fichiers png ajustés</span></a>
+        <br>   
+        <a class="navButton" href="https://www.overleaf.com/docs?snip_uri=https://mathslozano.fr/mathaleaProjetDNB/tex_a_compiler/dnb_2013_04_pondichery_1.tex&engine=latex_dvipdf" target="_blank"><span>compiler un fichier tex sur overleaf</span></a>        
+        <a class="navButton" href="../tex_a_compiler/dnb_2013_04_pondichery_1.tex" target="_blank"><span>télécharger le fichier source tex </span></a>
         </p>
 
         <h3> License <a href="https://choosealicense.com/licenses/mit/" target="_blank">MIT</a><h3>        

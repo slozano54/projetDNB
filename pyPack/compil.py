@@ -125,7 +125,8 @@ def cutTex2Ex(file : str,source : str)->list:
     indices = []
 
     for i in range(len(source_lines)):
-        if ("textbf{Exercice" in source_lines[i]):
+        # Selon les années la commande pour le style des exos n'est pas la même
+        if ("\textbf{Exercice" in source_lines[i] or "\textbf{\textsc{Exercice" in source_lines[i]):
             indices.append(i)
     indices.append(len(source_lines)) 
     

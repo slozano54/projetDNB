@@ -126,7 +126,6 @@ def cutTex2Ex(file : str,source : str)->list:
         myTex.writelines(source_lines[indices[i]:indices[i+1]])
         myTex.close()
 
-
 def generateFiles(file : str,source_ex : str):
     """
     Générer tous les fichiers *.pdf *.pdf ajusté *.png *.tex prêt à compiler
@@ -143,8 +142,57 @@ def generateFiles(file : str,source_ex : str):
     #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
     copyAllFiles(file)   
 
+def generateFileName(source_ex : str)->str:
+    """
+    Générer le nom du fichier pour le découpage au format dnb_aaaa_mm_lieu    
+    """
+    aaaa = ''
+    mm = ''
+    lieu = ''   
+    
+    # Possibles pour les années
+    annees = []
+    for i in range(2001,datetime.now().year):
+        annees.append(i)    
+    # On récupère l'année
+    for annee in annees:
+        if (str(annee) in source_ex):
+            aaaa = str(annee)
+    
+    # Possibles pour les mois
+    months = [['jan','01'],['fev','02'],['mars','03'],['avril','04'],['mai','05'],['juin','06'],['juillet','07'],['aout','08'],['sept','09'],['oct','10'],['nov','11'],['dec','12']]
+    # On récupère le mois
+    for month in months:
+        if (month[0] in source_ex):
+            mm = month[1]
+    if (mm == ''):
+        mm = 'bugMois'    
 
-       
+    # Possibles pour les centres
+    centres = [
+        'pondichery',
+        'ameriquesud',
+        'ameriquenord',
+        'asie',
+        'etrangers',
+        'metropole',
+        'polynesie',
+        'caledonie',
+    ]
+    # On passe le nom du fichier en minuscules
+    cleanSource = source_ex.lower()
+    # On récupère le lieu
+    for centre in centres:
+        if (centre in cleanSource):
+            lieu = centre
+    if (lieu == ''):
+        lieu = 'bugLieu'
+    
+    # On forme le nom du fichier
+    filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
+
+    return filename
+
 
 
 # Script principal
@@ -168,7 +216,9 @@ if __name__ == "__main__":
 
 #    main()
     # Test 
-    cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
+    #cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
+    print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
+    
 
     # On évalue le temps de traitement
     end_time = datetime.now()

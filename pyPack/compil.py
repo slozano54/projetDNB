@@ -114,7 +114,11 @@ def cutTex2Ex(file : str,source : str)->list:
         if ("textbf{Exercice" in source_lines[i]):
             indices.append(i)
     indices.append(len(source_lines)) 
-
+    
+    #On crée e dossier qui va accueillir les fichiers tex 
+    if not os.path.exists("./exercices_corrections_tex/"):
+        os.mkdir("./exercices_corrections_tex/")
+    
     for i in range(len(indices)-1):
         # On ouvre le fichier dans lequel on va écrire
         myTex = open("./exercices_corrections_tex/"+file+"_ex"+str(i+1)+".tex","w")

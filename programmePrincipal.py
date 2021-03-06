@@ -47,11 +47,9 @@ def main():
            
     # Tous les fichiers du répertoire /exercices_corrections_tex
     for (dirpath, dirnames, filenames) in os.walk('./exercices_corrections_tex/'):
-        for source in filenames:
-            # print(source)
+        for source in filenames:            
             # On supprime l'extension du fichier
-            source = '.'.join(source.split('.')[:-1])            
-            # print(source)
+            source = '.'.join(source.split('.')[:-1])                        
             compil.generateFiles(source,source)
 
     # On génére page d'accueil

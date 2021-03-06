@@ -1,0 +1,25 @@
+# On ignore certaines chose pour tester que ça ne marche pas que chez moi
+# le dossier de documentation
+docs/pyPack
+
+# le dossier où sont générés les PDFS
+exercices_corrections_pdf
+
+# le dossier où sont générés les PDFS ajustés
+exercices_corrections_pdf_crop
+
+# le dossier où sont générés les png_jpg ajustés
+exercices_corrections_png_jpg
+
+# Les pagesWeb
+pagesWeb
+
+# toutes les extensions inutiles du dossier tex à compiler
+tex_a_compiler/*.aux
+tex_a_compiler/*.dvi
+tex_a_compiler/*.log
+tex_a_compiler/*.out
+tex_a_compiler/*.pdf
+tex_a_compiler/*.png
+tex_a_compiler/*.ps 
+tex_a_compiler/*.tex 

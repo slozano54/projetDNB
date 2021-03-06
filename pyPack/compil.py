@@ -138,7 +138,11 @@ def cutTex2Ex(file : str,source : str)->list:
     
     for i in range(len(indices)-1):
         # On ouvre le fichier dans lequel on va écrire
-        myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+".tex","w")
+        if ("Corrige" in source):
+            myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+"_cor.tex","w")
+        else:
+            myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+".tex","w")
+        
         # On ajoute les lignes
         myTex.writelines(source_lines[indices[i]:indices[i+1]])
         myTex.close()
@@ -233,10 +237,11 @@ if __name__ == "__main__":
 
 #    main()
     # Test 
-    cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
-    cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")
-    print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
-    print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
+    #cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
+    #cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")
+    #print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
+    #print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
+    cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")
     
 
     # On évalue le temps de traitement

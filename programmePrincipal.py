@@ -41,9 +41,9 @@ def main():
     for (dirpath, dirnames, filenames) in os.walk('./sujets_corrections_tex/'):        
         for source in filenames:
             # On supprime l'extension du fichier
-            source = '.'.join(source.split('.')[:-1])
+            source = '.'.join(source.split('.')[:-1])            
             # On formatte le nom du fichier de sortie
-            source_format = compil.generateFileName(source)            
+            source_format = compil.generateFileName(source)                        
             # On découpe
             compil.cutTex2Ex(source_format,source) 
            

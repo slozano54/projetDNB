@@ -1,0 +1,358 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}%ATTENTION codage UTF8
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage{textcomp} 
+\newcommand{\euro}{\eurologo{}}
+%Tapuscrit : Denis Vergès
+\usepackage{pstricks,pst-plot,pst-tree,pstricks-add}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Brevet des collèges},
+pdftitle = {Amérique du Nord  juin 2013},
+allbordercolors = white}
+\usepackage[np]{numprint}
+\usepackage[frenchb]{babel}
+\begin{document}
+\setlength\parindent{0mm}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Brevet des collèges}
+\lfoot{\small{Amérique du Nord}}
+\rfoot{\small{7 juin 2013}}
+\renewcommand \footrulewidth{.2pt}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\begin{center}
+\textbf{Durée : 2 heures}
+
+\vspace{0,25cm}
+
+{\Large \textbf{\decofourleft~Brevet des collèges Amérique du Nord 7 juin 2013~\decofourright}}
+
+\vspace{0,25cm}
+
+L'utilisation d'une calculatrice est autorisée.
+
+\end{center}
+ 
+\vspace{0,25cm}
+
+\textbf{\textsc{Exercice 1} \hfill 4 points}
+
+\medskip
+
+\emph{Pour chacune des quatre questions suivantes, plusieurs propositions de réponse sont faites. Une seule des propositions est exacte. Aucune justification n'est attendue. Une bonne réponse rapporte $1$ point. Une mauvaise réponse ou une absence de réponse rapporte $0$ point. Reporter sur votre copie le numéro de la question et donner la bonne réponse.}
+
+\medskip
+ 
+\begin{enumerate}
+\item L'arbre ci-dessous est un arbre de probabilité.
+
+\begin{center}
+\psset{nrot=:U}
+\pstree[treemode=R]{\Tdot}
+{\Tdot~[tnpos=r]{}\naput{$\frac{1}{9}$}
+ \Tdot~[tnpos=r]{}\nbput{\psset{unit=1cm}\begin{pspicture}(-0.25,0)(0.25,0.25)\pscurve*(-0.25,0.25)(-0.15,0.45)(0,0.5)(0.25,0.5)(0.25,0.25)(0.1,0.05)(0,0.1)(-0.15,0.15)(-0.25,0.25)\end{pspicture}}
+ \Tdot~[tnpos=r]{}\nbput{$\frac{1}{3}$}
+ } 
+ \end{center}
+
+La probabilité manquante sous la tache est: 
+
+\medskip
+\begin{tabularx}{\linewidth}{*{3}{X}} 
+\textbf{a.~~} $\dfrac{7}{9}$ &\textbf{b.~~} $\dfrac{5}{12}$ &\textbf{c.~~} $\dfrac{5}{9}$
+\end{tabularx}
+\medskip
+  
+\item Dans une salle, il y a des tables à 3 pieds et à 4 pieds. Léa compte avec les yeux bandés 169 pieds. Son frère lui indique qu'il y a 34 tables à 4 pieds. Sans enlever son bandeau, elle parvient à donner le nombre de tables à 3 pieds qui est de :
+ 
+\medskip
+\begin{tabularx}{\linewidth}{*{3}{X}} 
+\textbf{a.~~} 135&\textbf{b.~~} 11&\textbf{c.~~} 166 
+\end{tabularx}
+
+\medskip
+\item 90\,\% du volume d'un iceberg est situé sous la surface de l'eau.
+ 
+La hauteur totale d'un iceberg dont la partie visible est 35~m est d'environ: 
+
+\medskip
+\begin{tabularx}{\linewidth}{*{3}{X}}
+\textbf{a.~~}  350 m&\textbf{b.~~} \np{3500} m&\textbf{c.~~} 31,5 m
+\end{tabularx}
+
+\medskip 
+\item \psset{unit=0.6cm}\begin{pspicture}(3.1,2.3)
+\psline(1.2,0.6)(0,0.6)(0,2.1)(1.2,2.1)
+\psline(2.4,2.1)(3.1,2.1)(3.1,0.6)(2.4,0.6)
+\psarc(1.8,2.1){0.6}{-180}{0}
+\psarc(1.8,0.6){0.6}{-180}{0}
+\end{pspicture} a le même périmètre que: 
+
+\medskip
+\begin{tabularx}{\linewidth}{*{3}{X}} 
+\textbf{a.~~}  &\textbf{b.~~}  &\textbf{c.~~}\\
+\psset{unit=0.6cm}\begin{pspicture}(3.2,2.5) 
+\psframe(0,0)(3.1,2.1)\end{pspicture}&
+\psset{unit=0.6cm}\begin{pspicture}(3.1,2.3)\psline(1.2,0.6)(0,0.6)(0,2.1)(1.2,2.1)
+\psline(2.4,2.1)(3.1,2.1)(3.1,0.6)(2.4,0.6)
+\psarc(1.8,2.1){0.6}{0}{180}
+\psarc(1.8,0.6){0.6}{180}{0}
+\end{pspicture}&\psset{unit=0.6cm}\begin{pspicture}(3.1,2.3)
+\psline(1.2,0.6)(0,0.6)(0,2.1)(3.1,2.1)(3.1,0.6)(2.4,0.6)
+\psarc(1.8,0.6){0.6}{180}{0}
+\end{pspicture} 
+\end{tabularx}
+
+\medskip 
+\end{enumerate}
+
+\bigskip
+
+\textbf{\textsc{Exercice 2} \hfill 4 points}
+
+\medskip 
+Arthur vide sa tirelire et constate qu'il possède 21 billets.
+ 
+Il a des billets de 5~\euro{} et des billets de 10~\euro{} pour une somme totale de 125~\euro.
+
+\medskip
+ 
+Combien de billets de chaque sorte possède-t-il ? 
+
+\medskip
+
+\textbf{Si le travail n'est pas terminé, laisse tout de même une trace de la recherche. Elle sera prise en compte dans l'évaluation.}
+
+\bigskip
+
+\textbf{\textsc{Exercice 3} \hfill 6 points}
+
+\medskip
+
+Caroline souhaite s'équiper pour faire du roller.
+ 
+Elle a le choix entre une paire de rollers gris à 87~\euro{} ? et une paire de rollers noirs à 99~\euro.
+ 
+Elle doit aussi acheter un casque et hésite entre trois modèles qui coûtent respectivement 45~\euro, 22~\euro{} et 29~\euro.
+
+\medskip
+ 
+\begin{enumerate}
+\item Si elle choisit son équipement (un casque et une paire de rollers) au hasard, quelle est la probabilité pour que l'ensemble lui coûte moins de 130~\euro{}? 
+\item Elle s'aperçoit qu'en achetant la paire de rollers noirs et le casque à 45~\euro, elle bénéficie d'une réduction de 20\,\% sur l'ensemble. 
+	\begin{enumerate}
+		\item Calculer le prix en euros et centimes de cet ensemble après réduction. 
+		\item Cela modifie-t-il la probabilité obtenue à la question 1 ? Justifier la réponse.
+	\end{enumerate}
+\end{enumerate}
+ 
+\bigskip
+
+\textbf{\textsc{Exercice 4} \hfill 5 points}
+
+\medskip
+
+Flavien veut répartir la totalité de 760~dragées au chocolat et \np{1045}~dragées aux amandes dans des sachets dans des sachets ayant la même répartition de dragées au chocolat et aux amandes.
+
+\medskip
+ 
+\begin{enumerate}
+\item Peut-il faire 76 sachets ? Justifier la réponse. 
+\item 
+	\begin{enumerate}
+		\item Quel nombre maximal de sachets peut-il réaliser ? 
+		\item Combien de dragées de chaque sorte y aura-t-il dans chaque sachet?
+	\end{enumerate}
+\end{enumerate}
+ 
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 5} \hfill 4 points}
+
+\bigskip
+ 
+Tom doit calculer $3,5^2$.
+ 
+\og Pas la peine de prendre la calculatrice \fg, lui dit Julie, tu n'as qu'à effectuer le produit de $3$ par $4$ et rajouter $0,25$. 
+
+\medskip
+
+\begin{enumerate}
+\item Effectuer le calcul proposé par Julie et vérifier que le résultat obtenu est bien le carré de $3,5$. 
+\item Proposer une façon simple de calculer $7,5^2$ et donner le résultat. 
+\item Julie propose la conjecture suivante : 	$(n + 0,5)^2 = n(n + 1) + 0,25$ 
+
+$n$ est un nombre entier positif. 
+
+Prouver que la conjecture de Julie est vraie (quel que soit le nombre $n$) 
+\end{enumerate} 
+
+\bigskip
+
+\textbf{\textsc{Exercice 6} \hfill 4 points}
+
+\medskip
+ 
+On dispose d'un carré de métal de $40$cm de côté. Pour fabriquer une boîte parallélépipèdique, on enlève à chaque coin un carré de côté $x$ et on relève les bords par pliage.
+
+\medskip
+ 
+\begin{enumerate}
+\item Quelles sont les valeurs possibles de x ? 
+\item On donne $x = 5$ cm. Calculez le volume de la boîte. 
+\item Le graphique suivant donne le volume de la boîte en fonction de la longueur $x$.
+
+\emph{On répondra aux questions à l'aide du graphique.} 
+	\begin{enumerate}
+		\item Pour quelle valeur de $x$, le volume de la boîte est-il maximum ? 
+		\item On souhaite que le volume de la boîte soit \np{2000}~cm$^3$. 
+		
+Quelles sont les valeurs possibles de $x$ ?
+	\end{enumerate} 
+\end{enumerate}
+
+\begin{center}
+\psset{unit=0.8cm}
+\begin{pspicture}(15,6)
+\pspolygon[fillstyle=solid,fillcolor=lightgray](2,0)(5.2,0)(5.2,0.9)(6,0.9)(6,4.1)(5.2,4.1)(5.2,4.9)(2,4.9)(2,4.1)(1.2,4.1)(1.2,0.9)(2,0.9)
+\psline[arrowsize=2pt 3]{<->}(1.2,5.2)(6,5.2)
+\psline[arrowsize=2pt 3]{<->}(0.7,4.1)(0.7,4.9)
+\psline[linestyle=dashed](1.2,4)(1.2,5.7)
+\psline[linestyle=dashed](0.3,4.9)(2,4.9)
+\psline[linestyle=dashed](6,4)(6,5.4)
+\psline[linestyle=dashed](1.2,4.1)(0.3,4.1)
+\pspolygon[fillstyle=solid,fillcolor=gray](9.3,2)(11.4,3.4)(13.3,2.85)(12.05,1.85)(12.05,0.8)(10.4,1.6)
+\pspolygon[fillstyle=solid,fillcolor=lightgray](7.7,2.5)(9.3,2)(10.4,1.6)(12.05,0.8)(9.2,1.7)%petit bord
+\pspolygon[fillstyle=solid,fillcolor=lightgray](12.05,0.8)(12.05,1.95)(14.45,3.65)(14.45,2.55)%bord vertical droit
+\pspolygon[fillstyle=solid,fillcolor=lightgray](11.4,3.4)(11.4,4.65)(14.45,3.65)(13.3,2.85)%bord vertical fond
+\pspolygon[fillstyle=solid,fillcolor=lightgray](8.7,2.2)(8.2,2.75)(10.5,4.5)(11.4,3.4)(9.3,2)%bord penché gauche
+\uput[u](3.6,5.3){40}
+\uput[l](0.7,4.5){$x$}
+\end{pspicture}
+
+\vspace{0,5cm}
+\psset{xunit=0.5cm,yunit=0.001cm}
+\begin{pspicture}(-1,-500)(21,5500)
+\multido{\n=0.0+0.5}{43}{\psline[linestyle=dotted,dotsep=1.5pt,linecolor=orange](\n,0)(\n,5500)}
+\multido{\n=0+250}{23}{\psline[linestyle=dotted,dotsep=1.5pt,linecolor=orange](0,\n)(21,\n)}
+\psaxes[linewidth=1.5pt,Dy=6000]{->}(0,0)(0,0)(21,5450)
+\multido{\n=0+500}{11}{\uput[l](0,\n){\np{\n}}}
+\uput[d](20.5,0){$x$}
+\uput[r](0,5500){volume de la boîte}
+\psplot[plotpoints=8000,linewidth=1.25pt,linecolor=blue]{0}{20}{40 x 2 mul  sub dup mul x mul}
+\uput[dl](0,0){O}
+\end{pspicture}
+\end{center} 
+
+\bigskip
+
+\textbf{\textsc{Exercice 7} \hfill 5 points}
+
+\medskip 
+
+\parbox{0.6\linewidth}{Le Pentagone est un bâtiment hébergeant le ministère de la défense des Etats-Unis.
+ 
+Il a la forme d'un pentagone régulier inscrit dans un cercle de rayon OA= 238 m.
+ 
+Il est représenté par le schéma ci-contre.}\hfill 
+\parbox{0.38\linewidth}{\psset{unit=1.25cm}\begin{pspicture}(-1.5,-1.5)(1.5,1.5)
+\pspolygon(1.2;20)(1.2;92)(1.2;164)(1.2;236)(1.2;308)
+\psline(1.2;92)(0;0)(1.2;164)
+\psline(0;0)(0.97;128)
+\uput[u](1.2;92){\footnotesize A} \uput[ul](1.2;164){\footnotesize B} \uput[dl](1.2;236){\footnotesize C} 
+\uput[dr](1.2;308){\footnotesize D} \uput[ur](1.2;20){\footnotesize E} \uput[dr](0,0){\footnotesize O} 
+\uput[ul](0.97;128){\footnotesize M}
+\rput{-52}(0.97;128){\psframe(0.2,0.2)}  
+\end{pspicture}}
+\medskip
+
+\begin{enumerate}
+\item Calculer la mesure de l'angle $\widehat{\text{AOB}}$. 
+\item La hauteur issue de O dans le triangle AOB coupe le côté [AB] au point M. 
+	\begin{enumerate}
+		\item Justifier que (OM) est aussi la bissectrice de $\widehat{\text{AOB}}$ et la médiatrice de [AB]. 
+		\item Prouver que [AM] mesure environ $140$~m. 
+		\item En déduire une valeur approchée du périmètre du Pentagone.
+	\end{enumerate}
+\end{enumerate}
+ 
+\bigskip
+
+\textbf{\textsc{Exercice 8} \hfill 4 points}
+
+\medskip  
+
+\parbox{0.5\linewidth}{Les longueurs sont données en centimètres. 
+
+ABCD est un trapèze.}\hfill
+\parbox{0.48\linewidth}{\psset{unit=0.8cm}
+\begin{pspicture}(7,3)
+\pspolygon(0,0)(1,3)(4,3)(7,0)
+\psline[linestyle=dashed](0,0)(0,3)(1,3)
+\psline[linestyle=dashed](4,3)(7,3)(7,0)
+\psframe(0,3)(0.2,2.8)
+\psframe(7,3)(6.8,2.8)
+\rput(2.5,3){o}\rput(5.5,3){o}\rput(7,1.5){o}
+\uput[r](7,1.5){3}\uput[u](0.5,3){1}\uput[d](3.5,0){7}
+\uput[ur](1,3){A} \uput[ur](4,3){B} \uput[dr](7,0){C} \uput[dl](0,0){D} 
+\end{pspicture}} 
+
+\medskip
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item Donner une méthode permettant de calculer l'aire du trapèze ABCD. 
+		\item Calculer l'aire de ABCD.
+	\end{enumerate} 
+\item \textbf{Dans cette question, si le travail n'est pas terminé, laisser tout de même une trace de la recherche. Elle sera prise en compte dans l'évaluation.}
+ 
+L'aire d'un trapèze $A$ est donnée par l'une des formules suivantes. Retrouver la formule juste en expliquant votre choix.
+ 
+\begin{center}
+\psset{unit=0.8cm}
+\begin{pspicture}(0,-0.2)(7,3.2)
+\pspolygon(0,0)(1,3)(4,3)(7,0)
+\psline[linestyle=dashed](4,3)(7,3)(7,0)
+\psframe(7,3)(6.8,2.8)
+\uput[u](2.5,3){$b$}
+\uput[d](3.5,0){$B$}
+\uput[r](7,1.5){$h$} 
+\end{pspicture}
+\end{center}
+\medskip
+
+\begin{tabularx}{\linewidth}{*{3}{X}}
+$A = \dfrac{(b . B)h}{2}$& 
+$A = \dfrac{(b + B)h}{2}$& 
+$A = 2(b + B)h$
+\end{tabularx} 
+\end{enumerate}
+\end{document}

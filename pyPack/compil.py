@@ -115,10 +115,14 @@ def cutTex2Ex(file : str,source : str)->list:
     file : le début du nom du fichier dans lequel on va écrire
     source : le fichier source contenant les exos
     """
-
+    if ("Corrige" in source):
+        plus = '_cor'
+    else:
+        plus = ''
     # On ouvre le fichier source    
     with open("./sujets_corrections_tex/"+source+".tex","r") as source:
         source_lines = source.readlines()
+        
 
     # Un compteur pour trouver les lignes contenant les entete des exos       
     cpt = 0
@@ -138,11 +142,7 @@ def cutTex2Ex(file : str,source : str)->list:
     
     for i in range(len(indices)-1):
         # On ouvre le fichier dans lequel on va écrire
-        if ("Corrige" in source):
-            myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+"_cor.tex","w")
-        else:
-            myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+".tex","w")
-        
+        myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
         # On ajoute les lignes
         myTex.writelines(source_lines[indices[i]:indices[i+1]])
         myTex.close()
@@ -241,7 +241,7 @@ if __name__ == "__main__":
     #cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")
     #print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
     #print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
-    cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")
+    #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")
     
 
     # On évalue le temps de traitement

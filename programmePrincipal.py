@@ -59,7 +59,7 @@ def main():
             compil.generateFiles(source,source)
     
     # On nettoie le dossier tex_a_compiler
-    compil.cleanPath()
+    compil.cleanPath("tex_a_compiler")
 
     # On génére page d'accueil
     print("=============================================================================")

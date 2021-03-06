@@ -17,6 +17,7 @@ def generateTex(file : str,source_ex : str):
     """
     Générer un fichier tex prêt à compiler
     """
+    pass
     #On crée e dossier qui va accueillir les fichiers tex prêts à compiler
     if not os.path.exists("./tex_a_compiler/"):
         os.mkdir("./tex_a_compiler/")
@@ -53,6 +54,7 @@ def compilTexToPDF(source : str):
     """
     Générer le fichier PDF à partir d'un fichier source tex
     """
+    pass
     #On crée le dossier qui va accueillir les fichiers pdf
     if not os.path.exists("./exercices_corrections_pdf/"):
         os.mkdir("./exercices_corrections_pdf/")
@@ -67,7 +69,8 @@ def compilTexToPDF(source : str):
 def pdf2png(source : str):
     """
     Générer le fichier png ajusté et le pdf ajusté à partir d'un fichier source pdf
-    """    
+    """
+    pass    
     #On crée le dossier qui va accueillir les fichiers png
     if not os.path.exists("./exercices_corrections_png_jpg/"):
         os.mkdir("./exercices_corrections_png_jpg/")
@@ -84,6 +87,10 @@ def pdf2png(source : str):
     os.chdir("../")
 
 def copyAllFiles(source : str):
+    """
+    Copier les fichiers générés là où il faut.
+    """
+    pass
     #On copie le fichier pdf
     #os.system("cp "+source+".pdf ../exercices_corrections_pdf/"+source+".pdf" )
     os.system("sh copy.sh ./tex_a_compiler/"+source+".pdf ./exercices_corrections_pdf/"+source+".pdf")
@@ -94,8 +101,13 @@ def copyAllFiles(source : str):
     #On copie le fichier pdf ajusté
     os.system("cp ./tex_a_compiler/"+source+"-crop.pdf ./exercices_corrections_pdf_crop/"+source+"-crop.pdf" )
 
-def cleanPath():
-    os.chdir("tex_a_compiler")
+def cleanPath(path):
+    """
+    Nettoyer les fichiers de compilation inutiles
+    """
+    pass
+    #os.chdir("tex_a_compiler")
+    os.chdir(path)
     os.system("rm *.aux")
     os.system("rm *.dvi")
     os.system("rm *.log")
@@ -107,7 +119,6 @@ def cleanPath():
     # On se remet à la racine du projet
     os.chdir("../")
 
-
 def cutTex2Ex(file : str,source : str)->list:
     """
     Découpe un fichier source *.tex
@@ -115,6 +126,8 @@ def cutTex2Ex(file : str,source : str)->list:
     file : le début du nom du fichier dans lequel on va écrire
     source : le fichier source contenant les exos
     """
+    pass
+    # Est-ce un corrigé ?
     if ("Corrige" in source):
         plus = '_cor'
     else:
@@ -151,6 +164,7 @@ def generateFiles(file : str,source_ex : str):
     """
     Générer tous les fichiers *.pdf *.pdf ajusté *.png *.tex prêt à compiler
     """
+    pass
     # On génère le fichier tex à compiler
     generateTex(file,source_ex)
 
@@ -167,6 +181,7 @@ def generateFileName(source_ex : str)->str:
     """
     Générer le nom du fichier pour le découpage au format dnb_aaaa_mm_lieu    
     """
+    pass
     aaaa = ''
     mm = ''
     lieu = ''   
@@ -216,26 +231,11 @@ def generateFileName(source_ex : str)->str:
 
     return filename
 
-# Script principal
-def main():
-    # On génère le fichier tex à compiler
-    generateTex("test","dnb20Polynesie_ex1")
-
-    #On compile
-    compilTexToPDF("test")
-
-    #On convertit en png
-    pdf2png("test")
-    
-    #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
-    copyAllFiles("test")   
-
 if __name__ == "__main__":    
     os.system("clear")
     # On récupère la date au début du traitement
     start_time = datetime.now()
 
-#    main()
     # Test 
     #cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
     #cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")

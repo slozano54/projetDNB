@@ -9,11 +9,14 @@
 """
 # PROJET DNB APMEP
 
-Le projet consiste à récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP
+## Auteur
+Sébastien LOZANO
 
-Pour le moment le test se fait sur le premier exo du sujet de polynésie 2020
+Le projet consiste à récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP à partir de l'année 2013
 
-Cette documentation a été générée avec le paquet **pdoc3**.
+Pour le moment le test se fait sur trois sujets et 1 corrigé
+
+La documentation a été générée avec le paquet **pdoc3**.
 
 Utiliser le **package manager** [pip3](https://pip.pypa.io/en/stable/) pour l'installer.
 
@@ -34,25 +37,33 @@ La procédure a été testé sous **Linux** uniquement.
 python3 programmePrincipal.py
 ```
 
-* Sous **Visual Studio Code** lancer Live server et aller dans le dossier **PagesWeb**
+* Sous **Visual Studio Code** lancer Live server et aller dans le dossier **PagesWeb** pour voir la documentation
     
 ## Notes
 
 Cette version n'est qu'un brouillon, elle n'est pas finalisée
 
-Pour le moment on peut uniquement déposer un fichier *.tex de corps d'exo dans le dossier **exercices_corrections_tex** puis lancer le script python **programmePrincipal.py** pour obtenir :
+Pour le moment il faut :
+
+* déposer un sujet au format *.tex dans le dossier **sujets_corrections_tex**
+
+* lancer le script python **programmePrincipal.py**
+
+Pour obtenir :
 
 * La documentation des fonctions du projet dans le dossier **docs/pyPack**
 
-* Un dossier **pagesWeb** avec une démo
+* Un dossier **pagesWeb** avec une démo NON FONCTIONNELLE AU NIVEAU DE LA COMPILATION OVERLEAF
 
-* un fichier *.tex prêt à compiler dans le dossier **tex_a_compiler**
+* <del>un fichier *.tex prêt à compiler dans le dossier **tex_a_compiler**</del> Je peux remettre ailleur pour overleaf par exemple.
 
 * un fichier pdf compilé dans le dossier **exercices_corrections_pdf**
 
 * un fichier pdf ajusté et compilé dans le dossier **exercices_corrections_pdf_crop**
 
 * un fichier png ajusté dans le dossier **exercices_corrections_png_jpg**
+
+* un fichier tex avec le code source de chaque exo ou corrigé dans le dossier **exercices_corrections_tex**
 
 """
 pass

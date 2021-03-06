@@ -5,6 +5,10 @@ Découper un sujet.
 
 Génèrer le document à compiler, la documentation, les versions pdf, pdf ajustée et png
 """
+
+__author__      = "Sébastien Lozano"
+__licence__   = "MIT"
+
 pass
 
 # On fait les imports nécessaires selon le contexte

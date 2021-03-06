@@ -41,9 +41,11 @@ def main():
     for (dirpath, dirnames, filenames) in os.walk('./sujets_corrections_tex/'):        
         for source in filenames:
             # On supprime l'extension du fichier
-            source = '.'.join(source.split('.')[:-1])            
+            source = '.'.join(source.split('.')[:-1])
+            # On formatte le nom du fichier de sortie
+            source_format = compil.generateFileName(source)            
             # On découpe
-            compil.cutTex2Ex(source,source) 
+            compil.cutTex2Ex(source_format,source) 
            
     # Tous les fichiers du répertoire /exercices_corrections_tex
     for (dirpath, dirnames, filenames) in os.walk('./exercices_corrections_tex/'):
@@ -51,6 +53,9 @@ def main():
             # On supprime l'extension du fichier
             source = '.'.join(source.split('.')[:-1])                        
             compil.generateFiles(source,source)
+    
+    # On nettoie le dossier tex_a_compiler
+    compil.cleanPath()
 
     # On génére page d'accueil
     print("=============================================================================")

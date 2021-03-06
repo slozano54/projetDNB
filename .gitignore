@@ -11,6 +11,9 @@ exercices_corrections_pdf_crop
 # le dossier où sont générés les png_jpg ajustés
 exercices_corrections_png_jpg
 
+# le dossier qui accueil les exos découpés
+exercices_corrections_tex/
+
 # Les pagesWeb
 pagesWeb
 
@@ -23,11 +26,3 @@ tex_a_compiler/*.pdf
 tex_a_compiler/*.png
 tex_a_compiler/*.ps 
 tex_a_compiler/*.tex 
-
-# quelques fichiers à ne pas pousser pour le moment
-exercices_corrections_tex/Brevet_Polynesie_sept_2020_DV_ex1.tex
-exercices_corrections_tex/Brevet_Polynesie_sept_2020_DV_ex2.tex
-exercices_corrections_tex/Brevet_Polynesie_sept_2020_DV_ex3.tex
-exercices_corrections_tex/Brevet_Polynesie_sept_2020_DV_ex4.tex
-exercices_corrections_tex/Brevet_Polynesie_sept_2020_DV_ex5.tex
-exercices_corrections_tex/Brevet_Polynesie_sept_2020_DV_ex6.tex

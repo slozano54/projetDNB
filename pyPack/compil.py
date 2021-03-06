@@ -92,6 +92,20 @@ def copyAllFiles(source : str):
     #On copie le fichier pdf ajusté
     os.system("cp ./tex_a_compiler/"+source+"-crop.pdf ./exercices_corrections_pdf_crop/"+source+"-crop.pdf" )
 
+def cleanPath():
+    os.chdir("tex_a_compiler")
+    os.system("rm *.aux")
+    os.system("rm *.dvi")
+    os.system("rm *.log")
+    os.system("rm *.out")
+    os.system("rm *.png")
+    os.system("rm *.ps")
+    os.system("rm *.tex")
+    os.system("rm *.pdf")
+    # On se remet à la racine du projet
+    os.chdir("../")
+
+
 def cutTex2Ex(file : str,source : str)->list:
     """
     Découpe un fichier source *.tex
@@ -192,8 +206,6 @@ def generateFileName(source_ex : str)->str:
     filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
 
     return filename
-
-
 
 # Script principal
 def main():

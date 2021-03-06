@@ -33,7 +33,8 @@ def main():
     # On génère le fichier png
     print("=============================================================================")
     print("  Création du fichier tex, du fichier pdf, du fichier png en cours ...  ")    
-    compil.main()
+    #compil.main()
+    compil.generateFiles("test","dnb20Polynesie_ex1")
 
     # On génére page d'accueil
     print("=============================================================================")

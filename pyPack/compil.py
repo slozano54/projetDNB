@@ -123,27 +123,46 @@ def cutTex2Ex(file : str,source : str)->list:
         myTex.close()
 
 
+def generateFiles(file : str,source_ex : str):
+    """
+    Générer tous les fichiers *.pdf *.pdf ajusté *.png *.tex prêt à compiler
+    """
+    # On génère le fichier tex à compiler
+    generateTex(file,source_ex)
+
+    #On compile
+    compilTexToPDF(file)
+
+    #On convertit en png
+    pdf2png(file)
+    
+    #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
+    copyAllFiles(file)   
+
 
        
 
 
 # Script principal
 def main():
+    # On génère le fichier tex à compiler
+    generateTex("test","dnb20Polynesie_ex1")
+
+    #On compile
+    compilTexToPDF("test")
+
+    #On convertit en png
+    pdf2png("test")
+    
+    #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
+    copyAllFiles("test")   
+
+if __name__ == "__main__":    
+    os.system("clear")
     # On récupère la date au début du traitement
     start_time = datetime.now()
 
-    # # On génère le fichier tex à compiler
-    # generateTex("test","dnb20Polynesie_ex1")
-
-    # #On compile
-    # compilTexToPDF("test")
-
-    # #On convertit en png
-    # pdf2png("test")
-    
-    # #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
-    # copyAllFiles("test")
-   
+#    main()
     # Test 
     cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
 
@@ -152,7 +171,4 @@ def main():
     print("=============================================================================")
     print("  Durée de traitement : ",end_time-start_time)        
     print("=============================================================================")
- 
-if __name__ == "__main__":
-    os.system("clear")
-    main()
+

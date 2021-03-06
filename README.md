@@ -19,10 +19,10 @@ La procédure a été testé sous **Linux** uniquement.
 * Cloner ce [dépot github](https://github.com/slozano54/projetDNB) ou télécharger [cette archive](https://github.com/slozano54/projetDNB/archive/master.zip).
 
 
-* À la racine du projet, lancer le script python **generate_all_files.py**.
+* À la racine du projet, lancer le script python **programmePrincipal.py**.
 
 ```bash
-python3 generate_all_files.py
+python3 programmePrincipal.py
 ```
 
 * Sous **Visual Studio Code** lancer Live server et aller dans le dossier **PagesWeb**
@@ -31,7 +31,7 @@ python3 generate_all_files.py
 
 Cette version n'est qu'un brouillon, elle n'est pas finalisée
 
-Pour le moment on peut uniquement déposer un fichier *.tex de corps d'exo dans le dossier **exercices_corrections_tex** puis lancer le script python **generate_all_files.py** pour obtenir :
+Pour le moment on peut uniquement déposer un fichier *.tex de corps d'exo dans le dossier **exercices_corrections_tex** puis lancer le script python **programmePrincipal.py** pour obtenir :
 
 * La documentation des fonctions du projet dans le dossier **docs/pyPack**
 

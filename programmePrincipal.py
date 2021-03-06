@@ -28,13 +28,31 @@ def main():
     print(" ")
     os.system('sh ./generateMyDoc.sh')   
 
+    # On découpe le sujet en exos
+    # Pour chaque exos
     # On génére le fichier tex
     # On le compile
     # On génère le fichier png
     print("=============================================================================")
     print("  Création du fichier tex, du fichier pdf, du fichier png en cours ...  ")    
     #compil.main()
-    compil.generateFiles("test","dnb20Polynesie_ex1")
+    #compil.generateFiles("dnb20Polynesie_ex1","dnb20Polynesie_ex1")
+    # On découpe les sujets présents dansle dossiers sujets_corrections_tex
+    for (dirpath, dirnames, filenames) in os.walk('./sujets_corrections_tex/'):        
+        for source in filenames:
+            # On supprime l'extension du fichier
+            source = '.'.join(source.split('.')[:-1])            
+            # On découpe
+            compil.cutTex2Ex(source,source) 
+           
+    # Tous les fichiers du répertoire /exercices_corrections_tex
+    for (dirpath, dirnames, filenames) in os.walk('./exercices_corrections_tex/'):
+        for source in filenames:
+            # print(source)
+            # On supprime l'extension du fichier
+            source = '.'.join(source.split('.')[:-1])            
+            # print(source)
+            compil.generateFiles(source,source)
 
     # On génére page d'accueil
     print("=============================================================================")
@@ -48,4 +66,5 @@ def main():
     print("=============================================================================")
  
 if __name__ == "__main__":
+    os.system("clear")
     main()

@@ -1,0 +1,417 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox}
+\usepackage{ulem}
+\usepackage{dcolumn}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{scratch}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{media9}
+\usepackage{lscape}
+\usepackage{pifont}
+\newcommand{\euro}{\eurologo{}}
+%\usepackage{color}
+\usepackage{pstricks,pst-plot,pstricks-add}
+\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+%Sujet aimablement fourni par Fabien Pucci
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Brevet des collèges},
+pdftitle = {Wallis et Futuna 2 décembre 2017},
+allbordercolors = white,pdfstartview=FitH}   
+\usepackage[frenchb]{babel}
+\usepackage[np]{numprint}
+\begin{document}
+\setlength\parindent{0mm}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Brevet des collèges}
+\lfoot{\small{Wallis et Futuna}}
+\rfoot{\small{2 décembre 2017}}
+\marginpar{\rotatebox{90}{\textbf{A. P{}. M. E. P{}.}}}
+\pagestyle{fancy}
+\thispagestyle{empty}
+
+\begin{center}\textbf{Durée : 2 heures}
+
+\vspace{0,5cm}
+
+{\Large\textbf{\decofourleft~Diplôme national du Brevet
+Wallis et Futuna~\decofourright}}\\[4pt]
+{\Large \textbf{2 décembre 2017}}
+
+\medskip
+
+THÉMATIQUE COMMUNE DE L'ÉPREUVE DE MATHÉMATIQUES-SCIENCES: LA SANTÉ
+
+\end{center}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 1 :  \hfill 5 points}
+
+\medskip
+
+\emph{Cet exercice est un questionnaire à choix multiple (QCM). Pour chaque question, une seule des quatre réponses proposées est exacte. Sur la copie, indiquer le numéro de la question et la réponse choisie On ne demande pas de justifier. Aucun point ne sera enlevé en cas de mauvaise réponse.}
+
+\emph{Indiquer sur la copie le numéro de la question et recopier la réponse exacte.}
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|c|m{4cm}|*{4}{>{\centering \arraybackslash}X|}}\hline
+\multicolumn{2}{|c|}{~}&A &B &C& D\\ \hline
+1&Dans un club sportif, $\dfrac{1}{8}$ des adhérents ont plus de 42 ans et $\dfrac{1}{4}$
+ ont moins de 25 ans. 
+
+La proportion d'adhérents ayant un âge de 25 à 42 ans est \ldots&$\dfrac{1}{6}$&$\dfrac{3}{8}$&$\dfrac{5}{8}$&$\dfrac{1}{8}$\\ \hline
+2&Une télé coûte \np{46000} F. Son prix est augmenté de 20\,\%. Je paierai donc \ldots&\np{36800} F &\np{55200} F &\np{46020} F &\np{48000} F\\ \hline
+3 &On triple la longueur de l'arête d'un cube. Son volume est \ldots&inchangé &multiplié par 3 &multiplié par 9 &multiplié par 27\\ \hline
+4 &Les nombres 23 et 37& sont premiers&sont divisibles par 3&n'ont aucun diviseur commun
+&sont  pairs\\ \hline
+5&L'image de 3 par la fonction $f$ définie par 
+
+$f(x) = x^2 - 2x + 7$ est \ldots &10 &4 &22 &$- 8$\\ \hline
+\end{tabularx}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 2 :  \hfill 4 points}
+
+\medskip
+
+Voici les tailles, en cm, de $29$ jeunes plants de blé $10$ jours après la mise en germination.
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|l|*{9}{>{\centering \arraybackslash}X|}}\hline
+Taille (en cm) &0 &10 &15 &17 &18 &19 &20 &21 &22\\ \hline
+Effectif &1 &4 &6 &2 &3 &3 &4 &4 &2\\ \hline
+\end{tabularx}
+
+\medskip
+
+\begin{enumerate}
+\item Calculer la taille moyenne d'un jeune plant de blé.
+\item 
+	\begin{enumerate}
+		\item Déterminer la médiane de cette série.
+		\item Interpréter ce résultat.
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\textbf{Exercice 3 :  \hfill 6 points}
+
+\medskip
+
+\parbox{0.65\linewidth}{Pour gagner le gros lot à une kermesse, il faut d'abord tirer une
+boule rouge dans une urne, puis obtenir un multiple de 3 en
+tournant une roue de loterie numérotée de 1 à 6.
+
+L'urne contient 3 boules vertes, 2 boules bleues et 3 boules rouges.
+
+\begin{enumerate}
+\item Sur la roue de loterie, quelle est la probabilité d'obtenir un
+multiple de $3$ ?
+\item Quelle est la probabilité qu'un participant gagne le gros lot ?
+\end{enumerate}}\hfill
+\parbox{0.3\linewidth}{\psset{unit=0.85cm}
+\begin{pspicture}(-2.5,-2.5)(2.8,2.5)
+\pscircle(0,0){2.5}
+\multido{\n=0+60,\na=30+60,\nb=1+1}{6}{\psline(2.5;\n)\rput(1.5;\na){\nb}}
+\rput{-35}(2.6;-35){$\blacktriangleleft$}
+\end{pspicture}
+}
+
+\begin{enumerate}[resume]
+\item On voudrait modifier le contenu de l'urne en ne changeant que le nombre de boules rouges.
+
+Combien faudra-t-il mettre en tout de boules rouges dans l'urne pour que la probabilité de
+tirer une boule rouge soit de $0,5$. 
+
+Expliquer votre démarche.
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 4 :  \hfill 5 points}
+
+\medskip
+
+\begin{enumerate}
+\item On souhaite tracer le motif ci-dessous en forme de losange.
+
+Compléter sur l'annexe 1, le script du bloc Losange afin d'obtenir ce motif.
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|X|X|}\hline
+Le motif \textbf{Losange}&Le bloc \textbf{Losange}\\
+\psset{unit=0.6cm}
+\begin{pspicture}(0,-5)(10,4)
+%\psgrid
+\pspolygon(0.5,1)(5.6,1)(10,3.5)(4.9,3.5)
+\psarc(0.5,1){4mm}{0}{30} \psarc(4.9,3.5){4mm}{210}{360}
+\rput(1,2.5){\scriptsize Point de départ}
+\psline{->}(0.5,2.2)(0.5,1.1)
+\psline{<->}(0.5,0.8)(5.6,0.8)\uput[d](3.05,0.8){\footnotesize 60}
+\rput(1.6,1.3){\footnotesize 30\degres}\rput(5.1,2.5){\footnotesize 150\degres}
+\end{pspicture}&\footnotesize{\begin{scratch}
+\initmoreblocks{définir \namemoreblocks{Losange}}
+\blockpen{stylo en position d'écriture}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{150} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{} degrés}
+\blockpen{relever le stylo}
+\end{scratch}}\\\hline
+\end{tabularx}
+
+\item On souhaite réaliser la figure ci-dessous construite à partir du bloc \textbf{Losange} complété à la question 1.
+
+\begin{center}
+\psset{unit=0.75cm}
+\begin{pspicture}(-2.5,-2.5)(2.5,2.5)
+\def\losange1{\pspolygon(0,0)(1.275,0)(2.375,0.625)(1.1,0.625)}
+\multido{\n=0+30}{12}{\rput{\n}(0;0){\losange1}}
+\end{pspicture}
+\end{center}
+
+\parbox{0.6\linewidth}{On rappelle que l'instruction \raisebox{-2.3ex}{\begin{scratch}\blockmove{s’orienter à \ovalnum{90\selectarrownum} degrés}\end{scratch}} signifie que l'on se dirige vers la droite.
+
+\bigskip
+
+Parmi les instructions ci-dessous, indiquer sur votre copie, dans
+l'ordre, les deux instructions à placer dans la boucle ci-contre pour
+finir le script.}\hfill
+\parbox{0.37\linewidth}{\begin{scratch}
+\blockinit{Quand \greenflag est cliqué}
+\blockpen{effacer tout}
+\blockmove{aller à x: \ovalnum0 y: \ovalnum0}
+\blockmove{s’orienter à \ovalnum{90\selectarrownum} degrés}
+\blockrepeat{répéter \ovalnum{12} fois}
+{\blockspace[0.5]}
+\end{scratch}}
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|c|X|m{0.5cm}|c|X|}\cline{1-2}\cline{4-5}
+\ding{'300}	&\raisebox{-2.3ex}{\begin{scratch}\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}\end{scratch}}	&	&\ding{'301}		&\raisebox{-2.3ex}{\begin{scratch}\blockmove{tourner \turnleft{} de \ovalnum{150} degrés}\end{scratch}}\\ \cline{1-2}\cline{4-5}
+\ding{'302}		&\raisebox{-2.3ex}{\begin{scratch} \blockmoreblocks{Losange}\end{scratch}}				&	&\ding{'303}		&\raisebox{-2.3ex}{\begin{scratch}\blockmove{avancer de \ovalnum{600}}\end{scratch}}\\ \cline{1-2}\cline{4-5}
+\end{tabularx}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 5 :  \hfill 9 points}
+
+\medskip
+
+Pour des raisons de santé, il est conseillé de limiter ses efforts durant des activités sportives, afin de ne pas dépasser un certain rythme cardiaque.
+
+La fréquence cardiaque est donnée en pulsations/minute.
+
+L'âge est donné en année.
+
+\smallskip
+
+Autrefois, la relation entre l'âge $x$ d'une personne et $f(x)$ la fréquence cardiaque maximale recommandée était décrite par la formule suivante :
+
+\[f(x) = 220 - x.\]
+
+Des recherches récentes ont montré que cette formule devait être légèrement modifiée.
+
+La nouvelle formule est :
+\[g(x) = 208 - 0,7x.\]
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item Avec la formule $f(x)$, quelle est la fréquence cardiaque maximale recommandée pour un enfant de $5$ ans ?
+		\item Avec la formule $g(x)$, quelle est la fréquence cardiaque maximale recommandée pour un enfant de $5$ ans ?
+	\end{enumerate}
+\item  
+	\begin{enumerate}
+		\item Sur l'annexe 2, compléter le tableau de valeurs.
+		\item Sur l'annexe 2, tracer la droite $d$ représentant la fonction $f$ dans le repère tracé.
+		\item Sur le même repère, tracer la droite $d'$ représentant la fonction $g$.
+	\end{enumerate}
+\item  Un journal commente : \og Une des conséquences de l'utilisation de la nouvelle formule au lieu de l'ancienne est que la fréquence cardiaque maximale recommandée diminue
+légèrement pour les jeunes et augmente légèrement pour les personnes âgées. \fg
+	
+Selon la nouvelle formule, à partir de quel âge la fréquence cardiaque maximale
+recommandée est-elle supérieure ou égale à celle calculée avec l'ancienne formule ?
+	
+Justifier.
+\item  Des recherches ont démontré que l'exercice physique est le plus efficace lorsque la
+fréquence cardiaque atteint 80\,\% de la fréquence cardiaque maximale recommandée
+donnée par la nouvelle formule.
+	
+Calculer pour une personne de $30$ ans la fréquence cardiaque, en pulsations/minute, pour
+que l'exercice physique soit le plus efficace.
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 6 :  \hfill 7 points}
+
+\medskip
+
+Dans un laboratoire A, pour tester le vaccin contre la grippe de la saison hivernale prochaine, on a injecté la même souche de virus à 5 groupes comportant 29 souris chacun.
+
+3 de ces groupes avaient été préalablement vaccinés contre ce virus.
+
+Quelques jours plus tard, on remarque que :
+
+\setlength\parindent{10mm}
+\begin{itemize}
+\item[$\bullet~~$] dans les $3$ groupes de souris vaccinées, aucune souris n'est malade ;
+\item[$\bullet~~$] dans chacun des groupes de souris non vaccinées, $23$ souris ont développé la maladie.
+\end{itemize}
+\setlength\parindent{0mm} 
+
+\medskip
+ 
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item En détaillant les calculs, montrer que la proportion de souris malades lors de ce test est $\dfrac{46}{145}$.
+		\item Justifier sans utiliser la calculatrice pourquoi on ne peut pas simplifier cette fraction.
+	\end{enumerate}	
+\end{enumerate}
+		
+\textbf{Donnée utile} Le début de la liste ordonnée des nombres premiers est : 
+		
+		2,\: 3,\: 5,\: 7,\: 11,\: 13,\: 17,\: 19,\: 23,\:29.
+		
+Dans un laboratoire B on informe que $\dfrac{140}{870}$ des souris ont été malades.
+
+\begin{enumerate}[resume]		
+\item  
+	\begin{enumerate}
+		\item Décomposer $140$ et $870$ en produit de nombres premiers.
+		\item En déduire la forme irréductible de la proportion de souris malades dans le laboratoire B.
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 7 :  \hfill 9 points}
+
+\medskip
+
+Pour soutenir la lutte contre l'obésité, un collège décide d'organiser une course.
+
+\parbox{0.48\linewidth}{Un plan est remis aux élèves participant à l'épreuve.
+
+Les élèves doivent partir du point A et se rendre
+au point E en passant par les points B, C et D.
+
+C est le point d'intersection des droites (AE) et
+(BD)
+
+La figure ci-contre résume le plan, elle n'est pas à
+l'échelle.}\hfill
+\parbox{0.47\linewidth}{\psset{unit=0.65cm,arrowsize=2pt 4}
+\begin{pspicture}(10.5,5)
+%\psgrid
+\psline[ArrowInside=->](1.7,4)(0.5,2)(10.2,3.8)(8.5,0.5)
+\psline[linestyle=dashed](1.7,4)(8.5,0.5)
+\rput{-118}(1.7,4){\psframe(0.25,0.25)}
+\rput{62}(8.5,0.5){\psframe(0.25,0.25)}
+\uput[u](1.7,4){A (départ)}\uput[dl](0.7,2){B}\uput[u](4.3,2.8){C}\uput[ur](10.2,3.8){D}
+\uput[r](8.5,0.5){E (arrivée)}
+\rput(0.5,3.3){300~m}\rput(3.5,3.6){400~m}\rput(7.3,1.7){\np{1000}~m}
+\end{pspicture}
+}
+
+\smallskip
+
+On donne AC $= 400$~m, EC $= \np{1000}$~m et AB $= 300$~m.
+
+\medskip
+
+\begin{enumerate}
+\item Calculer BC.
+\item Montrer que ED $= 750$m.
+\item Déterminer la longueur réelle du parcours ABCDE.
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+{\Large \textbf{Annexe 1 : exercice 4}}
+
+\vspace{3cm}
+
+\begin{scratch}
+\initmoreblocks{définir \namemoreblocks{Losange}}
+\blockpen{stylo en position d'écriture}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{150} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{} degrés}
+\blockpen{relever le stylo}
+\end{scratch}
+\end{center}
+
+\newpage
+
+\begin{center}
+{\Large \textbf{Annexe 2 : exercice 5}}
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{|*{12}{>{\centering \arraybackslash}X|}}\hline
+$x$		&5	&10	&20	&30	&40	&50	&60	&70	&80	&90	&100\\ \hline
+$f(x)$	&	&	&	&	&	&	&	&	&	&	&\\ \hline
+$g(x)$	&	&	&	&	&	&	&	&	&	&	&\\ \hline
+\end{tabularx}
+
+\bigskip
+
+\psset{xunit =0.08cm,yunit=0.08cm}
+\begin{pspicture}(-5,-5)(100,220)
+\multido{\n=0+5}{21}{\psline[linecolor=cyan,linewidth=0.3pt](\n,0)(\n,220)}
+\multido{\n=0+5}{45}{\psline[linecolor=cyan,linewidth=0.3pt](0,\n)(100,\n)}
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10,labelFontSize=\scriptstyle]{->}(0,0)(0,0)(100,220)
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10,labelFontSize=\scriptstyle](0,0)(0,0)(100,220)
+\uput[r](0,217.5){fréquence cardiaque}
+\uput[u](97,0){$x$}
+\end{pspicture}
+\end{center}
+\end{document}

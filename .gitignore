@@ -26,3 +26,6 @@ tex_a_compiler/*.pdf
 tex_a_compiler/*.png
 tex_a_compiler/*.ps 
 tex_a_compiler/*.tex 
+
+# on ignore les zip
+*.zip

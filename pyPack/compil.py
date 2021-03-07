@@ -136,7 +136,7 @@ def cutTex2Ex(file : str,source : str)->list:
     """
     pass
     # Est-ce un corrigé ?
-    if ("Corrige" in source):
+    if ("corrige" in source.lower()):
         plus = '_cor'
     else:
         plus = ''
@@ -161,13 +161,32 @@ def cutTex2Ex(file : str,source : str)->list:
     if not os.path.exists("./exercices_corrections_tex/"):
         os.mkdir("./exercices_corrections_tex/")
     
-    for i in range(len(indices)-1):
+    # On génére tous les fichiers sauf le dernier qui peut contenir des annexes
+    for i in range(len(indices)-2):
         # On ouvre le fichier dans lequel on va écrire
         myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
         # On ajoute les lignes
         myTex.writelines(source_lines[indices[i]:indices[i+1]])
         myTex.close()
+    
+    # On vérifie s'il y a ou non le mot annexe dans une ligne
+    isAnnexe = False
+    for i in range(indices[len(indices)-2],indices[len(indices)-1]):
+        if ("annexe" in source_lines[i].lower()):
+            isAnnexe = True
 
+    # Si il y a des annexes on renomme
+    if (isAnnexe):
+        # On ouvre le fichier dans lequel on va écrire
+        myTex = open("./exercices_corrections_tex/"+file+"_"+str(len(indices)-1)+plus+"avecLesAnnexes.tex","w")       
+        # On ajoute les lignes
+        for i in range(indices[len(indices)-2],indices[len(indices)-1]):
+            # On ajoute les lignes sauf \end{document}
+            if ("\\end{document}" not in source_lines[i]):
+                myTex.writelines(source_lines[i])
+        #myTex.writelines(source_lines[indices[len(indices)-2]:indices[len(indices)-1]])
+        myTex.close()
+        
 def generateFiles(file : str,source_ex : str):
     """
     Générer tous les fichiers *.pdf *.pdf ajusté *.png *.tex prêt à compiler
@@ -265,6 +284,7 @@ if __name__ == "__main__":
     #print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
     #print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
     #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")
+    cutTex2Ex("wallis","Brevet_Wallis_2_dec_2017")
     
 
     # On évalue le temps de traitement

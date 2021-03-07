@@ -37,6 +37,7 @@ def main():
     # On génére le fichier tex
     # On le compile
     # On génère le fichier png
+    print("")
     print("=============================================================================")
     print("  Création du fichier tex, du fichier pdf, du fichier png en cours ...  ")    
     #compil.main()
@@ -47,7 +48,12 @@ def main():
             # On supprime l'extension du fichier
             source = '.'.join(source.split('.')[:-1])            
             # On formatte le nom du fichier de sortie
-            source_format = compil.generateFileName(source)                        
+            source_format = compil.generateFileName(source)
+            if ('bugMois' in source_format or 'bugLieu' in source_format):
+                print("============================= ATTENTION =========================")
+                print("Problème avec le nom du fichier : "+source)
+                print(".................................................................")
+                source_format = input("Renommez le correctement selon la nomenclature dnb_aaaa_mm_lieu\n")
             # On découpe
             compil.cutTex2Ex(source_format,source) 
            

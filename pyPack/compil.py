@@ -81,7 +81,8 @@ def pdf2png(source : str):
     
     #On lance la commande ce compilation, surement dans le répartoire courant...
     os.chdir("tex_a_compiler")
-    os.system("sh dvi2png.sh "+source)
+    # os.system("sh dvi2png.sh "+source)
+    os.system("sh pdf2png.sh "+source)
 
     # On se remet à la racine du projet
     os.chdir("../")

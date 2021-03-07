@@ -102,6 +102,13 @@ def copyAllFiles(source : str):
     #On copie le fichier pdf ajusté
     os.system("cp ./tex_a_compiler/"+source+"-crop.pdf ./exercices_corrections_pdf_crop/"+source+"-crop.pdf" )
 
+    #On crée le dossier qui va accueillir les fichiers png
+    if not os.path.exists("./exercices_corrections_tex_autonome/"):
+        os.mkdir("./exercices_corrections_tex_autonome/")
+    #On copie le fichier tex
+    os.system("cp ./tex_a_compiler/"+source+".tex ./exercices_corrections_tex_autonome/"+source+".tex" )
+
+
 def cleanPath(path):
     """
     Nettoyer les fichiers de compilation inutiles
@@ -115,7 +122,7 @@ def cleanPath(path):
     os.system("rm *.out")
     os.system("rm *.png")
     os.system("rm *.ps")
-    #os.system("rm *.tex")
+    os.system("rm *.tex")
     os.system("rm *.pdf")
     # On se remet à la racine du projet
     os.chdir("../")

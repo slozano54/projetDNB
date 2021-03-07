@@ -11,8 +11,10 @@ exercices_corrections_pdf_crop
 # le dossier où sont générés les png_jpg ajustés
 exercices_corrections_png_jpg
 
-# le dossier qui accueil les exos découpés
+# le dossier qui accueil les sources text des exos découpés 
 exercices_corrections_tex/
+# le dossier qui accueil les sources tex autonomes
+exercices_corrections_tex_autonome
 
 # Les pagesWeb
 pagesWeb

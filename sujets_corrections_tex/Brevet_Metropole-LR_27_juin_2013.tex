@@ -1,0 +1,370 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{textcomp}
+\newcommand{\euro}{\eurologo{}}
+\usepackage{pstricks,pst-plot,pst-all,graphicx,pstricks-add}
+% Tapuscrit Denis Vergès
+\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Brevet des collèges},
+pdftitle = {Métropole La Réunion Antilles-Guyane  juin 2013},
+allbordercolors = white} 
+\usepackage[frenchb]{babel}
+\usepackage[np]{numprint}
+\begin{document}
+\setlength\parindent{0mm}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{Brevet des collèges}
+\lfoot{Métropole--La Réunion--Antilles-Guyane}
+\rfoot{27 juin 2013}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\definecolor{gristab}{gray}{0.80}
+ 
+\begin{center}
+{\Large \textbf{\decofourleft~Brevet des collèges   27 juin 2013~\decofourright\\[5pt]
+Métropole--La Réunion--Antilles-Guyane}}
+    
+\vspace{0,5cm}
+     
+\end{center}
+
+\begin{tabular}{|m{12cm}|}\hline
+\multicolumn{1}{|c|}{Indication portant sur l'ensemble du sujet}\\
+ Toutes les réponses doivent être justifiées, sauf si une indication contraire 
+ est donnée.\\ 
+Pour chaque question, si le travail n'est pas terminé, laisser tout de même 
+une trace de la recherche. Elle sera prise en compte dans la notation.\\ \hline
+\end{tabular}
+
+\vspace{0,25cm} 
+
+\textbf{\textsc{Exercice} 1 \hfill 4 points}
+
+\medskip
+
+\parbox{0.5\linewidth}{Avec un logiciel :
+ 
+\begin{itemize}
+\item on a construit un carré ABCD, de côté 4 cm.
+\item on a placé un point M mobile sur [AB] et construit le carré MNPQ comme visualisé sur la copie d'écran ci-contre. 
+\item on a représenté l'aire du carré MNPQ en 
+fonction de la longueur AM.
+\end{itemize}}\hfill  \parbox{0.4\linewidth}{\psset{unit=0.8cm}
+\begin{pspicture}(6.5,6.5)
+\psframe(0.5,0.5)(5.7,5.7)
+\pspolygon(4.2,0.5)(5.7,4.2)(2,5.7)(0.5,2)
+\uput[ul](0.5,5.7){A} \uput[ur](5.7,5.7){B} \uput[dr](5.7,0.5){C} \uput[dl](0.5,0.5){D} 
+\uput[u](2,5.7){M} \uput[r](5.7,4.2){N} \uput[d](4.2,0.5){P} \uput[l](0.5,2){Q}
+\uput[u](2,5.7){M} \uput[r](5.7,4.2){N} \uput[d](4.2,0.5){P} \uput[l](0.5,2){Q}
+\psline(1.25,5.6)(1.25,5.8)\psline(1.35,5.6)(1.35,5.8)
+\psline(4.90,0.4)(4.90,0.6)\psline(5.00,0.4)(5.00,0.6)
+\psline(0.4,1.2)(0.6,1.2)\psline(0.4,1.3)(0.6,1.3)
+\psline(5.6,4.9)(5.8,4.9)\psline(5.6,5)(5.8,5)
+\end{pspicture}}
+
+On a obtenu le graphique ci-dessous.
+
+\begin{center}
+\psset{xunit=1.25cm,yunit=0.5cm}
+\begin{pspicture}(-1,-0.5)(6,18)
+\psgrid[gridlabels=0pt,subgriddiv=1,gridwidth=1pt,griddots=10,gridcolor=orange](0,0)(6,18)
+\psaxes[linewidth=1pt](0,0)(0,0)(6,18)
+\psaxes[linewidth=1.5pt]{->}(0,0)(1,1)
+\psplot[plotpoints=5000,linewidth=1.25pt,linecolor=blue]{0}{4}{x dup mul 2 mul 8 x mul sub 16 add}
+\uput[r](0,17.5){Aire de MNPQ $\left(\text{en cm}^2\right)$}
+\uput[u](5,0){Longueur AM (en cm)}\uput[dl](0,0){O}
+\end{pspicture} 
+\end{center}
+ 
+En utilisant ce graphique répondre aux questions suivantes. \textbf{Aucune justification n'est attendue.} 
+
+\begin{enumerate}
+\item Déterminer pour quelle(s) valeur(s) de AM, l'aire de MNPQ est égale à $10$~cm$^2$.
+\item Déterminer l'aire de MNPQ lorsque AM est égale à 0,5cm.
+\item Pour quelle valeur de AM l'aire de MNPQ est-elle minimale ? Quelle est alors cette aire ? 
+\end{enumerate}
+
+\bigskip
+
+\textbf{\textsc{Exercice} 2 \hfill 4 points}
+
+\medskip
+
+On a utilisé un tableur pour calculer les images de différentes valeurs de $x$ par une fonction affine $f$ et par une autre fonction $g$. Une copie de l'écran obtenu est donnée ci-dessous. 
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|c|*{8}{>{\centering \arraybackslash}X|}}\hline
+\multicolumn{3}{|c|}{C2}&$fx$&\multicolumn{5}{|l|}{$=-5\star\text{C}1+7$}\\ \hline
+&A&B&C&D&R&F&G&H\\ \hline
+1&$x$&$- 3$&$- 2$&$- 1$&$0$&1&2&3\\ \hline 
+2&$f(x)$&22&\psframe(-0.57,-0.15)(0.91,0.3)17&12&7&2&$- 3$&$- 8$\\ \hline 
+3&$g(x)$&13&8&5&4&5&8&13\\ \hline
+4&&&&&&&&\\ \hline
+\end{tabularx}
+
+\medskip
+
+\begin{enumerate}
+\item Quelle est l'image de $- 3$ par  $f$ ? 
+\item Calculer $f(7)$. 
+\item Donner l'expression de $f(x)$. 
+\item On sait que $g(x) = x^2 + 4$. Une formule a été saisie dans la cellule B3 et recopiée ensuite vers la droite pour compléter la plage de cellules C3:H3.  Quelle est cette formule ?
+\end{enumerate}
+ 
+\bigskip
+
+\textbf{\textsc{Exercice} 3 \hfill 6 points}
+
+\medskip
+
+Les informations suivantes concernent les salaires des hommes et des femmes d'une même entreprise : 
+\medskip
+
+\begin{tabularx}{\linewidth}{|>{\centering \arraybackslash}X|}\hline
+Salaires des femmes :\\ 
+\np{1200}~\euro{} ; \np{1230}~\euro{} ; \np{1250}~\euro{} ; \np{1310}~\euro{} : \np{1376}~\euro{} ; \np{1400}~\euro{} ; \np{1440}~\euro{} ; \np{1500}~\euro{} ; \np{1700}~\euro{} ; \np{2100}~\euro{}\\ \hline
+\end{tabularx}
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|>{\centering \arraybackslash}X|}\hline
+Salaires des hommes : \\
+Effectif total : 20\\
+Moyenne : \np{1769}~\euro\\
+Étendue: \np{2400}~\euro \\
+Médiane: \np{2000}~\euro\\ 
+Les salaires des hommes sont tous différents.\\ \hline
+\end{tabularx}
+
+\medskip
+
+\begin{enumerate}
+\item Comparer le salaire moyen des hommes et celui des femmes. 
+\item On tire au sort une personne dans l'entreprise. Quelle est la probabilité que ce soit une femme ?
+\item Le plus bas salaire de l'entreprise est de \np{1000}~\euro. Quel salaire est le plus élevé ?
+\item Dans cette entreprise combien de personnes gagnent plus de \np{2000}~\euro ?
+\end{enumerate}
+
+\bigskip
+
+\textbf{\textsc{Exercice} 4 \hfill 5 points}
+
+\medskip
+
+Trois figures codées sont données ci-dessous. Elles ne sont pas dessinées en vraie grandeur. Pour chacune d'elles, déterminer la mesure de l'angle 
+$\widehat{\text{ABC}}$.
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{|*{2}{>{\centering \arraybackslash}X|}}\hline
+\multicolumn{2}{|c|}{\psset{unit=0.6cm}
+\begin{pspicture}(10,6)
+\psframe(1,4.9)(1.3,5.2)\psarc(9,5.2){8mm}{-180}{-150}
+\rput(-4,5.5){Figure 1}
+\pspolygon(1,0.5)(1,5.2)(9,5.2)
+\uput[ul](1,5.2){A} \uput[ur](9,5.2){B} \uput[dl](1,0.5){C} 
+\rput{90}(0.1,2.85){AC = 3cm} 
+\rput{32}(5,2.5){BC = 6cm}\rput(7.4,4.85){?}
+\end{pspicture}}\\ \hline 
+\psset{unit=0.6cm}
+\begin{pspicture}(-5,-5)(5,5.5)
+\pscircle(0,0){4.5}
+\pspolygon(4.5;20)(4.5;90)(4.5;200)
+\uput[ur](4.5;20){A} \uput[dl](4.5;200){B} \uput[u](4.5;90){C}
+\uput[dr](0,0){O}
+\psline(-1.8,-0.4)(-1.6,-0.8)\psline(-1.9,-0.4)(-1.7,-0.8)
+\psline(1.8,0.4)(1.6,0.8)\psline(1.9,0.4)(1.7,0.8)
+\psline(-0.2,1.9)(0.2,1.9)\psline(-0.2,2)(0.2,2)
+\psline(0;0)(4.5;90)
+\rput(2.1,1.75){59\degres}
+\rput(-4.25,4.5){Figure 2 }
+\psarc(4.5;20){8mm}{-215}{-160}
+\psarc(4.5;200){8mm}{20}{54} \rput(-2.8,-0.4){?}
+\rput(0,-4.8){[AB] est un diamètre du cercle de centre O.} 
+\end{pspicture}&\psset{unit=0.6cm}
+\begin{pspicture}(-5,-5)(5,5)
+\pscircle(0,0){4}
+\pspolygon(4;20)(4;92)(4;164)(4;236)(4;308)
+\uput[u](4;92){A}\uput[l](4;164){B}\uput[dl](4;236){C}\uput[dr](4;308){D}
+\uput[ur](4;20){E}
+\psarc(4;164){8mm}{-70}{40}\rput(-2.2,1){?}
+\rput(-4.25,4.5){Figure 3}
+\rput{20}(2;20){\psline(0,0.2)(0,-0.2)\psline(0.1,0.2)(0.1,-0.2)}
+\rput{92}(2;92){\psline(0,0.2)(0,-0.2)\psline(0.1,0.2)(0.1,-0.2)}
+\rput{164}(2;164){\psline(0,0.2)(0,-0.2)\psline(0.1,0.2)(0.1,-0.2)}
+\rput{236}(2;236){\psline(0,0.2)(0,-0.2)\psline(0.1,0.2)(0.1,-0.2)}
+\rput{308}(2;308){\psline(0,0.2)(0,-0.2)\psline(0.1,0.2)(0.1,-0.2)}
+\multido{\n=20+72,\na=19+72,\nb=21+72}{5}{\psline(0;0)(4;\n)\psline(2;\na)(2;\nb)}
+\uput[r](0,-0.08){O}
+\psline(3,-0.8)(3.2,-1.)
+\psline(1.7,2.5)(2,2.8)
+\psline(-1.9,2.45)(-2,2.8)
+\psline(-3.1,-1.3)(-2.9,-1.2)
+\psline(0.1,-3.4)(0.05,-3.05)
+\end{pspicture}\\ \hline
+\end{tabularx}
+
+\bigskip
+
+\textbf{\textsc{Exercice} 5 \hfill 7 points}
+
+\medskip
+
+\parbox{0.5\linewidth}{Pour réaliser un abri de jardin en parpaing, un bricoleur a besoin de $300$~parpaings de dimensions 50 cm $\times$ 20 cm $\times$ 10 cm pesant chacun $10$~kg. 
+
+Il achète les parpaings dans un magasin situé à $10$~km de sa  maison. Pour les transporter, il loue au magasin un fourgon.} \hfill \parbox{0.42\linewidth}{\psset{unit=1cm}
+\begin{pspicture}(0,-0.5)(5,5)
+\psline(0.1,2.2)(3.2,0.3)(4.1,0.6)(4.1,2.3)(3.2,2)(3.2,0.3)
+\psline(0.1,2.2)(0.1,3.9)(1,4.2)(4.1,2.3)
+\psline(0.1,3.9)(3.2,2)
+\psline[linewidth=0.6pt,arrowsize=3pt 3]{<->}(0.1,1.9)(3.2,0)\rput(1.5,0.6){50 cm}
+\psline[linewidth=0.6pt,arrowsize=3pt 3]{<->}(4.4,0.6)(4.4,2.3)
+\uput[r](4.4,1.2){20 cm}
+\psline[linewidth=0.6pt,arrowsize=3pt 3]{<->}(0.1,4.1)(1,4.4)\rput(0.4,4.6){10 cm}
+\end{pspicture}}
+
+\vspace{0,5cm}
+
+\textbf{Information 1} : Caractéristiques du fourgon :
+
+\bigskip
+ 
+\begin{itemize}
+\item 3 places assises. 
+\item Dimensions du volume transportable (L $\times   l \times h$) : 
+
+2,60 m $\times$ 1,56 m $\times$ 1,84 m. 
+\item Charge pouvant être transportée : $1,7$ tonne.
+\item Volume réservoir : $80$ litres. 
+\item Diesel (consommation : $8$ litres aux $100$ km). 
+\end{itemize}
+
+\bigskip
+
+\textbf{Information} 2 : Tarifs de location du fourgon
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|*{5}{>{\centering \arraybackslash}X|}}\hline 
+1 jour			& 1 jour 			&1 jour			&1 jour			& km\\
+30 km maximum 	&50 km maximum 		&100 km maximum &200 km maximum	&supplémentaire\\ \hline 
+48~\euro 		&55~\euro 			&61~\euro 		&78~\euro		&2~\euro\\ \hline
+\multicolumn{5}{l}{\emph{Ces prix comprennent le kilométrage indiqué hors carburant}}\\
+\end{tabularx} 
+
+\bigskip
+
+\textbf{Information} 3 : Un litre de carburant coûte $1,50$~\euro.
+ 
+\medskip
+ 
+\begin{enumerate}
+\item Expliquer pourquoi il devra effectuer deux aller-retour pour transporter les $300$~parpaings jusqu'à sa maison. 
+\item Quel sera le coût total du transport ? 
+\item Les tarifs de location du fourgon sont-ils proportionnels à la distance maximale autorisée par jour ? 
+\end{enumerate}
+
+\bigskip
+
+\textbf{\textsc{Exercice} 6 \hfill 5,5 points}
+
+\medskip 
+
+Dans les marais salants, le sel récolté est stocké sur une surface plane. On admet qu'un tas de sel a toujours la forme d'un cône de révolution. 
+
+\medskip
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item Pascal souhaite déterminer la hauteur d'un cône de sel de diamètre 5~mètres. Il possède un bâton de longueur $1$~mètre. Il effectue des mesures et réalise les deux schémas ci-dessous :
+		
+\begin{center}
+\psset{unit=0.7cm} 
+\begin{pspicture}(0,-0.3)(15,12)
+\rput(11.5,9.5){Cône de sel} 
+\pspolygon[linestyle=dashed](11.5,8)(0.3,8)(11.5,11.7)
+\psline[linewidth=1.8pt](4.5,8)(4.5,9.4)
+\uput[r](4.5,8.7){Bâton}
+\scalebox{.99}[0.3]{\psarc(11.5,26.8){2.5}{180}{0}}%
+\scalebox{.99}[0.3]{\psarc[linestyle=dashed](11.5,26.8){2.5}{0}{180}}%
+\psline(8.9,8)(11.5,11.7)(13.9,8)
+\pspolygon[linestyle=dashed](11.5,0.5)(0.3,0.5)(11.5,4.2)
+\pspolygon(8.9,0.5)(11.5,4.2)(13.9,0.5)
+\psline[linewidth=1.8pt](4.5,0.5)(4.5,1.9)
+\psframe(11.5,0.5)(11.8,0.8)
+\psframe(4.5,0.5)(4.2,0.8)
+\psline[linewidth=0.6pt,arrowsize=3pt 3]{<->}(0.2,0.2)(4.5,0.2)
+\psline[linewidth=0.6pt,arrowsize=3pt 3]{<->}(4.5,0.2)(8.9,0.2)
+\psline[linewidth=0.6pt,arrowsize=3pt 3]{<->}(8.9,0.2)(13.9,0.2)
+\uput[d](2.35,0.2){3,20 m} \uput[d](6.7,0.2){2,30 m} \uput[d](11.4,0.2){5 m}
+\uput[r](4.5,1.2){1 m}\uput[ul](0.2,0.5){A}\uput[u](4.5,1.9){C}
+\uput[u](11.5,4.2){S}\uput[ul](11.5,0.5){O}
+\uput[ul](8.9,0.5){E}\uput[ur](13.9,0.5){L} \uput[ur](4.5,0.5){B}
+\end{pspicture}
+\end{center}
+
+Démontrer que la hauteur de ce cône de sel est égale à $2,50$~mètres.
+
+\medskip
+ 
+Dans cette question, on n'attend pas de démonstration rédigée. Il suffit d'expliquer brièvement le raisonnement suivi et de présenter clairement les calculs.
+\item À l'aide de la formule  V$_{\text{c\^one}}= \dfrac{\pi \times \text{rayon}^2 \times \text{hauteur}}{3}$, déterminer en m$^3$ le volume de sel contenu dans ce cône. Arrondir le résultat au m$^3$ près. 
+	\end{enumerate} 
+\item Le sel est ensuite stocké dans un entrepôt sous la forme de cônes de volume \np{1000}~m$^3 $. Par mesure de sécurité, la hauteur d'un tel cône de sel ne doit pas dépasser $6$~mètres. Quel rayon faut-il prévoir au minimum pour la base ? Arrondir le résultat au décimètre près.
+\end{enumerate}
+ 
+\bigskip
+
+\textbf{\textsc{Exercice} 7 \hfill 4,5 points}
+
+\medskip 
+ 
+Chacune des trois affirmations suivantes est-elle vraie ou fausse ? On rappelle que les réponses doivent être justifiées.
+
+\medskip
+ 
+\textbf{Affirmation 1 :}
+ 
+Dans un club sportif les trois quarts des adhérents sont mineurs et le tiers des adhérents majeurs a plus de 25 ans. Un adhérent sur six a donc entre 18 ans et 25~ans.
+
+\medskip
+ 
+\textbf{Affirmation 2 :}
+ 
+Durant les soldes si on baisse le prix d'un article de 30\,\% puis de 20\,\%, au final le prix de l'article a baissé de 50\,\%.
+
+\medskip
+ 
+\textbf{Affirmation 3 :}
+ 
+Pour n'importe quel nombre entier $n,\: (n + 1)^2 - (n - 1)^2$ est un multiple de $4$.
+\end{document}

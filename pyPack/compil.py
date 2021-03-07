@@ -210,12 +210,16 @@ def generateFileName(source_ex : str)->str:
         'pondichery',
         'ameriquesud',
         'ameriquenord',
+        'amdunord',
         'asie',
         'etrangers',
         'etranger',
         'metropole',
         'polynesie',
         'caledonie',
+        'wallis',
+        'antillesguyane',
+        'antilles'
     ]
     # On passe le nom du fichier en minuscules
     cleanSource = source_ex.lower()
@@ -224,7 +228,14 @@ def generateFileName(source_ex : str)->str:
     # On récupère le lieu
     for centre in centres:
         if (centre in cleanSource):
-            lieu = centre
+            if (centre == 'amdunord'):
+                lieu = 'ameriquenord'
+            elif centre == 'wallis':
+                lieu = 'wallisfutuna'
+            elif (centre == 'antilles' or centre =='antillesguyanne'):
+                lieu = 'antillesguyanne'
+            else:
+                lieu = centre
     if (lieu == ''):
         lieu = 'bugLieu'
     

@@ -199,7 +199,7 @@ def generateFileName(source_ex : str)->str:
     months = [['jan','01'],['fev','02'],['mars','03'],['avril','04'],['mai','05'],['juin','06'],['juillet','07'],['aout','08'],['sept','09'],['oct','10'],['nov','11'],['dec','12']]
     # On récupère le mois
     for month in months:
-        if (month[0] in source_ex):
+        if (month[0] in source_ex.lower()):
             mm = month[1]
     if (mm == ''):
         mm = 'bugMois'    

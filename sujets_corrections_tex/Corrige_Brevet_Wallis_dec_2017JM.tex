@@ -1,0 +1,554 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools,amsfonts,amssymb} % nécessaire pour taper des maths
+\usepackage{pstricks}  % permet de faire des dessins
+\usepackage{pstricks-add} % avec des possibilités élargies
+\usepackage{pst-eucl}  		% permet de faire des dessins de géométrie simplement
+\usepackage{tikz,tkz-tab} 	% permet de faire des tableaux de variations facilement
+\usepackage{pst-text}  		%permet d'écrire du texte dans une zone math
+\usepackage{enumerate}  	%Permet de renuméroter différement les questions
+\usepackage{esvect}  		% permet de faire des beaux vecteurs
+\usepackage{multicol}  		% permet de fusionner des colonnes
+\usepackage{multirow}   	% permet de fusionner des lignes
+\usepackage{colortbl}  		%couleur dans les tableaux
+\usepackage{tabularx}  		% permet des tableaux plus compliqués mais pas simple à  utiliser.
+\usepackage{graphicx} 		% pour l'insersion d'images, incompatible avec xcolor
+\everymath{\displaystyle} %pour que les maths soient à  la bonne taille (limite, intégrale)
+\usepackage{scratch}
+\usepackage{marvosym}   %c'est pour le symbole euro : code \EUR{}
+\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+%%%% Ajouts 2017
+\newcommand{\textding}[1]{\text{\ding{#1}}}
+\usepackage{pgfplots}
+\usepgflibrary{shapes.callouts} % Pour des bulles de BD \begin{tikzpicture}[remember picture]
+%\node[ellipse callout, draw] (hallo) {texte}; \end{tikzpicture}
+\usepgflibrary{shapes.symbols}  % Pour des bulles de BD \begin{tikzpicture}[remember picture]
+%\node[starburst,starburst points height=1cm, draw,blue] {texte}; \end{tikzpicture}
+% p77,visualTikZ-fr17.pdf
+\usepackage{animate}
+\usetikzlibrary{mindmap}
+\usetikzlibrary[mindmap]
+% Puces
+\newenvironment{Puces}[1][1cm]%
+{\begin{list}%
+	{$\bullet$}%
+	{	\setlength{\leftmargin}{#1}% marge à gauche, par défaut=1cm
+		\setlength{\itemsep}{3ptplus3ptminus2pt}% espacement entre item
+		\setlength{\topsep}{3ptplus3ptminus2pt}% espacement entre le paragraphe précédent et le 1er item
+	}}%
+{\end{list}}
+%\usepackage{tabularx,graphicx}
+%\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage{textcomp} 
+\newcommand{\euro}{\eurologo{}}
+%Tapuscrit : Joëlle Meillier
+\usepackage{pstricks,pst-plot,pst-tree,pstricks-add}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Brevet des collèges},
+pdftitle = {Wallis et Futuna 2 décembre 2017},
+allbordercolors = white,
+pdfstartview=FitH} 
+\usepackage[np]{numprint}
+\usepackage[frenchb]{babel}
+\renewcommand{\baselinestretch}{1.2}
+%% Mes commandes 
+% Met entre guillemets français
+\def\guill#1{\og{}#1\fg{}}
+\usepackage{cancel}% pour barrer des termes dans les formules
+\input{xlop} % JM pour les opérations
+%%% Table des nombres premiers  %%%%
+\newcount\primeindex
+\newcount\tryindex
+\newif\ifprime
+\newif\ifagain
+\newcommand\getprime[1]{%
+\opcopy{2}{P0}%
+\opcopy{3}{P1}%
+\opcopy{5}{try}
+\primeindex=2
+\loop
+\ifnum\primeindex<#1\relax
+\testprimality
+\ifprime
+\opcopy{try}{P\the\primeindex}%
+\advance\primeindex by1
+\fi
+\opadd*{try}{2}{try}%
+\ifnum\primeindex<#1\relax
+\testprimality
+\ifprime
+\opcopy{try}{P\the\primeindex}%
+\advance\primeindex by1
+\fi
+\opadd*{try}{4}{try}%
+\fi
+\repeat
+}
+\newcommand\testprimality{%
+\begingroup
+\againtrue
+\global\primetrue
+\tryindex=0
+\loop
+\opidiv*{try}{P\the\tryindex}{q}{r}%
+\opcmp{r}{0}%
+\ifopeq \global\primefalse \againfalse \fi
+\opcmp{q}{P\the\tryindex}%
+\ifoplt \againfalse \fi
+\advance\tryindex by1
+\ifagain
+\repeat
+\endgroup
+}
+%%% Décomposition en nombres premiers %%%
+
+\newcommand\primedecomp[2][nil]{%
+\begingroup
+\opset{#1}%
+\opcopy{#2}{NbtoDecompose}%
+\opabs{NbtoDecompose}{NbtoDecompose}%
+\opinteger{NbtoDecompose}{NbtoDecompose}%
+\opcmp{NbtoDecompose}{0}%
+\ifopeq
+Je refuse de décomposer zéro.
+\else
+\setbox1=\hbox{\opdisplay{operandstyle.1}%
+{NbtoDecompose}}%
+{\setbox2=\box2{}}%
+\count255=1
+\primeindex=0
+\loop
+\opcmp{NbtoDecompose}{1}\ifopneq
+\opidiv*{NbtoDecompose}{P\the\primeindex}{q}{r}%
+\opcmp{0}{r}\ifopeq
+\ifvoid2
+\setbox2=\hbox{%
+\opdisplay{intermediarystyle.\the\count255}%
+{P\the\primeindex}}%
+\else
+\setbox2=\vtop{%
+\hbox{\box2}
+\hbox{%
+\opdisplay{intermediarystyle.\the\count255}%
+{P\the\primeindex}}}
+\fi
+\opcopy{q}{NbtoDecompose}%
+\advance\count255 by1
+\setbox1=\vtop{%
+\hbox{\box1}
+\hbox{%
+\opdisplay{operandstyle.\the\count255}%
+{NbtoDecompose}}
+}%
+\else
+\advance\primeindex by1
+\fi
+\repeat
+\hbox{\box1
+\kern0.5\opcolumnwidth
+\opvline(0,0.75){\the\count255.25}
+\kern0.5\opcolumnwidth
+\box2}%
+\fi
+\endgroup
+}
+\begin{document}
+\setlength\parindent{0mm}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Corrigé du brevet des collèges}
+\lfoot{\small{Wallis et Futuna}}
+\rfoot{\small{2 décembre 2017}}
+\begin{center}
+
+
+{\Large \textbf{\decofourleft~Corrigé du brevet des collèges Wallis et Futuna~\decofourright\\[4pt]2 décembre 2017}}
+
+\medskip
+
+\textbf{THÉMATIQUE COMMUNE DE L'ÉPREUVE DE MATHÉMATIQUES-SCIENCES : LA SANTÉ}
+
+\end{center}
+
+\vspace{0.2cm}
+
+\textbf{Exercice 1 :  \hfill 5 points}
+
+\medskip
+
+\textbf{Question 1} : Dans un club sportif, $\dfrac{1}{8}$ des adhérents ont plus de 42~ans et $\dfrac{1}{4}$, soit $\dfrac{2}{8}$ ont moins de 25~ans.
+
+$\dfrac{1}{8}+\dfrac{2}{8}=\dfrac{3}{8}$. Il reste une proportion de $1 - \dfrac{3}{8} = \dfrac{8 - 3}{8} = \dfrac{5}{8}$ d'adhérents ayant un âge de 25 à  42~ans. \textbf{Réponse~C}.
+
+\textbf{Question 2} : Pour augmenter le prix de 20~\%\, on multiplie le prix de départ par 1,20. $46~000\times 1,20=\np{55200}$. \textbf{Réponse~B}.
+
+\textbf{Question 3} : Si toutes les longueurs sont multipliées par $k$, alors les aires sont multipliées par $k^2$ et les volumes sont multipliés par $k^3$. Ici, toutes les longueurs du cube sont multipliées par 3, donc le volume du cube est multiplié par $3^3$, soit par 27.  \textbf{Réponse~D}. \\[2mm]
+\textbf{Question 4} : Les nombres 23 et 37 sont impairs, donc on élimine la réponse~D.
+
+Les nombres 23 et 37 ne sont pas divisibles par 3 (on ne les trouve pas dans la table de multiplication du 3 ; ou la somme de leurs chiffres n’est pas divisible par 3 ($2+3=5$ et 5 n’est pas divisible par 3 ; $3+7 = 10$ et 10 n’est pas divisible par 3)), donc on élimine la réponse~B.
+
+Tous les nombres entiers sont divisibles par 1, donc les nombres 23 et 37 ont 1 comme diviseur commun, donc on élimine la réponse~C.
+
+Il ne reste que la bonne réponse. Les nombres 23 et 37 ont exactement deux diviseurs (1 et le nombre lui-même), donc ils sont premiers. \textbf{Réponse~A}.
+
+\textbf{Question 5} : On calcule $f(3)$ (en remplaçant $x$ par 3). 
+
+$3^2 - 2\times 3+7 = 9 - 6 + 7 =  10$. \quad  \textbf{Réponse~A}. 
+
+\vspace{0.5cm}
+
+\textbf{Exercice 2 :  \hfill 4 points}
+
+\vspace{0.2cm}
+Voici les tailles, en cm, de 29 jeunes plants de blé 10 jours après la mise en germination.
+
+\vspace{0.2cm}
+
+\begin{tabularx}{\linewidth}{|l|*{9}{>{\centering \arraybackslash}X|}}\hline
+Taille (en cm) &0 &10 &15 &17 &18 &19 &20 &21 &22\\ \hline
+Effectif &1 &4 &6 &2 &3 &3 &4 &4 &2\\ \hline
+Effectif cumulé croissant&1 &5 &11 &13 &16 &19 &23 &27 &29\\ \hline
+\end{tabularx}
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+\item $\dfrac{1\times 0 + 4\times10  + 6\times15  + 2\times17  + 3\times18  + 3\times 19 + 4\times20  +4\times21  +2\times 22}{29}=\dfrac{483}{29} \approx16,7$
+
+La taille moyenne d'un jeune plant de blé est \textcolor{red}{\textbf{d’environ}} 16,7~cm 10 jours après la mise en germination.
+\item 
+	\begin{enumerate}
+		\item L’effectif total est égal à 29. $29\div2=14,5$. La médiane est la 15\ieme\ donnée de la série de données ordonnée dans l’ordre croissant. La médiane de cette série est égale à 18~cm.
+		\item Dire que la médiane de cette série est égale à 18~cm signifie qu’au moins la moitié des plants de blé mesurent 18~cm ou moins de 18~cm, 10 jours après la mise en germination.
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\textbf{Exercice 3 :  \hfill 6 points}
+
+\medskip
+
+\begin{minipage}{9cm}
+Pour gagner le gros lot à  une kermesse, il faut d'abord tirer une boule rouge dans une urne, puis obtenir un multiple de 3 en tournant une roue de loterie numérotée de 1 à  6.
+
+L'urne contient 3 boules vertes, 2 boules bleues et 3 boules rouges.
+
+\begin{enumerate}
+\item Sur la roue de loterie, il y a deux issues (3 et 6) sur 6 issues qui réalisent l’évènement \guill{obtenir un multiple de $3$}.
+
+La probabilité d'obtenir un multiple de $3$ est donc égale à $\dfrac{2}{6}$ $\left( \text{ou~} \dfrac{1}{3}\right)$
+\item Dans l’urne, la probabilité de tirer une boule rouge est égale à $\dfrac{3}{8}$.
+
+la probabilité de tirer une boule rouge dans une urne, puis d’obtenir un multiple de 3 sur la roue de loterie est égale à $\dfrac{3}{8}\times\dfrac{1}{3}$, soit $\dfrac{1}{8}$.
+
+La probabilité qu'un participant gagne le gros lot est égale à $\dfrac{1}{8}$.
+\end{enumerate}
+\end{minipage}
+\hspace{0.5cm}\begin{minipage}{5cm}
+\psset{unit=0.85cm}
+\begin{pspicture}(-2.5,-2.5)(2.8,2.5)
+\pscircle(0,0){2.5}
+\multido{\n=0+60,\na=30+60,\nb=1+1}{6}{\psline(2.5;\n)\rput(1.5;\na){\nb}}
+\rput{-35}(2.6;-35){$\blacktriangleleft$}
+\end{pspicture}
+\end{minipage}
+
+\begin{enumerate}
+\item[\textbf{3.}] Comme on ne change pas le nombre de boules vertes et de boules bleues, il y a 5 boules vertes ou bleues.
+
+Il faut que la moitié des boules soient rouges, donc il faut mettre en tout 5 boules rouges dans l'urne pour que la probabilité de tirer une boule rouge soit de $0,5$.
+\end{enumerate}
+
+\newpage
+
+\textbf{Exercice 4 :  \hfill 5 points}
+
+\medskip
+
+\begin{enumerate}
+\item On souhaite tracer le motif ci-dessous en forme de losange.
+
+\vspace{0.2cm}
+
+\begin{tabularx}{\linewidth}{|X|X|}\hline
+Le motif \textbf{Losange} &Le bloc \textbf{Losange}\\
+\psset{unit=0.6cm}
+\begin{pspicture}(0,-5)(10,4)
+\pspolygon(0.5,1)(5.6,1)(10,3.5)(4.9,3.5)
+\psarc(0.5,1){4mm}{0}{30} \psarc(4.9,3.5){4mm}{210}{360}
+\rput(1,2.5){\scriptsize Point de départ}
+\psline{->}(0.5,2.2)(0.5,1.1)
+\rput(1.6,1.3){\footnotesize 30\degres}\rput(5.1,2.5){\footnotesize 150\degres}
+\psline{<->}(0.5,0.8)(5.6,0.8)
+\uput[d](3.05,0.8){\footnotesize 60}
+\end{pspicture}&\footnotesize{\begin{scratch}
+\initmoreblocks{définir \namemoreblocks{Losange}}
+\blockpen{stylo en position d'écriture}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{150} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{} degrés}
+\blockmove{avancer de \ovalnum{}}
+\blockmove{tourner \turnleft{} de \ovalnum{} degrés}
+\blockpen{relever le stylo}
+\end{scratch}}\\ \hline
+\end{tabularx}
+
+\item On souhaite réaliser la figure ci-dessous construite à  partir du bloc \textbf{Losange} complété à  la question 1.
+
+\parbox{0.6\linewidth}{
+La figure :
+\begin{center}
+\psset{unit=0.75cm}
+\begin{pspicture}(-2.5,-2.5)(2.5,2.5)
+\def\losange1{\pspolygon(0,0)(1.275,0)(2.375,0.625)(1.1,0.625)}
+\multido{\n=0+30}{12}{\rput{\n}(0;0){\losange1}}
+\end{pspicture}
+\end{center}
+
+L’instruction \raisebox{-2.3ex}{\begin{scratch}\blockmove{s’orienter à  \ovalnum{90\selectarrownum}}\end{scratch}} signifie que l'on se dirige vers la droite. \\[2mm]
+Les deux instructions à  placer dans la boucle pour
+finir le script sont les \linebreak instruction \ding{'302}, puis \ding{'300}.}\hfill
+\parbox{0.37\linewidth}{Le script : \\
+\begin{scratch}
+\blockinit{Quand \greenflag est cliqué}
+\blockpen{effacer tout}
+\blockmove{aller à  x: \ovalnum0 y: \ovalnum0}
+\blockmove{s'orienter à  \ovalnum{90\selectarrownum}}
+\blockrepeat{répéter \ovalnum{12} fois}
+{\initmoreblocks{Losange}
+\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}
+}
+\end{scratch}}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Exercice 5 :  \hfill 9 points}
+
+\medskip
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item Avec la formule $f(x) = 220 - x$, on remplace $x$ par 5.
+		
+$220-5 = 215$. La fréquence cardiaque maximale recommandée pour un enfant de $5$ ans est de 215~pulsations/minute.
+		\item Avec la formule $g(x) = 208 - 0,7x$, on remplace $x$ par 5. 
+		
+$208- 0,7\times 5 = 208 - 3,5 = 204,5$. La fréquence cardiaque maximale recommandée pour un enfant de $5$ ans est de 204~pulsations/minute (on ne compte pas de demi-pulsation !).
+	\end{enumerate}
+\item  
+	\begin{enumerate}
+		\item Sur l'annexe 2, on complète le tableau de valeurs comme ci-dessous : \\[2mm]
+		\begin{tabularx}{\linewidth}{|*{12}{>{\centering \arraybackslash}X|}}\hline
+$x$		&5		&10		&20		&30		&40	&50		&60		&70		&80		&90		&100\\ \hline
+$f(x)$	&215 	&210 	&200 	&190 	&180&170 	&160 	&150 	&140	&130 	&120 \\ \hline
+$g(x)$	&204,5 	&201 	&194 	&187 	&180&173 	&166 	&159 	&152 	&145 	&138\\ \hline
+\end{tabularx}
+		\item Sur l'annexe 2, on a tracé en rouge la droite $d$ représentant la fonction $f$ dans le repère tracé.
+		\item Sur le même repère, on a tracé en violet la droite $d'$ représentant la fonction $g$.
+	\end{enumerate}
+\item  Selon la nouvelle formule, à  partir de 40~ans la fréquence cardiaque maximale
+recommandée est supérieure ou égale à  celle calculée avec l'ancienne formule. Ceci se voit dans le tableau : avant la colonne correspondant à 40~ans, $f(x)$ est supérieur à $g(x)$ et après cette colonne,  $f(x)$ est inférieur à $g(x)$.
+
+Ceci se voit aussi sur la représentation graphique : avant le point d’intersection de $d$ et $d’$ correspondant à 40~ans, $d$ est au-dessus de $d’$ et après ce point,  $d$ est en-dessous de $d’$.
+\item  L’exercice physique, pour une personne de $30$~ans, est le plus efficace lorsque la
+fréquence cardiaque atteint 80\,\% de  187~pulsations/minute.
+
+$\dfrac{80}{100}\times187=149,6$
+
+Pour que l'exercice physique soit le plus efficace pour une personne de $30$~ans, la fréquence cardiaque doit être de 149 pulsations/minute (on ne compte pas 6 dixièmes de pulsation !).
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 6 :  \hfill 7 points}
+
+\medskip
+
+Dans un laboratoire A, pour tester le vaccin contre la grippe de la saison hivernale prochaine, on a injecté la même souche de virus à  5 groupes comportant 29 souris chacun.
+
+3 de ces groupes avaient été préalablement vaccinés contre ce virus.
+
+Quelques jours plus tard, on remarque que :
+
+\setlength\parindent{10mm}
+\begin{itemize}
+\item[$\bullet~~$] dans les $3$ groupes de souris vaccinées, aucune souris n'est malade ;
+\item[$\bullet~~$] dans chacun des groupes de souris non vaccinées, $23$ souris ont développé la maladie.
+\end{itemize}
+\setlength\parindent{0mm} 
+
+\medskip
+ 
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item Il y a $5$~groupes de $29$~souris. $5\times29=145$.
+		
+Il y a $2$~groupes de souris non vaccinées contenant chacun $23$~souris ayant développé la maladie.$2\times23=46$.
+		
+		 La proportion de souris malades lors de ce test est $\dfrac{46}{145}$ car il y a $46$~souris ayant développé la maladie sur $145$~souris.
+		\item Les décompositions en facteurs premiers de 46 et 145 sont : \quad $46=2\times23$ et $145=5\times29$. \\
+		Ces deux décompositions permettent de dire que le seul diviseur commun à 46 et 145 est 1, on ne peut donc pas simplifier cette fraction.
+	\end{enumerate}	
+\end{enumerate}
+		
+Dans un laboratoire B on informe que $\dfrac{140}{870}$ des souris ont été malades.
+
+\begin{enumerate}		
+\item[\textbf{2.}] 
+	\begin{enumerate}
+		\item  ~	
+	\vspace{-0.5cm}
+	\hspace{-0.3cm}\getprime{20}%
+\primedecomp{140}
+
+\vspace{0.4cm}
+
+La décomposition en facteurs premiers de 140 est : \quad $140=2\times2\times5\times7$.
+
+\hspace{-0.3cm}\getprime{20}%
+\primedecomp{870}
+
+\vspace{0.2cm}
+
+La décomposition en facteurs premiers de 870 est : \quad $870 = 2 \times 3\times 5 \times 29$.
+		\item $\dfrac{140}{870}=\dfrac{\cancel{2}\times2\times\cancel{5}\times7}{\cancel{2}\times3\times\cancel{5}\times29} = \dfrac{14}{87}$.
+		
+La forme irréductible de la proportion de souris malades dans le laboratoire B est $\dfrac{14}{87}$.
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 7 :  \hfill 9 points}
+
+\begin{minipage}{7.5cm}
+\begin{enumerate}
+\item Le triangle $ABC$ est rectangle en $A$, donc d’après le théorème de Pythagore :
+
+$BC^2 = BA^2 + AC^2$
+
+$BC^2 = 300^2 + 400^2$
+
+$BC^2 = \np{90000} + \np{160000}$
+
+$BC^2 = \np{250000}$ 
+
+$BC=500$~m.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{6cm}
+\psset{unit=0.65cm,arrowsize=2pt 4}
+\begin{pspicture}(10.5,5)
+%\psgrid
+\psline[ArrowInside=->](1.7,4)(0.5,2)(10.2,3.8)(8.5,0.5)
+\psline[linestyle=dashed](1.7,4)(8.5,0.5)
+\rput{-118}(1.7,4){\psframe(0.25,0.25)}
+\rput{62}(8.5,0.5){\psframe(0.25,0.25)}
+\uput[u](1.7,4){$A$ (départ)}\uput[dl](0.7,2){$B$}\uput[u](4.3,2.8){$C$}\uput[ur](10.2,3.8){$D$}
+\uput[r](8.5,0.5){$E$ (arrivée)}
+\rput(0.5,3.3){300~m}\rput(3.5,3.6){400~m}\rput(7.3,1.7){\np{1000}~m}
+\end{pspicture}
+\end{minipage}
+
+\begin{enumerate}
+\item[\textbf{2.}] Les triangles $ABC$ et $CDE$ ont deux angles de même mesure : l’angle droit et l’angle au sommet $C$, ils sont donc semblables.
+
+Le triangle $CDE$ est un agrandissement du triangle $ABC$.
+
+Si $k$ est le coefficient d’agrandissement, alors on a :
+
+$\np{1000}=k\times 400$ \hspace{1cm} ; \hspace{1cm} $ED=k\times 300$ \hspace{1cm} et \hspace{1cm} $CD=k\times 500$
+
+Avec la première égalité, on obtient $k=\dfrac{1~000}{400}$, soit $k=2,5$.
+
+Avec la deuxième égalité, on obtient $ED=2,5\times 300$, soit $ED=750$~m. 
+\item[\textbf{3.}] Avec la troisième égalité, on obtient $CD=2,5\times 500$, soit $CD=1~250$~m. 
+
+$300+500+1~250+750=2~800$.
+
+La longueur réelle du parcours $ABCDE$ est égale à \np{28000}~m.
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+{\Large \textbf{Annexe 1 : exercice 4}}
+
+\vspace{3cm}
+
+\begin{scratch}
+\initmoreblocks{définir \namemoreblocks{Losange}}
+\blockpen{stylo en position d'écriture}
+\blockmove{avancer de \ovalnum{60}}
+\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}
+\blockmove{avancer de \ovalnum{60}}
+\blockmove{tourner \turnleft{} de \ovalnum{150} degrés}
+\blockmove{avancer de \ovalnum{60}}
+\blockmove{tourner \turnleft{} de \ovalnum{30} degrés}
+\blockmove{avancer de \ovalnum{60}}
+\blockmove{tourner \turnleft{} de \ovalnum{150} degrés}
+\blockpen{relever le stylo}
+\end{scratch}
+
+\end{center}
+\newpage
+
+\begin{center}
+{\Large \textbf{Annexe 2 : exercice 5}}
+
+\bigskip
+
+\bigskip
+
+\psset{xunit =0.08cm,yunit=0.08cm}
+\begin{pspicture}(-5,-5)(100,220)
+\multido{\n=0+5}{21}{\psline[linecolor=cyan,linewidth=0.3pt](\n,0)(\n,220)}
+\multido{\n=0+5}{45}{\psline[linecolor=cyan,linewidth=0.3pt](0,\n)(100,\n)}
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10,labelFontSize=\scriptstyle]{->}(0,0)(0,0)(100,220)
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10,labelFontSize=\scriptstyle](0,0)(0,0)(100,220)
+\psline[linewidth=1.25pt,linecolor=red](5,215)(100,120)
+\psline[linewidth=1.25pt,linecolor=violet](5,204,5)(100,138)
+\psline[linestyle=dashed](40,0)(40,180)
+\psline[linestyle=dashed](0,180)(40,180)
+\uput[r](90,120){\textcolor{red}{$d$}}
+\uput[r](90,148){\textcolor{violet}{$d’$}}
+\uput[r](0,217.5){fréquence cardiaque}
+\uput[u](93,0){$x$ (âge)}
+\end{pspicture}
+\end{center}
+\end{document}

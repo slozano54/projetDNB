@@ -15,6 +15,8 @@ pdfcrop -margin 3 $1.pdf || exit
 # conversion png mais sortie trop lourde
 #pdftoppm $1-crop.pdf|pnmtopng -compression 0 > $1.png
 #pdftoppm -r 300 $1-crop.pdf|pnmtopng -compression 0 > $1.png
+pdftoppm -r 300 $1-crop.pdf|pnmtopng > $1.png
 ##################################
 # conversion png avec convert
-convert -density 300 -antialias $1-crop.pdf -quality 100 -alpha remove $1.png
+#convert -density 300 -antialias $1-crop.pdf -quality 100 -alpha remove $1.png
+#convert -density 300 -antialias $1-crop.pdf -quality 100 -colorspace RGB $1.png

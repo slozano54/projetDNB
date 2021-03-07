@@ -52,6 +52,7 @@ def main():
             if ('bugMois' in source_format or 'bugLieu' in source_format):
                 print("============================= ATTENTION =========================")
                 print("Problème avec le nom du fichier : "+source)
+                print("La sortie actuelle est : "+source_format)
                 print(".................................................................")
                 source_format = input("Renommez le correctement selon la nomenclature dnb_aaaa_mm_lieu\n")
             # On découpe

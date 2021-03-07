@@ -211,6 +211,7 @@ def generateFileName(source_ex : str)->str:
         'ameriquenord',
         'asie',
         'etrangers',
+        'etranger',
         'metropole',
         'polynesie',
         'caledonie',

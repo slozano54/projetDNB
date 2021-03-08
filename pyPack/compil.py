@@ -178,8 +178,21 @@ def cutTex2Ex(file : str,source : str)->list:
         print(" CELA SIGNIFIE QUE LE SUJET SUIVANT NE SERA PAS DÉCOUPÉ")        
         print("\033[32m"+source.name)        
         print("\033[31m.................................................................\033[0m")
-        e=input("Appuyer sur une touche pour poursuivre ...")
+        e=input("Après avoir modifier le fichier source du sujet, appuyer sur une touche \n pour poursuivre la génération des fichier...")
         print(e)
+        if not os.path.exists("./exercices_corrections_tex/"):
+            os.mkdir("./exercices_corrections_tex/")
+        
+        # On génére tous les fichiers sauf le dernier qui peut contenir des annexes
+        for i in range(len(indices)-1):
+            # On ouvre le fichier dans lequel on va écrire
+            myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
+            # On ajoute les lignes
+            for j in range(indices[i],indices[i+1]):
+                # On ajoute les lignes sauf \end{document} ou \newpage
+                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j]):
+                    myTex.writelines(source_lines[j])
+            myTex.close()
     else:
         #print("OK")
         #On crée e dossier qui va accueillir les fichiers tex 

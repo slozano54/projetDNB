@@ -39,7 +39,7 @@ def main():
     # On génère le fichier png
     print("")
     print("=============================================================================")
-    print("  Création du fichier tex, du fichier pdf, du fichier png en cours ...  ")    
+    print("  Création des fichiers tex, pdf, png en cours ...  ")    
     #compil.main()
     #compil.generateFiles("dnb20Polynesie_ex1","dnb20Polynesie_ex1")
     # On découpe les sujets présents dansle dossiers sujets_corrections_tex
@@ -50,11 +50,11 @@ def main():
             # On formatte le nom du fichier de sortie
             source_format = compil.generateFileName(source)
             if ('bugMois' in source_format or 'bugLieu' in source_format):
-                print("============================= ATTENTION =========================")
-                print("Problème avec le nom du fichier : "+source)
-                print("La sortie actuelle est : "+source_format)
-                print(".................................................................")
-                source_format = input("Renommez le correctement selon la nomenclature dnb_aaaa_mm_lieu\n")
+                print("\033[31m============================= ATTENTION =========================")
+                print("Problème avec le nom du fichier : \033[32m"+source+"\033[31m")
+                print("La sortie actuelle est : \033[32m"+source_format+"\033[31m")
+                print(".................................................................\033[0m")
+                source_format = input("Renommez le correctement selon la nomenclature dnb_aaaa_mm_lieu\n")                
             # On découpe
             compil.cutTex2Ex(source_format,source) 
            

@@ -5,6 +5,10 @@
 """
 pass
 
+# Memo couleurs du terminal
+# https://chamilo.univ-grenoble-alpes.fr/courses/IUT1RT1M2109/document/1718-Sokoban/build/sequences_ansi.html 
+
+
 # On fait les imports nécessaires selon le contexte
 # Pour générer la documentation, les répertoires, ...
 import os
@@ -155,37 +159,72 @@ def cutTex2Ex(file : str,source : str)->list:
         # Selon les années la commande pour le style des exos n'est pas la même
         if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i]):
             indices.append(i)
-    indices.append(len(source_lines)) 
-    
-    #On crée e dossier qui va accueillir les fichiers tex 
-    if not os.path.exists("./exercices_corrections_tex/"):
-        os.mkdir("./exercices_corrections_tex/")
-    
-    # On génére tous les fichiers sauf le dernier qui peut contenir des annexes
-    for i in range(len(indices)-2):
-        # On ouvre le fichier dans lequel on va écrire
-        myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
-        # On ajoute les lignes
-        myTex.writelines(source_lines[indices[i]:indices[i+1]])
-        myTex.close()
-    
-    # On vérifie s'il y a ou non le mot annexe dans une ligne
+    indices.append(len(source_lines))
+
+    # On commence par voir s'il y a des annexes
+    # S'il y a des annexes on invite à modifier les sources du sujets dans un message d'erreur
+    # On vérifie s'il y a ou non le mot annexe dans une ligne du dernier découpage
     isAnnexe = False
     for i in range(indices[len(indices)-2],indices[len(indices)-1]):
         if ("annexe" in source_lines[i].lower()):
             isAnnexe = True
-
-    # Si il y a des annexes on renomme
+    
     if (isAnnexe):
-        # On ouvre le fichier dans lequel on va écrire
-        myTex = open("./exercices_corrections_tex/"+file+"_"+str(len(indices)-1)+plus+"avecLesAnnexes.tex","w")       
-        # On ajoute les lignes
-        for i in range(indices[len(indices)-2],indices[len(indices)-1]):
-            # On ajoute les lignes sauf \end{document}
-            if ("\\end{document}" not in source_lines[i]):
-                myTex.writelines(source_lines[i])
-        #myTex.writelines(source_lines[indices[len(indices)-2]:indices[len(indices)-1]])
-        myTex.close()
+        print("\033[31m============================= ATTENTION =========================")
+        print(" Ce sujet contient des annexes qu'il faut replacer manuellement ")
+        print(" au niveau des bons exercices dans le code source du sujet ")
+        print(" avant de relancer le traitement.")
+        print(".................................................................")
+        print(" CELA SIGNIFIE QUE LE SUJET SUIVANT NE SERA PAS DÉCOUPÉ")        
+        print("\033[32m"+source.name)        
+        print("\033[31m.................................................................\033[0m")
+        e=input("Appuyer sur une touche pour poursuivre ...")
+        print(e)
+    else:
+        #print("OK")
+        #On crée e dossier qui va accueillir les fichiers tex 
+        if not os.path.exists("./exercices_corrections_tex/"):
+            os.mkdir("./exercices_corrections_tex/")
+        
+        # On génére tous les fichiers sauf le dernier qui peut contenir des annexes
+        for i in range(len(indices)-1):
+            # On ouvre le fichier dans lequel on va écrire
+            myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
+            # On ajoute les lignes
+            myTex.writelines(source_lines[indices[i]:indices[i+1]])
+            myTex.close()
+    
+
+    
+    # #On crée e dossier qui va accueillir les fichiers tex 
+    # if not os.path.exists("./exercices_corrections_tex/"):
+    #     os.mkdir("./exercices_corrections_tex/")
+    
+    # # On génére tous les fichiers sauf le dernier qui peut contenir des annexes
+    # for i in range(len(indices)-2):
+    #     # On ouvre le fichier dans lequel on va écrire
+    #     myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
+    #     # On ajoute les lignes
+    #     myTex.writelines(source_lines[indices[i]:indices[i+1]])
+    #     myTex.close()
+    
+    # # On vérifie s'il y a ou non le mot annexe dans une ligne
+    # isAnnexe = False
+    # for i in range(indices[len(indices)-2],indices[len(indices)-1]):
+    #     if ("annexe" in source_lines[i].lower()):
+    #         isAnnexe = True
+
+    # # Si il y a des annexes on renomme
+    # if (isAnnexe):
+    #     # On ouvre le fichier dans lequel on va écrire
+    #     myTex = open("./exercices_corrections_tex/"+file+"_"+str(len(indices)-1)+plus+"avecLesAnnexes.tex","w")       
+    #     # On ajoute les lignes
+    #     for i in range(indices[len(indices)-2],indices[len(indices)-1]):
+    #         # On ajoute les lignes sauf \end{document}
+    #         if ("\\end{document}" not in source_lines[i]):
+    #             myTex.writelines(source_lines[i])
+    #     #myTex.writelines(source_lines[indices[len(indices)-2]:indices[len(indices)-1]])
+    #     myTex.close()
         
 def generateFiles(file : str,source_ex : str):
     """
@@ -283,7 +322,8 @@ if __name__ == "__main__":
     #cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")
     #print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
     #print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
-    #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")
+    #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")   
+    # gestion des couleurs   
     cutTex2Ex("wallis","Brevet_Wallis_2_dec_2017")
     
 

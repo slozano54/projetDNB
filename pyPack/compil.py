@@ -147,10 +147,6 @@ def cutTex2Ex(file : str,source : str)->list:
     # On ouvre le fichier source    
     with open("./sujets_corrections_tex/"+source+".tex","r") as source:
         source_lines = source.readlines()
-        
-
-    # Un compteur pour trouver les lignes contenant les entete des exos       
-    cpt = 0
 
     # Un tableau pour les indices contenant le début des exos
     indices = []
@@ -164,6 +160,7 @@ def cutTex2Ex(file : str,source : str)->list:
     # On commence par voir s'il y a des annexes
     # S'il y a des annexes on invite à modifier les sources du sujets dans un message d'erreur
     # On vérifie s'il y a ou non le mot annexe dans une ligne du dernier découpage
+    # Plutôt dans tout le document ?
     isAnnexe = False
     for i in range(indices[len(indices)-2],indices[len(indices)-1]):
         if ("annexe" in source_lines[i].lower()):
@@ -178,8 +175,23 @@ def cutTex2Ex(file : str,source : str)->list:
         print(" CELA SIGNIFIE QUE LE SUJET SUIVANT NE SERA PAS DÉCOUPÉ")        
         print("\033[32m"+source.name)        
         print("\033[31m.................................................................\033[0m")
-        e=input("Après avoir modifier le fichier source du sujet, appuyer sur une touche \n pour poursuivre la génération des fichier...")
+        e=input("Après avoir modifié le fichier source du sujet, appuyer sur une touche \n pour poursuivre la génération des fichier...")
         print(e)
+
+        # On doit refaire le parcours du fichier sinon on est sur l'ancien découpage !
+        # On ouvre le fichier source    
+        with open(source.name,"r") as source:
+            source_lines = source.readlines()
+
+        # Un tableau pour les indices contenant le début des exos
+        indices = []
+
+        for i in range(len(source_lines)):
+            # Selon les années la commande pour le style des exos n'est pas la même
+            if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i]):
+                indices.append(i)
+        indices.append(len(source_lines))
+
         if not os.path.exists("./exercices_corrections_tex/"):
             os.mkdir("./exercices_corrections_tex/")
         

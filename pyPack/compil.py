@@ -191,10 +191,11 @@ def cutTex2Ex(file : str,source : str)->list:
             # On ouvre le fichier dans lequel on va écrire
             myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
             # On ajoute les lignes
-            myTex.writelines(source_lines[indices[i]:indices[i+1]])
+            for j in range(indices[i],indices[i+1]):
+                # On ajoute les lignes sauf \end{document} ou \newpage
+                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j]):
+                    myTex.writelines(source_lines[j])
             myTex.close()
-    
-
     
     # #On crée e dossier qui va accueillir les fichiers tex 
     # if not os.path.exists("./exercices_corrections_tex/"):

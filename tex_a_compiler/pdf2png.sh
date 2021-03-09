@@ -9,6 +9,7 @@
 # poopler-utils ?
 #http://netpbm.sourceforge.net/doc/pnmtopng.html
 #https://tex.stackexchange.com/questions/11866/compile-a-latex-document-into-a-png-image-thats-as-short-as-possible
+#https://tex.stackexchange.com/questions/503388/convert-pdf-to-multi-images-png-jpg
 
 pdfcrop -margin 3 $1.pdf || exit
 ############################################

@@ -45,18 +45,20 @@ def main():
     # On découpe les sujets présents dansle dossiers sujets_corrections_tex
     for (dirpath, dirnames, filenames) in os.walk('./sujets_corrections_tex/'):        
         for source in filenames:
-            # On supprime l'extension du fichier
-            source = '.'.join(source.split('.')[:-1])            
-            # On formatte le nom du fichier de sortie
-            source_format = compil.generateFileName(source)
-            if ('bugMois' in source_format or 'bugLieu' in source_format):
-                print("\033[31m============================= ATTENTION =========================")
-                print("Problème avec le nom du fichier : \033[32m"+source+"\033[31m")
-                print("La sortie actuelle est : \033[32m"+source_format+"\033[31m")
-                print(".................................................................\033[0m")
-                source_format = input("Renommez le correctement selon la nomenclature dnb_aaaa_mm_lieu\n")                
-            # On découpe
-            compil.cutTex2Ex(source_format,source) 
+            #On ne traite que les sources pas les images
+            if (source.split('.')[-1] != 'eps'):
+                # On supprime l'extension du fichier
+                source = '.'.join(source.split('.')[:-1])            
+                # On formatte le nom du fichier de sortie
+                source_format = compil.generateFileName(source)
+                if ('bugMois' in source_format or 'bugLieu' in source_format):
+                    print("\033[31m============================= ATTENTION =========================")
+                    print("Problème avec le nom du fichier : \033[32m"+source+"\033[31m")
+                    print("La sortie actuelle est : \033[32m"+source_format+"\033[31m")
+                    print(".................................................................\033[0m")
+                    source_format = input("Renommez le correctement selon la nomenclature dnb_aaaa_mm_lieu\n")                
+                # On découpe
+                compil.cutTex2Ex(source_format,source) 
            
     # Tous les fichiers du répertoire /exercices_corrections_tex
     for (dirpath, dirnames, filenames) in os.walk('./exercices_corrections_tex/'):

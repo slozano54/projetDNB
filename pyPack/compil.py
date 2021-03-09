@@ -128,6 +128,7 @@ def cleanPath(path):
     os.system("rm *.ps")
     os.system("rm *.tex")
     os.system("rm *.pdf")
+    os.system("rm *.eps")
     # On se remet à la racine du projet
     os.chdir("../")
 
@@ -144,6 +145,11 @@ def cutTex2Ex(file : str,source : str)->list:
         plus = '_cor'
     else:
         plus = ''
+    
+    # On copie les fichiers images eps s'il y en a
+    print("Copie des fichiers images *.eps s'il y en a ...")
+    os.system("cp ./sujets_corrections_tex/*.eps ./tex_a_compiler/" )
+    
     # On ouvre le fichier source    
     with open("./sujets_corrections_tex/"+source+".tex","r") as source:
         source_lines = source.readlines()

@@ -99,9 +99,11 @@ def copyAllFiles(source : str):
     #On copie le fichier pdf
     #os.system("cp "+source+".pdf ../exercices_corrections_pdf/"+source+".pdf" )
     os.system("sh copy.sh ./tex_a_compiler/"+source+".pdf ./exercices_corrections_pdf/"+source+".pdf")
+    #os.system("cp ./tex_a_compiler/*.pdf ../exercices_corrections_pdf/" )
 
     #On copie le fichier png
-    os.system("cp ./tex_a_compiler/"+source+".png ./exercices_corrections_png_jpg/"+source+".png" )
+    #os.system("cp ./tex_a_compiler/"+source+".png ./exercices_corrections_png_jpg/"+source+".png" )
+    os.system("cp ./tex_a_compiler/*.png ./exercices_corrections_png_jpg/" )
 
     #On copie le fichier pdf ajusté
     os.system("cp ./tex_a_compiler/"+source+"-crop.pdf ./exercices_corrections_pdf_crop/"+source+"-crop.pdf" )

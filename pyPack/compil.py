@@ -210,7 +210,8 @@ def cutTex2Ex(file : str,source : str)->list:
             # On ajoute les lignes
             for j in range(indices[i],indices[i+1]):
                 # On ajoute les lignes sauf \end{document} ou \newpage
-                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                #if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                if ("\\end{document}" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
                     myTex.writelines(source_lines[j])
             myTex.close()
     else:
@@ -226,7 +227,8 @@ def cutTex2Ex(file : str,source : str)->list:
             # On ajoute les lignes
             for j in range(indices[i],indices[i+1]):
                 # On ajoute les lignes sauf \end{document} ou \newpage
-                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                #if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                if ("\\end{document}" not in source_lines[j]  and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
                     myTex.writelines(source_lines[j])
             myTex.close()
     

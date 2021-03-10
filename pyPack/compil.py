@@ -91,6 +91,61 @@ def pdf2png(source : str):
     # On se remet à la racine du projet
     os.chdir("../")
 
+def concat_png():
+    """
+    Concaténer les png si nécessaire    
+    """
+    pass
+
+    #On lance la commande dans le répertoire adequat
+    os.chdir("tex_a_compiler")
+    filenames = os.listdir("./")
+    #print(listdir)
+    # On trie les png
+    pngfiles = []
+    for filename in filenames:
+        if (filename.split('.')[-1] == 'png'):
+            pngfiles.append(filename)
+
+    # On nettoie la fin des noms des fichiers
+    # on ne garde que ce qui se trouve avant le -
+    cleanpngfiles = []
+    for pngfile in pngfiles:
+        cleanpngfiles.append('-'.join(pngfile.split('-')[:-1]))
+    
+    # On compte les occurences différentes et les effectifs 
+    countpngfiles = []
+    for cleanpngfile in cleanpngfiles:
+        countpngfiles.append([cleanpngfile,cleanpngfiles.count(cleanpngfile)])
+
+    # On supprime les doublons
+    newcountpngfiles = []
+    for countpngfile in countpngfiles:
+        if (countpngfile not in newcountpngfiles):
+            newcountpngfiles.append(countpngfile)
+    
+    # On concatène ce qu'il faut
+    # On crée la chaine du premier argument    
+    for i in range(len(newcountpngfiles)):
+        firstArgStr = ''
+        for j in range(int(newcountpngfiles[i][1])):
+            firstArgStr+=newcountpngfiles[i][0]+'-'+str(j+1)+'.png '
+            print(firstArgStr)
+        # On fait la concaténétion
+        print(firstArgStr+newcountpngfiles[i][0]+".png")
+        #os.system("sh ./concat_png.sh "+firstArgStr+newcountpngfiles[i][0]+".png")
+        os.system("sh concat_png.sh \""+firstArgStr+"\" "+newcountpngfiles[i][0]+".png")
+    
+    # On supprime les fichiers png qui contiennent un -
+    filenames = os.listdir("./")    
+    # On trie les png    
+    for filename in filenames:
+        if (filename.split('.')[-1] == 'png' and '-' in filename):
+            os.system("rm "+filename)
+    
+    # On se remet à la racine du projet
+    os.chdir("../")
+
 def copyAllFiles(source : str):
     """
     Copier les fichiers générés là où il faut.
@@ -113,7 +168,6 @@ def copyAllFiles(source : str):
         os.mkdir("./exercices_corrections_tex_autonome/")
     #On copie le fichier tex
     os.system("cp ./tex_a_compiler/"+source+".tex ./exercices_corrections_tex_autonome/"+source+".tex" )
-
 
 def cleanPath(path):
     """
@@ -210,8 +264,8 @@ def cutTex2Ex(file : str,source : str)->list:
             # On ajoute les lignes
             for j in range(indices[i],indices[i+1]):
                 # On ajoute les lignes sauf \end{document} ou \newpage
-                #if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
-                if ("\\end{document}" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                #if ("\\end{document}" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
                     myTex.writelines(source_lines[j])
             myTex.close()
     else:
@@ -227,8 +281,8 @@ def cutTex2Ex(file : str,source : str)->list:
             # On ajoute les lignes
             for j in range(indices[i],indices[i+1]):
                 # On ajoute les lignes sauf \end{document} ou \newpage
-                #if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
-                if ("\\end{document}" not in source_lines[j]  and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                #if ("\\end{document}" not in source_lines[j]  and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
                     myTex.writelines(source_lines[j])
             myTex.close()
     
@@ -275,7 +329,10 @@ def generateFiles(file : str,source_ex : str):
 
     #On convertit en png
     pdf2png(file)
-    
+
+    # On concatène les png à concaténer
+    concat_png()
+        
     #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
     copyAllFiles(file)   
 
@@ -360,7 +417,8 @@ if __name__ == "__main__":
     #print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
     #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")   
     # gestion des couleurs   
-    cutTex2Ex("wallis","Brevet_Wallis_2_dec_2017")
+    #cutTex2Ex("wallis","Brevet_Wallis_2_dec_2017")
+    concat_png()
     
 
     # On évalue le temps de traitement

@@ -1,0 +1,436 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage{diagbox}
+\usepackage{ulem}
+\usepackage{pifont}
+\usepackage{dcolumn}
+\usepackage{scratch}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{lscape}
+%Tapuscrit : Denis Vergès
+\newcommand{\euro}{\eurologo{}}
+\usepackage{graphicx}
+\usepackage{pstricks,pst-plot,pst-tree,pstricks-add}
+\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\sfdefault}{phv}% police helvetica pour les blocs scratch.
+%\usepackage{scratch3}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\def\Oij{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O}~;~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\usepackage[french]{babel}
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Brevet des collèges},
+pdftitle = {Antilles_Guyane 14 septembre 2020},
+allbordercolors = white,
+pdfstartview=FitH}  
+\usepackage[np]{numprint}
+\frenchbsetup{StandardLists=true}
+\begin{document}
+\setlength\parindent{0mm}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Corrigé du brevet des collèges}
+\lfoot{\small{ Antilles Guyane}}
+\rfoot{\small{14 septembre  2020}}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\begin{center}
+
+{\Large \textbf{\decofourleft~Corrigé du brevet des collèges 14 septembre  2020~\decofourright\\[5pt] Antilles--Guyane}}
+
+\bigskip
+
+\textbf{Durée : 2 heures} 
+
+\medskip
+
+\end{center}
+
+\textbf{Exercice 1 \hfill 20 points}
+
+\medskip
+
+%\parbox{0.49\linewidth}{La figure ci-contre est dessinée à main levée. On donne les informations suivantes :
+%
+%\begin{itemize}[label=\textbullet]
+%\item ABC est un triangle tel que :
+%AC = 10,4 cm, AB =4 cm et BC = 9,6 cm ;
+%\item les points A, L et C sont alignés ;
+%\item les points B, K et C sont alignés ;
+%\item la droite (KL) est parallèle à la droite (AB) ;
+%\item CK = 3~cm.
+%\end{itemize}}\hfill
+%\parbox{0.49\linewidth}{\psset{unit=1cm}
+%\begin{pspicture}(6,2.8)
+%%\psgrid
+%\pslineByHand(0.5,0.5)(5.5,1)(4.75,2.5)(0.5,0.5)%CBA
+%\uput[ur](4.75,2.5){A} \uput[d](5.5,1){B} \uput[l](0.5,0.5){C} \uput[ul](1.9,1.1){L} \uput[dl](2.2,0.65){K} 
+%\pslineByHand(2.5,0)(1.5,2)%LK
+%\end{pspicture}
+%}
+%\medskip
+
+\begin{enumerate}
+\item ~
+%À l'aide d'instruments de géométrie, construire la figure en vraie grandeur sur la copie en laissant apparents les traits de construction.
+
+\begin{center}
+\psset{unit=1cm}
+\begin{pspicture}(-0.5,-0.5)(11,6)
+\psline[linecolor=blue](0,0.5)(9,5.7)%CA
+\uput[dl](0,0.5){C}\uput[ur](9,5.7){A}
+%\pscircle[linecolor=blue](4.5,3.1){5.2}
+\psarc[linecolor=blue](0,0.5){9.6}{0}{20}\psarc[linecolor=blue](9,5.7){4}{-100}{-70}
+\pspolygon[linecolor=blue](0,0.5)(9,5.7)(9.55,1.73)
+\uput[r](9.55,1.73){B}
+\psarc[linecolor=blue](0,0.5){3}{-10}{25}
+\uput[dr](3,0.9){K}
+\psline(2.45,4.87)(3,0.9)
+\psline[linestyle=dotted,linewidth=1.5pt](3,0.9)(9,5.7)
+\psline[linestyle=dotted,linewidth=1.5pt](9.55,1.73)(2.45,4.87)
+\uput[ul](2.8,2.13){L}
+\end{pspicture}
+\end{center}
+
+\item On a AC$^2 = 10,4^2 = 108,16$ ;
+
+$\text{AB}^2 + \text{CB}^2 = 4^2 + 9,6^2 = 16 + 92,16= 108,16$.
+
+On a donc $\text{AC}^2 = \text{AB}^2 + \text{CB}^2$ ; d'après la réciproque du théorème de Pythagore cette égalité montre que le triangle ABC est rectangle en B.
+
+%Prouver que le triangle ABC est rectangle en B.
+
+
+\item %Calculer la longueur CL en cm.
+
+Puisque les droites (BC) et (KL) sont parallèles on a une configuration de Thalès.
+
+Donc $\dfrac{\text{CK}}{\text{CB}} = \dfrac{\text{CL}}{\text{CA}} $ ou $\dfrac{3}{9,6} = \dfrac{\text{CL}}{10,4}$ ; on en déduit que CL $ = 10,4 \times \dfrac{3}{9,6} = 10,4 \times \dfrac{1}{3,2} = \dfrac{10,4}{3,2} = \dfrac{104}{32} = \dfrac{26}{8} = \dfrac{13}{4} = 3,25$~cm.
+\item %À l'aide de la calculatrice, calculer une valeur approchée de la mesure de l'angle $\widehat{\text{CAB}}$, au degré près.
+
+On a en utilisant par exemple le cosinus :
+
+$\cos \widehat{\text{CAB}} = \dfrac{\text{AB}}{\text{AC}} = \dfrac{4}{10,4} \approx 0,385$.
+
+La calculatrice donne $\widehat{\text{CAB}} \approx 67,4$, soit 67\degres{} au degré près.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Exercice 2 \hfill 15 points}
+
+\medskip
+
+%%Cet exercice est un questionnaire à choix multiple (QCM).
+%%
+%%Pour chacune des cinq questions, quatre réponses sont proposées, une seule d'entre elles est exacte.
+%%
+%% Pour chacune des cinq questions, indiquer sur la copie le numéro de la question et la réponse choisie .
+%% 
+%%\textbf{On rappelle que toute réponse doit être justifiée}.
+%%
+%%Une réponse fausse ou l'absence de réponse ne retire pas de point.
+%%
+%%\begin{center}
+%%\begin{tabularx}{\linewidth}{|c m{3.25cm}|*{4}{>{\centering \arraybackslash}X|}}\hline
+%%&Question&Réponse A &Réponse B &Réponse C &Réponse D\\ \hline
+%%1.&Si on multiplie la longueur de chaque arête
+%% d'un cube par 3, alors le volume du cube sera multiplié par:&3 &9 &12 &27\\ \hline
+%%2.&Lorsque $x$ est égal à $-4$,\: $x^2 +3x + 4$ est égal à :&8 &0 &$-24$ &$-13$\\ \hline
+%%3.&$\dfrac{1}{3} + \dfrac{1}{4} = $&$\dfrac{2}{7}$&0,583&$\dfrac{7}{12}$&$\dfrac{1}{7}$\\ \hline
+%%4.&La notation scientifique de \np{1500000000} est &$15 \times 10^{-8}$& $15 \times 10^8$&
+%%$1,5 \times 10^{-9}$& $1,5 \times 10^9$\\ \hline
+%%5.&$(x - 2)\times (x + 2)$	&$x^2 - 4$&	$x^2 +4$	&$2x - 4$ 	&$2x$\\ \hline
+%%\end{tabularx}
+%%\end{center}
+\begin{enumerate}
+\item Si $V_a = a \times a \times a = a^3$, alors $V_{3a} =  3a \times 3a \times 3a = (3a)^3 = 3^3 \times a^3 = 27a^3$.
+\item On a $(- 4)^2 + 3\times (- 4) + 4 = 16  - 12 + 4 = 8$.
+\item $\dfrac{1}{3} + \dfrac{1}{4} = \dfrac{1\times 4}{3\times 4} + \dfrac{1\times 3}{4\times 3} = \dfrac{4}{12} + \dfrac{3}{12} = \dfrac{7}{12}$.
+\item $\np{1500000000} = 1,5 \times 10^9$ (1,5 milliard).
+\item $(x - 2)\times (x + 2) = x^2 - 4$ (identité remarquable).
+
+\end{enumerate}
+
+\bigskip
+
+\textbf{Exercice 3 \hfill 18 points}
+
+\medskip
+
+%Dans cet exercice, le carré ABCD n'est pas représenté en vraie grandeur.
+%
+%Aucune justification n'est attendue pour les questions 1. et 2. On attend des réponses justifiées pour la question 3.
+%
+%\medskip
+
+\begin{enumerate}
+\item ~
+
+%\parbox{0.68\linewidth}{On considère le carré ABCD de centre O représenté ci-contre, partagé en quatre polygones superposables, numérotés \textcircled{1}, \textcircled{2}, \textcircled{3}, et \textcircled{4}.
+	\begin{enumerate}
+		\item %Quelle est l'image du polygone \textcircled{1} par la symétrie centrale de centre O ?
+	L'image du polygone \textcircled{1} par la symétrie centrale de centre O est le polygone \textcircled{3}.
+		\item %Quelle est l'image du polygone \textcircled{4} par la rotation de centre O qui transforme le polygone \textcircled{1} en le polygone \textcircled{2} ?
+L'image du polygone \textcircled{4} par la rotation de centre O qui transforme le polygone \textcircled{1} en le polygone \textcircled{2} est le polygone \textcircled{1}.
+	\end{enumerate}
+%	}\hfill
+%\parbox{0.28\linewidth}{
+%\psset{unit=1cm}
+%\begin{pspicture}(-0.1,-0.1)(3,3)
+%\def\motif{\psline(0,1.4)(0,1.05)(-0.6,0.7)(0,0.35)(0,0)(0.35,0)(0.7,0.6)(1.05,0)(1.4,0)}
+%\psframe(0,0)(2.8,2.8)
+%\uput[ul](0,2.8){A}\uput[ur](2.8,2.8){B}\uput[dr](2.8,0){C}\uput[dl](0,0){D}
+%\rput(1.4,1.4){\motif}
+%\rput{90}(1.4,1.4){\motif}
+%\rput{180}(1.4,1.4){\motif}
+%\rput(0.5,2.2){\textcircled{1}}\rput(2.2,2.2){\textcircled{2}}
+%\rput(2.2,0.5){\textcircled{3}}\rput(0.5,0.5){\textcircled{4}}
+%\uput[dr](1.4,1.4){O}
+%\end{pspicture}
+%}
+	
+\item %La figure ci-dessous est une partie de pavage dont un motif de base est le carré ABCD de la question 1.
+
+%Quelle transformation partant du polygone \textcircled{1} permet d'obtenir le polygone \textcircled{5} ?
+On passe du polygone \textcircled{1} au  polygone \textcircled{5} par la translation de vecteur $\vect{\text{AB}}$.
+
+%\def\zig{\psset{unit=0.8cm}
+%\def\motif{\psline(0,1.4)(0,1.05)(-0.6,0.7)(0,0.35)(0,0)(0.35,0)(0.7,0.6)(1.05,0)(1.4,0)}
+%\rput(1.4,1.4){\motif}
+%\rput{90}(1.4,1.4){\motif}
+%\rput{180}(1.4,1.4){\motif}
+%}
+%\begin{center}
+%\psset{unit=0.8cm}
+%\begin{pspicture}(14,8.4)
+%\psframe(14,8.4)
+%%\psgrid
+%\multido{\n=0.0+2.8}{5}{
+%	\multido{\na=0.0+2.8}{3}{
+%	\rput(\n,\na){\zig}
+%	}
+%	}
+%\multido{\n=0.0+2.8}{6}
+%{\psline(\n,0)(\n,8.4)}
+%\multido{\n=0.0+2.8}{4}
+%{\psline(0,\n)(14,\n)}
+%\rput(0.6,7.7){\textcircled{1}}\rput(3.4,7.7){\textcircled{5}}
+%\uput[ul](0,8.4){A}\uput[ur](2.8,8.4){B}\uput[dl](0,5.6){D}\uput[dr](2.8,5.6){C}
+%\uput[dr](1.4,7){O}
+%\end{pspicture}
+%\end{center}
+\item %On souhaite faire imprimer ces motifs sur un tissu rectangulaire de longueur $315$ cm et de largeur $270$ cm.
+
+%On souhaite que le tissu soit entièrement recouvert par les carrés identiques à ABCD, sans découpe et de sorte que le côté du carré mesure un nombre entier de centimètres.
+	\begin{enumerate}
+		\item %Montrer qu'on peut choisir des carrés de 9 cm de côté.
+		
+Il faut que la longueur côté du carré divise 315 et aussi 270.
+
+Or $315 = 5 \times 63 = 5 \times 7 \times 9 = 3^2 \times 5 \times 7$ et 
+
+$270 = 27 \times 10 = 3^3 \times 2 \times 5 = 2 \times 3^3 \times 5$.
+
+On constate que $3^2 = 9$ est un diviseur commun à 315 et à 270 : on peut donc imprimer des carrés de côté 9~cm.
+		\item %Dans ce cas, combien de carrés de 9 cm de côté seront imprimés sur le tissu?
+		
+On a $315 = 9 \times 35$ : il rentre 35 carrés dans la longueur ;
+
+$270 = 9 \times 30$ : il rentre 30 carrés dans la largeur.
+
+Il y a donc $35 \times 30 = \np{1050}$ motifs imprimés sur le tissu.
+	\end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+\textbf{Exercice 4 \hfill 24 points}
+
+\medskip
+
+%Voici la série des temps exprimés en secondes, et réalisés par des nageuses lors de la finale du 100 mètres féminin nage libre lors des championnats d'Europe de natation de 2018 :
+%
+%\begin{center}
+%\begin{tabularx}{\linewidth}{|*{8}{>{\centering \arraybackslash}X|}}\hline
+%53,23&54,04&53,61&54,52&53,35&52,93&54,56&54,07\\ \hline
+%\end{tabularx}
+%\end{center}
+
+\begin{enumerate}
+\item %La nageuse française, Charlotte BONNET, est arrivée troisième à cette finale. Quel est le temps, exprimé en secondes, de cette nageuse ?
+Le troisième temps est 53,35~s.
+\item %Quelle est la vitesse moyenne, exprimée en m/s, de la nageuse ayant parcouru les $100$ mètres en $52,93$ secondes? Arrondir au dixième près.
+La vitesse moyenne est égale à $\dfrac{100}{52,93} \approx 1,89$ soit environ 1,9~m/s au dixième près.
+\item Comparer moyenne et médiane des temps de cette série.
+
+$\bullet~~$La moyenne est égale à $\dfrac{53,23 + 5,04 + \ldots + 54,07}{8}  \approx 53,8$ ;
+
+$\bullet~~$La médiane peut être prise entre 53,61 et 54,04. On peut prendre 53,8!
+
+\medskip
+
+%Sur une feuille de calcul, on a reporté le classement des dix premiers pays selon le nombre de médailles d'or lors de ces championnats d'Europe de natation, toutes disciplines confondues :
+
+%\begin{center}
+%\begin{tabularx}{\linewidth}{|c|c|c|*{4}{>{\centering \arraybackslash}X|}}\hline
+%&A&B &C& D &E &F\\ \hline
+%1& Rang &Nation &Or 	&Argent &Bronze &Total\\ \hline
+%2&1		&Russie 		&23	&15 &9 	&47 \\ \hline
+%3&2		&Grande-Bretagne&13	&12 &9 	&34 \\ \hline
+%4&3		&Italie 		&8	&12 &19 &39\\ \hline
+%5&4		&Hongrie 		&6	&4	&2	&12\\ \hline
+%6&5		&Ukraine 		&5	&6 	&2 	&13\\ \hline
+%7&6		&Pays-Bas 		&5	&5 	&2 	&12\\ \hline
+%8&7		&France 		&4	&2 	&6 	&12\\ \hline
+%9&8		&Suède 			&4	&0 	&0 	&4\\ \hline
+%10&9	&Allemagne 		&3	&6 	&10 &19\\ \hline
+%11&10	&Suisse 		&1	&0 	&1 	&2\\ \hline
+%\end{tabularx}
+%\end{center}
+
+\item %Est-il vrai qu'à elles deux, la Grande-Bretagne et l'Italie ont obtenu autant de médailles d'or
+%que la Russie ?
+La Grande-Bretagne et l'Italie ont obtenu en tout $13 + 8 = 21$ soit moins que les 23 médailles de la Russie.
+\item %Est-il vrai que plus de 35\,\% des médailles remportées par la France sont des médailles d'or ?
+La France a remporté 4 médailles d'or 12 médailles en tout soit $\dfrac{4}{12} \times 100 = \dfrac{1}{3} \times 100 = \dfrac{100}{3} \approx 33,3\,\%$.
+\item %Quelle formule a-t-on pu saisir dans la cellule F2 de cette feuille de calcul, avant qu'elle soit étirée vers le bas jusqu'à la cellule F11 ?
+Formule: SOMME(C2:E2)
+
+\end{enumerate}
+
+\bigskip
+
+\textbf{Exercice 5 \hfill 23 points}
+
+\medskip
+
+%On dispose de deux urnes:
+%
+%\begin{itemize}
+%\item une urne bleue contenant trois boules bleues numérotées: \textcircled{2},\textcircled{3} et \textcircled{4}.
+%\item une urne rouge contenant quatre boules rouges numérotées: \textcircled{2},\textcircled{3}, \textcircled{4} et \textcircled{5}.
+%\end{itemize}
+%
+%Dans chaque urne, les boules sont indiscernables au toucher et ont la même probabilité d'être tirées.
+%
+%\begin{center}
+%\begin{tabularx}{\linewidth}{|*{2}{>{\centering \arraybackslash}X|}}\hline
+%Urne bleue &Urne rouge\\
+%\textcircled{2} \textcircled{3}  \textcircled{4}& \textcircled{2} \textcircled{3} \textcircled{4}  \textcircled{5}\\ \hline
+%\end{tabularx}
+%\end{center}
+%\medskip
+%
+%On s'intéresse à l'expérience aléatoire suivante :
+%
+%\og On tire au hasard une boule bleue et on note son numéro, puis on tire au hasard une boule rouge et on note son numéro. \fg
+%
+%\emph{Exemple} : si on tire la boule bleue numérotée \textcircled{3}, puis la boule rouge numérotée \textcircled{4},le tirage obtenu sera noté (3~;~4).
+%
+%On précise que le tirage (3~;~4) est différent du tirage (4~;~3).
+%
+%\medskip
+
+\begin{enumerate}
+\item %On définit les deux évènements suivants:
+
+%\og On obtient deux nombres premiers \fg{} et \og La somme des deux nombres est égale à 12 \fg
+	\begin{enumerate}
+		\item %Pour chacun des deux évènements précédents, dire s'il est possible ou impossible lorsqu'on effectue l'expérience aléatoire.
+$\bullet~~$Il est possible de tirer deux nombres premiers : (2~;~2), (2~;3), (2~;~5), (3~;~2), (3~;~3), (3~;~5).
+
+$\bullet~~$La somme la plus grande est $4 + 5 = 9$. 12 est donc impossible à atteindre.
+		\item %Déterminer la probabilité de l'évènement \og On obtient deux nombres premiers \fg.
+Il y a $3 \times 4 = 12$ tirages différents et on a vu qu'il y en avait 6 donnant deux nombres premiers. La probabilité est donc égale à $\dfrac{6}{12} = \dfrac{1}{2} = 0,5$.
+	\end{enumerate}
+\item %On obtient un \og double \fg{} lorsque les deux boules tirées portent le même numéro. 
+
+%Justifier que la probabilité d'obtenir un \og double \fg{} lors de cette expérience, est $\dfrac{1}{4}$.
+On peut obtenir les doubles (2~;~2), (3~;~3) et (4~;~4), donc 3 doubles sur 12 tirages possibles. La probabilité de tirer un double est donc égale à $\dfrac{3}{12} = \dfrac{1}{4}$.
+\item %Dans cette question, aucune justification n'est attendue. 
+
+%On souhaite simuler cette expérience \np{1000} fois.
+
+%Pour cela, on a commencé à écrire un programme, à ce stade, encore incomplet. Voici des copies d'écran :
+
+%\begin{center}
+%{\footnotesize
+%\begin{tabular}{|c |c|}\hline
+%\textbf{Script principal}& \textbf{Bloc \og Tirer deux boules \fg}\\
+%\begin{scratch}
+%\blockinit{quand \greenflag est cliqué},
+%\blockrepeat{répéter \ovalnum{A} fois}
+%		{
+%		\blockif{si \booloperator{\ovalmove{Boule bleue} = \ovalmove{Boule rouge}} alors}
+%{\blockmove{ajouter à \selectmenu{Nombre de doubles} \ovalnum{1}}}		
+%		}	
+%\end{scratch}
+%&
+%\begin{scratch}	
+%\initmoreblocks{définir \namemoreblocks{Tirer deux boules}}
+%\blockmove{mettre \selectmenu{Boule bleue} à {nombre aléatoire entre \ovalnum{2} et \ovalnum{B}}}
+%\blockmove{mettre \selectmenu{Boule rouge} à {nombre aléatoire entre \ovalnum{2} et \ovalnum{C}}}
+%\end{scratch}
+%\\ 
+%\multicolumn{2}{|c|}{Boule bleue, Boule rouge et Nombre de doubles 
+% sont des variables.}\\
+%\multicolumn{2}{|c|}{Le bloc \begin{scratch}\blockmove{Tirer deux boules}\end{scratch} est à insérer dans le script principal.}\\ \hline
+%\end{tabular}}
+%\end{center}
+	\begin{enumerate}
+		\item %Par quels nombres faut-il remplacer les lettres A, B et C ?
+Il faut remplacer A par \np{1000}, B par 4 et C par 5.
+		\item %Dans le script principal, indiquer où placer le bloc \begin{scratch}\blockmove{Tirer deux boules}\end{scratch}
+Il faut insérer le bloc après répéter \np{1000} fois.
+		\item %Dans le script principal, indiquer où placer le bloc 
+%\begin{scratch}
+%\blockmove{mettre \selectmenu{Nombre de doubles}à \ovalnum{0} }
+%\end{scratch}
+Il faut insérer le bloc avant répéter \np{1000} fois.
+		\item %On souhaite obtenir la fréquence d'apparition du nombre de \og doubles \fg{} obtenus.
+		
+%Parmi les instructions ci-dessous, laquelle faut-il placer à la fin du script principal après la
+%boucle \og répéter \fg{} ?
+
+%\begin{center}
+%{\footnotesize
+%\begin{tabular}{|ccc|}\hline
+%Proposition \textcircled{1}&Proposition \textcircled{2} & Proposition \textcircled{3}\\
+%\begin{scratch}
+%\blockmove{dire \ovaloperator{Nombre de doubles}} 
+%\end{scratch}&
+%\begin{scratch} 
+%\blockmove{dire \ovaloperator{Nombre de doubles}/\ovalnum{1000}}\end{scratch}&\begin{scratch} 
+%\blockmove{dire \ovaloperator{Nombre de doubles}/\ovalnum{2}}
+%\end{scratch}\\ \hline
+%\end{tabular}}
+%\end{center}
+Il faut placer à la fin la proposition \textcircled{2}.
+	\end{enumerate}
+\end{enumerate}
+\end{document}

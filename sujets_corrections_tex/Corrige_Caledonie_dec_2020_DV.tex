@@ -1,0 +1,678 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox}
+\usepackage{ulem}
+\usepackage{dcolumn}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{ifthen}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{00A0}{~}
+%Merci à :http://maths.ac-noumea.nc/spip.php?article620
+\usepackage{lscape}
+\usepackage{pst-fun} 
+\newcommand{\euro}{\eurologo{}}
+\usepackage{pstricks,pst-plot,pst-node,pstricks-add}
+\usepackage[left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\usepackage{scratch}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O}~;~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Brevet des collèges},
+pdftitle = {Nouvelle-Calédonie 14 décembre 2020},
+allbordercolors = white,pdfstartview=FitH}   
+\usepackage[french]{babel}
+\usepackage[np]{numprint}
+\begin{document}
+\setlength\parindent{0mm}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Brevet des collèges}
+\lfoot{\small{Nouvelle-Calédonie}}
+\rfoot{\small{14 décembre 2020}}
+\marginpar{\rotatebox{90}{\textbf{A. P{}. M. E. P{}.}}}
+\pagestyle{fancy}
+\thispagestyle{empty}
+
+\begin{center}\textbf{Durée : 2 heures}
+
+\vspace{0,5cm}
+
+{\Large\textbf{\decofourleft~Diplôme national du Brevet
+Nouvelle--Calédonie~\decofourright}}\\[5pt]
+{\Large \textbf{14 décembre 2020}}
+
+\medskip
+
+ATTENTION : ANNEXE pages  et 8/8 est à rendre avec la copie
+
+\medskip
+
+\emph{L'usage de calculatrice avec mode examen activé est autorisé.\\
+L'usage de calculatrice sans mémoire \og type collège \fg{} est autorisé}
+
+\end{center}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 1 : QCM \hfill 18 points}
+
+\medskip
+
+%\emph{Cet exercice est un questionnaire à choix multiples (QCM). Pour chaque question, une seule des trois réponses proposées est exacte.\\
+%Sur la copie, indiquer le numéro de la question et la réponse {\rm A}, {\rm B} ou {\rm C} choisie.\\
+%Aucune justification n'est demandée.\\
+%Aucun point, ne sera enlevé en cas de mauvaise réponse.}
+%
+%\begin{center}
+%\begin{tabularx}{\linewidth}{|c|m{4cm}|m{2.5cm}|*{3}{>{\centering \arraybackslash}X|}}\hline
+%\multicolumn{3}{|c|}{\textbf{Propositions}}& \textbf{Réponse A}& \textbf{Réponse B}&\textbf{Réponse C}\\ \hline
+%\textbf{1.}&\multicolumn{2}{|m{6.5cm}|}{$\dfrac{5}{3} - \dfrac{1}{3}\times \dfrac{3}{2}$ est égal à :}\rule[-4mm]{0mm}{8mm}&$\dfrac{2}{3}$&$2$&$\dfrac{7}{6}$\\ \hline
+%\textbf{2.}&\multicolumn{2}{|m{6.5cm}|}{L'écriture scientifique de $245 \times 10^{-5}$ est :}\rule[-4mm]{0mm}{8mm}&$245 \times 5$&$2,45 \times 10^{-3}$&$2,45 \times 10^{-7}$\\ \hline
+%\textbf{3.}&\multirow{2}{4cm}{On donne les durées en minutes entre les différents arrêts d'une ligne de bus :
+%3~;~2~;~4~;~3~;~7~;~9~;~7.}\rule[-5mm]{0mm}{9mm}&La durée moyenne est:&3 min&4 min&5 min\\ \cline{1-1}\cline{3-6}
+%\textbf{4.}&&La durée médiane est :&3 min&4 min&5 min\\ \hline
+%\textbf{5.}&\multicolumn{2}{|m{6.5cm}|}{Un jeu de 32 cartes comporte 4 rois.
+%
+%On tire au hasard une carte du jeu.
+%
+%Quelle est la probabilité d'obtenir un roi ?}&$\dfrac{1}{8}$&$\dfrac{1}{32}$&$\dfrac{3}{32}$\\ \hline 
+%\textbf{6.}&\multicolumn{2}{|m{6.5cm}|}{Une ville située sur l'équateur peut avoir pour coordonnées :}&(45\degre N~;~ 45\degre E)& (78\degre N~;~0\degre E)& (0\degre N~;~ 78\degre O)\\ \hline
+%\end{tabularx}
+%\end{center}
+
+\begin{enumerate}
+\item $\dfrac{5}{3} - \dfrac{1}{3}\times \dfrac{3}{2} = \dfrac{5}{3} - \dfrac{1}{2} = \dfrac{10}{6} - \dfrac{3}{6} = \dfrac{7}{6}$.
+\item $245 \times 10^{-5} = 2,45 \times 10^2 \times 10^{-5} = 2,45 \times 10^{-3}$.
+\item $\bullet~~$Durée moyenne : $\dfrac{3 + 2 + 4 + 3 + 7 + 9 + 7}{7} = \dfrac{35}{7} = 5$~(min).
+
+\item $\bullet~~$Durée médiane : $2 < 3 \leqslant 3 < \textbf{4} < 7 \leqslant 7 < 9$, le temps médian est 4~(min).
+\item On a $p(\text{Roi}) = \dfrac{4}{32} = \dfrac{1}{8}$.
+\item (0\degre N~;~ 78\degre O) : latitude nulle.
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 2 : La facture \hfill 8 points}
+
+\medskip
+
+%Un prix TTC (Toutes Taxes Comprises) s'obtient en ajoutant la taxe appelée TGC (Taxe Générale sur la Consommation) au prix HT (Hors Taxes).
+%
+%En Nouvelle-Calédonie, il existe quatre taux de TGC selon les cas : 22\,\%, 11\,\%, 6\,\% et 3\,\%.
+%
+%\smallskip
+%
+%Alexis vient de faire réparer sa voiture chez un carrossier.
+%
+%Voici un extrait de sa facture qui a été tâchée par de la peinture. 
+%
+%Les colonnes B, D et E désignent des prix en francs.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|c|l|*{4}{>{\centering \arraybackslash}X|}}\hline
+&A&B&C&D&E\\ \hline
+1& \textbf{Référence}	&Prix HT&TGC (en \,\%)&Montant TGC&Prix TTC\\ \hline
+2& Phare avant			&\np{64000}	&22\,\%	&\np{14080}	&\np{78080} \\ \hline
+3& Pare choc			&\np{18000}	&22\,\%	&\pscurve*(-0.5,-0.1)(0,-0.1)(0.6,0.12)(0.8,0.2)(0.5,0.28)(0,0.25)(-0.25,0.3)(-0.5,-0.1)			&\np{21960}\\ \hline
+4& Peinture				&\np{11700}	&11\,\%	&\np{1287}	&\np{12987}\\ \hline 
+5& Main d'œuvre			&\np{24000}	&\pscurve*(-0.5,0)(0,-0.1)(0.6,0.1)(0.8,0.18)(0.5,0.28)(0,0.25)(-0.25,0.3)(-0.5,0)		&\np{1440}	&\np{25440}\\ \hline
+6&\multicolumn{2}{c}{~}&\multicolumn{2}{r|}{\textbf{TOTAL À RÉGLER (en Francs)}}&\textbf{\np{138467}}\\ \hline
+\end{tabularx}
+\end{center}
+
+\begin{enumerate}
+\item %Quel est le montant TGC pour le pare-chocs ?
+Le montant TGC pour le pare-chocs est égal à la différence $\np{21960} - \np{18000} = \np{3960}$~(francs).
+
+On peut aussi calculer $\np{18000} \times \dfrac{22}{100} = \np{3960}$~(francs).
+\item %Quel est le pourcentage de la TGC qui s'applique à la main d'œuvre ?
+On a $\frac{\np{1440}}{\np{24000}} \times 100 = \dfrac{\np{1440}}{24} = 6$~(\,\%)
+\item %La facture a été faite à l'aide d'un tableur.
+
+%Quelle formule a été saisie dans la cellule E6 pour obtenir le total à payer ?
+Dans la case C6 on écrit : = SOMME(E2:E5)
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{Exercice 3 : Programmes de calcul \hfill 11 points}
+
+\medskip
+
+%On donne les deux programmes de calcul suivants :
+%
+%\begin{center}
+%\begin{tabularx}{\linewidth}{|X|X|}\hline 
+%\multicolumn{1}{|c|}{\textbf{Programme A}}&\multicolumn{1}{|c|}{\textbf{Programme B}}\\
+%~&~\\
+%$\bullet~~$Choisir un nombre								&$\bullet~~$Choisir un nombre\\
+%$\bullet~~$Soustraire $5$ à ce nombre						&$\bullet~~$Mettre ce nombre au carré\\
+%$\bullet~~$Multiplier le résultat par le nombre de départ	&$\bullet~~$Soustraire 4 au résultat\\ \hline
+%\end{tabularx}
+%\end{center}
+%
+%\medskip
+
+\begin{enumerate}
+\item %Alice choisit le nombre 4 et applique le programme A. 
+
+%Montrer qu'elle obtiendra $- 4$.
+Elle obtient : $4 \to - 1 \to - 4$. 
+\item %Lucie choisit le nombre $- 3$ et applique le programme B. 
+
+%Quel résultat va-t-elle obtenir ?
+Lucie obtient $- 3 \to 9 \to 5$.
+\end{enumerate}
+
+%Tom souhaite trouver un nombre pour lequel des deux programmes de calculs donneront le même résultat.
+%
+%Il choisit $x$ comme nombre de départ pour les deux programmes.
+\begin{enumerate}[resume]
+\item %Montrer que le résultat du programme A peut s'écrira $x^2 - 5x$.
+On a successivement avec le programme A :  : $x \to x - 5 \to x(x - 5)$.
+\item %Exprimer en fonction de $x$ le résultat obtenu avec le programme B.
+On a successivement avec le programme B :  : $x \to x^2 \to x^2 - 4$.
+\item %Quel est le nombre que Tom cherche ?
+On veut trouver $x$ tel que :
+
+$x(x - 5) = x^2 - 4$ ou $x^2 - 5x = x^2 - 4$ ou encore $4 = 5x$, soit en multipliant chaque membre par $\dfrac{1}{5}$, \: $x = \dfrac{4}{5} = 0,8$.
+\end{enumerate}
+
+%\textbf{Toute trace de recherche même non aboutie sera prise ,en compte dans la notation.}
+
+\vspace{0,5cm}
+
+\textbf{EXERCICE 4 : La régate \hfill 16 points}
+
+\medskip
+
+Dans la figure suivante, on donne les distances en mètres :
+
+AB $= 400$, AC $= 300$, BC $= 500$ et CD $= 700$.
+
+\medskip
+\begin{center}
+\begin{tabularx}{\linewidth}{lX} 
+\psset{unit=1cm}
+\begin{pspicture}(7,5.2)
+%\psgrid
+\pspolygon(1.5,3.2)(0.5,0.5)(6.2,5.14)(5,1.9)%ABDE
+\uput[u](1.5,3.2){A} \uput[l](0.5,0.5){B} \uput[u](3,2.6){C} \uput[r](6.2,5.14){D} \uput[r](5,1.9){E} 
+\end{pspicture}&\vspace{-2.5cm}\begin{tabular}{|l|} \hline
+
+Les droites (AE) et (BD) se coupent en C \\
+~\\
+Les droites (AB) et (DE)sont parallèles\\ \hline
+\end{tabular}\\
+\end{tabularx}
+
+\end{center}
+
+\begin{enumerate}
+\item %Calculer la longueur DE.
+Les droites (AB) et (DE) étant parallèles, on peut écrire d'après le théorème de Thalès : 
+
+$\dfrac{\text{DE}}{\text{AB}} = \dfrac{\text{CD}}{\text{BC}}$ soit $\dfrac{\text{DE}}{400} = \dfrac{700}{500}$,d'où en multipliant par 400 : $\text{DE} = 400 \times \dfrac{700}{500} = 400 \times \dfrac{7}{5} = 560$~(m).
+\item %Montrer que le triangle ABC est rectangle.
+On a BC$^2 = 500^2 = \np{25000}$ et $\text{AB}^2 + \text{AC}^2 = 400^2 + 300^2 = \np{16000} + \np{9000} = \np{25000}$.
+
+On a donc  $\text{AB}^2 + \text{AC}^2 = \text{BC}^2$ : d'après la réciproque du théorème de Pythagore, le triangle ABC est rectangle en A.
+\item %Calculer la mesure de l'angle $\widehat{\text{ABC}}$. Arrondir au degré.
+Par définition du cosinus d'un angle aigu, dans le triangle ABC rectangle en A :
+
+$\cos \widehat{\text{ABC}} = \dfrac{\text{AB}}{\text{BC}} = \dfrac{400}{500} = \dfrac{4}{5} = 0,8$.
+
+La calculatrice donne, en mode degré : $\widehat{\text{ABC}} \approx 36,8$,soit 37\degres au degré près.
+\end{enumerate}
+
+%Lors d'une course les concurrents doivent effectuer plusieurs tours du parcours représenté ci-dessus. Ils partent du point A, puis passent par les points B, C, D et E dans cet ordre puis de nouveau par le point C pour ensuite revenir au point A.
+
+%\smallskip
+%
+%Maltéo, le vainqueur, a mis 1~h 48~min pour effectuer les $5$ tours du parcours. La distance parcourue pour faire un tour est \np{2880}~m.
+
+\begin{enumerate}[resume]
+\item %Calculer la distance totale parcourue pour effectuer les $5$~tours du parcours.
+\emph{Remarque : non demandé} : 
+
+Pour calculer la longueur d'un parcours, il reste à calculer CE.
+
+Or les droites (AB) et (DE) étant parallèles, la droite (AC) perpendiculaire à (AB) est aussi perpendiculaire à (DE), donc le triangle CDE est rectangle en E.
+
+D'après le théorème de Pythagore :
+
+$\text{CE}^2 + \text{ED}^2 = \text{CD}^2$ ou $\text{CE}^2 + 560^2 = 700^2$,soit $\text{CE}^2 = 700^2 - 560^2 = (700+560)\times (700-560) = \np{1260} \times 140 = \np{176400} $.
+
+D'où CE $= \sqrt{\np{176400}} = 420$~(m).
+
+Longueur d'un parcours : AB + BC + CD + DE + EC + CA $= 400 + 500 + 700 + 560 + 420 + 300 = \np{2880}$.
+
+Les 5 tours représentent donc une longueur de $5 \times \np{2880} = \np{14400}$~(m) ou 14,4~(km).
+\item %Calculer la vitesse moyenne de Maltéo. Arrondir à l'unité.
+1~h 48~min = 60 + 48 = 108~min.
+La vitesse moyenne est égale au quotient de la distance parcourue par le le temps mis pour faire les 5 tours :
+
+$v = \dfrac{\np{14400}}{108}= \dfrac{\np{1600}}{12}= \dfrac{400}{3} \approx 133,33$~(m/min) soit $\approx 60 \times 133,33 = \np{7999,8}$~(m/h), soit enfin à peu près 8~(km/h).
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{EXERCICE 5 : La corde \hfill 7 points}
+
+\medskip
+
+%Le triangle ABC rectangle en B ci-dessous est tel que AB $= 5$ m et AC $= 5,25$ m.
+
+
+\medskip
+
+\begin{enumerate}
+\item Le triangle ABC étant rectangle en B, le théorème de Pythagore permet d'écrire :
+
+$\text{AB}^2 + \text{BC}^2 = \text{AC}^2$, soit $5^2 + \text{BC}^2 = 5,25^2$ ou encore $\text{BC}^2 = 5,25^2 - 5^2 = \np{2,5625} \approx \np{1,60078}$ soit 1,6 m au dixième près.
+
+%\parbox{0.47\linewidth}{Calculer, en m, la longueur BC.
+%
+% Arrondir au dixième.}\hfill \parbox{0.5\linewidth}{
+%\psset{unit=1cm}
+%\begin{pspicture}(4.5,2.4)
+%\pspolygon(0.5,0.5)(4.2,0.5)(4.2,2.2)%ABC
+%\uput[l](0.5,0.5){A} \uput[r](4.2,0.5){B} \uput[ur](4.2,2.2){C}
+%\psframe(4.2,0.5)(4,0.7) 
+%\end{pspicture}}
+%\end{enumerate}
+
+%Une corde non élastique de $10,5$ m de long est fixée au sol par ses deux extrémités entre deux poteaux distants de $10$~m.
+\item Si la corde est tendue en son milieu on a la figure suivante composée de deux triangles rectangles identiques à celui de la question \textbf{1.}:
+
+\begin{center}
+\psset{unit=1cm}
+\begin{pspicture}(10,2)
+\pspolygon(0,0)(10,0)(5,1.6)
+\psline{<->}(5,0)(5,1.55)\uput[l](5,0.7625){1,6}
+\psline{<->}(5,1)(10,-0.2)\uput[d](7.5,-0.2){5}
+\rput(5.36,0.77){\includegraphics[width=0.64cm]{Melvin}}
+\end{pspicture}
+\end{center}
+
+%\parbox{0.47\linewidth}{Melvin qui mesure 1,55 m pourrait-il passer sous cette corde sans se baisser en la soulevant par le milieu ?}\hfill
+%\parbox{0.5\linewidth}{
+%\psset{unit=1cm,arrowsize=2pt 3}
+%\begin{pspicture}(7.5,4.2)
+%\psline{<->}(0.4,0.5)(7.4,0.5)
+%\rput(3.5,2.5){\includegraphics[width=1.5cm]{Melvin}}
+%\psline(0.4,1)(0.4,0.5)\psline(7.4,1)(7.4,0.5)
+%\qdisk(0.4,1){1mm}\qdisk(7.4,1){1mm}
+%\pscurve(0.4,1)(1,1.2)(2,1.9)(3.3,2.3)(4,2.1)(5,1.7)(6,1.4)(7.4,1)
+%\uput[d](3.9,0.5){10~m}
+%\end{pspicture}
+%}
+Comme $1,55 < 1,60$, Melvin qui mesure 1,55 m pourra passer sous cette corde sans se baisser en la soulevant par le milieu.
+%\textbf{Toute trace de recherche même non aboutie sera prise en compte dans la notation.}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{EXERCICE 6 : Les étiquettes \hfill 14 points}
+
+\medskip
+ 
+\begin{enumerate}
+\item %Justifier que le nombre 102 est divisible par 3.
+$\bullet~~$Comme $1 + 0 + 2 = 3$, 102 est un multiple de 3 (critère de divisibilité par 3 ;
+
+$\bullet~~$$102 = 90 + 12 = 3\times 30 + 3 \times 4 = 3\times (30 + 4) = 3\times 34$.
+
+102 est un multiple de 3  : il est divisible par 3.
+\item On donne la décomposition en produits de facteurs premiers de 85 : $85 = 5 \times 17$.
+
+%Décomposer 102 en produits de facteurs premiers.
+On a vu que $102 = 3 \times 34 = 3 \times 2 \times 17 = 2 \times 3 \times 17$.
+\item Donner 3 diviseurs non premiers du nombre 102.
+
+$2 \times 3 = 6 \:;\:  2 \times 17 = 34 \:;\: 3 \times 17 = 51$ sont trois diviseurs de 102 non premiers. 
+%\end{enumerate}
+
+%Un libraire dispose d'une feuille cartonnée de 85 cm sur 102 cm.
+%
+%Il souhaite découper dans celle-ci, en utilisant toute la feuille, des étiquettes carrées. 
+%
+%Les côtés de ces étiquettes ont tous la même mesure.
+%\begin{enumerate}[resume]
+\item %Les étiquettes peuvent-elles avoir $34$ cm de côté ? Justifier. 
+Si toute la feuille est utilisée c'est que la longueur et la largeur sont des multiples des côtés du carré. Ces côtés ont donc une  longueur $c$ qui divise à la fois 102 et 85.
+
+Or 34 ne divise pas 85 (car 2 divise 34 mais ne divise pas 85). les étiquettes ne peuvent pas faire 34cm de côté.
+\item %Le libraire découpe des étiquettes de $17$ cm de côté.
+
+%Combien d'étiquettes pourra-t-il découper dans ce cas ?
+Par contre 17 divise 85 ($85 = 5 \times 17$) et 17 divise 102 ($102 = 17 \times 6$).
+
+Les étiquettes rentrent 5 fois en largeur et 6 fois en longueur : il y en aura donc $5 \times 6 = 30$ par feuille.
+
+\emph{Remarque } : on peut aussi utiliser les aires.
+
+Une étiquette a une aire de $17 \times 17 = 289$ et la feuille une aire de $85 \times 102 = \np{8670}$.
+
+On pourra donc faire $\dfrac{\np{8670}}{289} = 30$ étiquettes dans une feuille.
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{EXERCICE 7 : L'habitation \hfill 15 points}
+
+\medskip
+
+%Nolan souhaite construire une habitation.
+%
+%Il hésite entre une \textbf{case} et une \textbf{maison} en forme de prisme droit.
+%
+%La case est représentée par un cylindre droit d'axe (OO$'$) surmontée d'un cône de révolution de sommet S.
+%
+%Les dimensions sont données sur les figures suivantes.
+%
+%$x$ \textbf{représente à la fois le diamètre de la case et la longueur AB du prisme droit.}
+%
+%\begin{center}
+%\begin{tabularx}{\linewidth}{*{2}{>{\centering \arraybackslash}X}}
+%\psset{unit=0.8cm,arrowsize=2pt 3}
+%\definecolor{mongris}{gray}{0.6}
+%\definecolor{grisleger}{gray}{0.8}
+%\begin{pspicture}(-3,-0.5)(3,5)
+%\pscustom[fillstyle=solid,fillcolor=grisleger]%haut
+%{\psellipticarc(0,0)(3,0.45){180}{0}
+%\psline(3,2.5)(0,3.75)(-3,2.5)
+%}
+%\pscustom[fillstyle=solid,fillcolor=mongris]
+%{\psellipticarc[linestyle=dashed](0,2.5)(3,0.45){0}{180}
+%\psellipticarc(0,2.5)(3,0.5){180}{360}
+%}
+%\pscustom[fillstyle=solid,fillcolor=grisleger]
+%{\psellipticarc(0,2.5)(3,0.5){180}{360}
+%\psline(3,2.5)(3,0)
+%\psellipticarc[linestyle=dashed](0,0)(3,0.49){180}{0}
+%\psline(-3,0)(-3,2.5)}
+%\pscustom[fillstyle=solid,fillcolor=mongris]
+%{\psellipticarc[linestyle=dashed](0,0)(3,0.45){0}{180}
+%\psellipticarc(0,0)(3,0.5){180}{360}
+%}
+%\psdots(0,0)(0,2.5)(0,3.75)
+%\uput[ur](0,0){O}\uput[ur](0,2.5){O$'$}\uput[r](0,3.75){S}
+%\psline{<->}(-2.5,-0.272)(2.5,0.272)\uput[dr](0,0){$x$}
+%\psline(0,0)(0,3.75)\rput{90}(-0.2,1.25){2 m}\rput{90}(-0.2,3.3){1 m}
+%\end{pspicture}&
+%\psset{unit=0.8cm}
+%\begin{pspicture}(7.3,4.3)
+%\psline(0.5,0.9)(3.5,0.5)(7,1)(7,2.5)(3.5,2)(3.5,0.5)
+%\psline(7,2.5)(3.9,4.1)(0.5,3.6)(3.5,2)
+%\psline(0.5,0.9)(0.5,3.6)
+%\uput[d](3.5,0.5){A}\uput[d](7,1){B}\uput[d](5.25,0.75){$x$}
+%\uput[d](2,0.6){5 m}\uput[l](0.3,1.8){2 m}\uput[l](0.3,3.125){1 m}
+%\psline[linestyle=dotted,linewidth=1.25pt](3.5,2)(0.5,2.7)
+%\psline[linestyle=dotted,linewidth=1.25pt](7,1)(4,1.4)(4,4.1)
+%\psline[linestyle=dotted,linewidth=1.25pt](0.5,0.9)(4,1.4)
+%\psline[linewidth=0.2pt]{<->}(0.3,0.9)(0.3,2.7)
+%\psline[linewidth=0.2pt]{<->}(0.3,3.6)(0.3,2.7)
+%\end{pspicture}
+%\end{tabularx}
+%\end{center}
+
+\textbf{Partie 1 :}
+
+\medskip
+
+Dans cette partie, on considère que $x = 6$ m.
+
+\medskip
+
+\begin{enumerate}
+\item %Montrer que le volume exact de la partie cylindrique de la case est $18\pi$ m$^3$.
+
+Le diamètre a une longueur de 6~m. Donc avec $r = 3$, le volume du cylindre est égal à :
+
+$\pi \times 3^2 \times 2 = 18\pi$~m$^3$.
+\item %Calculer le volume de la partie conique. Arrondir à l'unité.
+Le volume de la partie conique est égale à : 
+
+$\dfrac{1}{3} \times \pi \times 3^2 \times 1 = 3\pi$~m$^3$, soit $\approx 9,42$ ou 9~m$^3$ à l'unité près.
+\item %En déduire que le volume total de la case est environ $66$~m$^3$.
+Le volume de la case est donc égal à : 
+
+$18\pi + 3\pi = 21\pi \approx 65,97$, soit $\approx 66$~m$^3$ à l'unité près.
+\end{enumerate}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|c *{2}{>{\centering \arraybackslash}X}|}\hline
+\textbf{Rappels :}&
+Cylindre rayon de base $r$ et de hauteur $h$&Cône
+rayon de base $r$ et de hauteur $h$\\
+&\psset{unit=1cm}
+\begin{pspicture}(-1.25,-0.4)(1.25,2.3)
+\psellipticarc(0,0)(1.25,0.4){180}{360}
+\psellipse(0,1.8)(1.25,0.4)
+\pscustom[fillstyle=solid,fillcolor=lightgray]{
+\psellipticarc(0,1.8)(1.25,0.4){00}{180}
+\psline(-1.25,1.8)(-1.25,0)
+\psellipticarc(0,0)(1.25,0.4){180}{360}
+\psline(1.25,0)(1.25,1.8)
+}
+\uput[r](1.25,0.9){$h$}\uput[d](0.55,1.9){$r$}
+\psline(0,1.8)(1.15,1.9)
+\end{pspicture}&\psset{unit=1cm}
+\begin{pspicture}(1.5,-0.5)(1.5,3)
+\psellipticarc(0,0)(1.5,0.4){180}{360}
+\pscustom[fillstyle=solid,fillcolor=lightgray]
+{
+\psellipticarc(0,0)(1.5,0.4){180}{360}
+\psline(1.5,0)(0,2.8)(-1.5,0)
+}
+\psline[linestyle=dashed,linewidth=1.25pt](0,2.8)(0,0)(1.5,0)
+\uput[l](0,1.4){$h$}\uput[d](0.75,0){$r$}
+\psellipticarc[linestyle=dashed,linewidth=1.25pt](0,0)(1.5,0.4){0}{180}
+\end{pspicture}\\
+&$\text{Volume} =\pi \times r^2 \times h$&$\text{Volume} =\dfrac{1}{3} \times \pi \times r^2 \times h$\\ \hline
+\end{tabularx}
+\end{center}
+
+\textbf{Partie 2 :}
+
+\medskip
+
+\emph{Dans cette partie, le diamètre est exprimé en mètre, le volume en m$^3$.}
+
+\medskip
+
+Sur l'\textbf{annexe } page \pageref{annexe1}, on a représenté la fonction qui donne le volume total de la case en fonction de son diamètre $x$.
+
+\medskip
+
+\begin{enumerate}
+\item %Par lecture graphique, donner une valeur approchée du volume d'une case de $7$ m de diamètre.
+
+%Tracer des pointillés permettant la lecture.
+On lit sur l'annexe $V(7) \approx 90$~m$^3$.
+\end{enumerate}
+
+%La fonction qui donne le volume de la maison en forme de prisme droit est définie par 
+
+\[V(x) = 12,5 x.\]
+
+\begin{enumerate}[resume]
+\item %Calculer l'image de 8 par la fonction $V$.
+On a $V(8) = 12,5 \times 8 = 100$~m$^3$.
+\item %Quelle est la nature de la fonction $V$ ?
+La fonction $V$ est une fonction linéaire.
+\item %Sur l'\textbf{annexe } page \pageref{annexe1}, tracer la représentation graphique de la fonction $V$.
+La représentation graphique de la fonction linéaire $V$ est une droite contenant l'origine.
+\end{enumerate}
+
+%Pour des raisons pratiques, la valeur maximale de $x$ est de $6$ m. Nolan souhaite choisir la construction qui lui offre le plus grand volume.
+\begin{enumerate}[resume]
+\item %Quelle construction devra-t-il choisir ? Justifier.
+$\bullet~~$Le plus grand volume de la maison est donc $V(6) = 12,5 \times 6 = 75$~m$^3$.
+
+$\bullet~~$Le plus grand volume de la case est donc $V(6) \approx 66$~m$^3$.
+
+Nolan choisira donc la maison.
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{EXERCICE 8 : Scratch \hfill 11 points}
+
+\medskip
+
+
+Le script suivant permet de tracer le carré de côté $50$ unités .
+
+\begin{center}
+\begin{scratch}
+\blockinit{quand \greenflag est cliqué}
+\blockmove{s’orienter à \ovaloperator{\selectmenu{90}}}
+\blockpen{stylo en position d’écriture}
+\blockinfloop{répéter \ovalnum{4} fois}
+{
+\blockmove{avancer de \ovalnum{50}}
+\blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
+}
+\end{scratch}
+\end{center}
+
+\medskip
+
+\begin{enumerate}
+\item %Sur l'annexe page \pageref{annexe2}, compléter le script pour obtenir un triangle équilatéral de coté $80$ unités.
+
+\medskip
+
+On a lancé le script suivant :
+
+\begin{center}
+\begin{scratch}
+\blockinit{quand \greenflag est cliqué}
+\blockmove{s’orienter à \ovaloperator{\selectmenu{90}}}
+\blockmove{mettre \selectmenu{longueur} à \ovalnum{40}}
+\blockpen{stylo en position d’écriture}
+\blockinfloop{répéter \ovalnum{12} fois}
+{
+\blockmove{avancer de \selectmenu{longueur}}
+\blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
+\blockmove{ajouter  à \selectmenu{longueur}\ovalnum{10}}
+}
+\end{scratch}
+\end{center}
+\item %Entourer sur l'annexe page \pageref{annexe2}, la figure obtenue avec ce script.
+Il suffit de compter le nombre de segments tracés : 12. Seule la figure 2 convient.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\label{annexe1}
+\textbf{\Large ANNEXE 1}
+
+\medskip
+
+\textbf{Exercice 7 :\\
+Partie 2 :} question 1 et 3
+
+\vspace{1cm}
+
+\textbf{Volume de la case en fonction de} \boldmath $x$ \unboldmath
+
+\bigskip
+
+\psset{xunit=1.2cm,yunit=0.06cm,arrowsize=2pt 4}
+\begin{pspicture}(11.4,220)
+\multido{\n=0+1}{11}{\psline[linewidth=0.2pt,linecolor=lightgray](\n,0)(\n,220)}
+\multido{\n=0+20}{10}{\psline[linewidth=0.2pt,linecolor=lightgray](0,\n)(11,\n)}
+\multido{\n=0+4}{56}{\psline[linewidth=0.4pt,linecolor=lightgray](0,\n)(11,\n)}
+\psaxes[linewidth=1.25pt,Dy=20]{->}(0,0)(0,0)(11,220)
+\psaxes[linewidth=1.25pt,Dy=20](0,0)(0,0)(11,220)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{0}{11}{x dup mul 3.141592 mul 7 mul 12 div}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0}{6}{x 12.5 mul}
+\uput[u](10.9,0){$x$}
+\uput[r](0,218){$V(x) ~\left(\text{m}^3\right)$}
+\psline[linestyle=dashed,linewidth=1.5pt, linecolor=red,ArrowInside=->]{->}(7,0)(7,89.8)(0,89.9)
+\uput[l](0,89.8){\red $\approx 90$}
+\end{pspicture}
+\end{center}
+
+\newpage
+\begin{center}
+\label{annexe2}
+\textbf{\Large ANNEXE 2}
+
+\vspace{2cm}
+
+\textbf{Exercice 8 question 1}
+
+\bigskip
+
+\textbf{Script à compléter}
+
+\bigskip
+
+\begin{scratch}
+\blockinit{quand \greenflag est cliqué}
+\blockmove{s’orienter à \ovalnum{\selectmenu{90}}}
+\blockpen{stylo en position d’écriture}
+\blockinfloop{répéter \ovalnum{3} fois}
+{
+\blockmove{avancer de \ovalnum{80}}
+\blockmove{tourner \turnleft{} de \ovalnum{120} degrés}
+}
+\end{scratch}
+
+
+\vspace{1.5cm}
+
+\textbf{Exercice 8 question 2}
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{*{3}{>{\centering \arraybackslash}X}}
+Figure 1&Figure 2& Figure 3\\
+\psset{unit=1mm,linecolor=red}
+\begin{pspicture}(33,33)
+%\psgrid
+\psline(0,0)(0,34)(32,34)(32,4)(4,4)(4,30)(28,30)(28,8)(8,8)(8,26)(24,26)
+(24,12)(12,12)(12,22)(20,22)(20,16)(16,16)
+\end{pspicture}&
+\psset{unit=1mm,linecolor=red}
+\begin{pspicture}(34,34)
+%\psgrid
+\psline(0,0)(0,34)(32,34)(32,4)(4,4)(4,30)(28,30)(28,8)(8,8)(8,26)(24,26)
+(24,12)(12,12)
+\end{pspicture}&
+\psset{unit=1mm,linecolor=red}
+\begin{pspicture}(-20,-12)(20,20)
+%\psgrid
+\psline(20;210)(18;90)(16.2;-30)(14.58;210)(13.122;90)(11.8098;-30)(10.629;210)(9.56;90)(8.61;-30)(7.75;210)(6.974;90)(6.276;-30)(5.649;210)
+\end{pspicture}
+\end{tabularx}
+\end{center}
+\end{document}

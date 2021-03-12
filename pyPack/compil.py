@@ -215,16 +215,20 @@ def cutTex2Ex(file : str,source : str)->list:
 
     for i in range(len(source_lines)):
         # Selon les années la commande pour le style des exos n'est pas la même
-        if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i]):
+        if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i] or "textbf{EXERCICE" in source_lines[i]):
             indices.append(i)
     indices.append(len(source_lines))
 
     # On commence par voir s'il y a des annexes
     # S'il y a des annexes on invite à modifier les sources du sujets dans un message d'erreur
     # On vérifie s'il y a ou non le mot annexe dans une ligne du dernier découpage
-    # Plutôt dans tout le document ?
+    # Plutôt dans tout le document Oui c'est mieux !
     isAnnexe = False
-    for i in range(indices[len(indices)-2],indices[len(indices)-1]):
+    # for i in range(indices[len(indices)-2],indices[len(indices)-1]):
+    #     if ("annexe" in source_lines[i].lower()):
+    #         isAnnexe = True
+
+    for i in range(indices[0],indices[len(indices)-1]):
         if ("annexe" in source_lines[i].lower()):
             isAnnexe = True
     
@@ -233,11 +237,14 @@ def cutTex2Ex(file : str,source : str)->list:
         print(" Ce sujet contient des annexes qu'il faut replacer manuellement ")
         print(" au niveau des bons exercices dans le code source du sujet ")
         print(" avant de relancer le traitement.")
-        print(".................................................................")
-        print(" CELA SIGNIFIE QUE LE SUJET SUIVANT NE SERA PAS DÉCOUPÉ")        
+        print("\033[33m.................................................................")
+        print("Supprimer les références aux exercices dans les annexes en même temps ")
+        print("car cela conditionne le découpage des exercices.")
+        print(".................................................................\033[31m")
+        print(" CELA SIGNIFIE QUE LE SUJET SUIVANT NE SERA DÉCOUPÉ QU'ENSUITE")        
         print("\033[32m"+source.name)        
         print("\033[31m.................................................................\033[0m")
-        e=input("Après avoir modifié le fichier source du sujet, appuyer sur une touche \n pour poursuivre la génération des fichier...")
+        e=input("Après avoir modifié le fichier source du sujet, appuyer sur une touche \n pour poursuivre la génération des fichiers...")
         print(e)
 
         # On doit refaire le parcours du fichier sinon on est sur l'ancien découpage !
@@ -250,7 +257,7 @@ def cutTex2Ex(file : str,source : str)->list:
 
         for i in range(len(source_lines)):
             # Selon les années la commande pour le style des exos n'est pas la même
-            if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i]):
+            if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i] or "textbf{EXERCICE" in source_lines[i]):
                 indices.append(i)
         indices.append(len(source_lines))
 

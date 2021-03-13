@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #-*- coding: utf8 -*-
 """
-    Génèrer le document à compiler, le compile en pdf, crée un pdf ajusté et un png ajusté
+    Génèrer le document \`{a} compiler, le compile en pdf, crée un pdf ajusté et un png ajusté
 """
 pass
 
@@ -19,10 +19,10 @@ from datetime import datetime
 
 def generateTex(file : str,source_ex : str):
     """
-    Générer un fichier tex prêt à compiler
+    Générer un fichier tex prêt \`{a} compiler
     """
     pass
-    #On crée e dossier qui va accueillir les fichiers tex prêts à compiler
+    #On crée e dossier qui va accueillir les fichiers tex prêts \`{a} compiler
     if not os.path.exists("./tex_a_compiler/"):
         os.mkdir("./tex_a_compiler/")
 
@@ -56,7 +56,7 @@ def generateTex(file : str,source_ex : str):
     
 def compilTexToPDF(source : str):
     """
-    Générer le fichier PDF à partir d'un fichier source tex
+    Générer le fichier PDF \`{a} partir d'un fichier source tex
     """
     pass
     #On crée le dossier qui va accueillir les fichiers pdf
@@ -67,12 +67,12 @@ def compilTexToPDF(source : str):
     os.chdir("tex_a_compiler")
     os.system("sh compilTex.sh "+source)
 
-    # On se remet à la racine du projet
+    # On se remet \`{a} la racine du projet
     os.chdir("../")
 
 def pdf2png(source : str):
     """
-    Générer le fichier png ajusté et le pdf ajusté à partir d'un fichier source pdf
+    Générer le fichier png ajusté et le pdf ajusté \`{a} partir d'un fichier source pdf
     """
     pass    
     #On crée le dossier qui va accueillir les fichiers png
@@ -88,7 +88,7 @@ def pdf2png(source : str):
     # os.system("sh dvi2png.sh "+source)
     os.system("sh pdf2png.sh "+source)
 
-    # On se remet à la racine du projet
+    # On se remet \`{a} la racine du projet
     os.chdir("../")
 
 def concat_png():
@@ -143,12 +143,12 @@ def concat_png():
         if (filename.split('.')[-1] == 'png' and '-' in filename):
             os.system("rm "+filename)
     
-    # On se remet à la racine du projet
+    # On se remet \`{a} la racine du projet
     os.chdir("../")
 
 def copyAllFiles(source : str):
     """
-    Copier les fichiers générés là où il faut.
+    Copier les fichiers générés l\`{a} où il faut.
     """
     pass
     #On copie le fichier pdf
@@ -191,7 +191,7 @@ def cleanPath(path):
     os.system("rm *.tex")
     os.system("rm *.pdf")
     os.system("rm *.eps")
-    # On se remet à la racine du projet
+    # On se remet \`{a} la racine du projet
     os.chdir("../")
 
 def cutTex2Ex(file : str,source : str)->list:
@@ -226,7 +226,7 @@ def cutTex2Ex(file : str,source : str)->list:
     indices.append(len(source_lines))
 
     # On commence par voir s'il y a des annexes
-    # S'il y a des annexes on invite à modifier les sources du sujets dans un message d'erreur
+    # S'il y a des annexes on invite \`{a} modifier les sources du sujets dans un message d'erreur
     # On vérifie s'il y a ou non le mot annexe dans une ligne du dernier découpage
     # Plutôt dans tout le document Oui c'est mieux !
     isAnnexe = False
@@ -331,10 +331,10 @@ def cutTex2Ex(file : str,source : str)->list:
         
 def generateFiles(file : str,source_ex : str):
     """
-    Générer tous les fichiers *.pdf *.pdf ajusté *.png *.tex prêt à compiler
+    Générer tous les fichiers *.pdf *.pdf ajusté *.png *.tex prêt \`{a} compiler
     """
     pass
-    # On génère le fichier tex à compiler
+    # On génère le fichier tex \`{a} compiler
     generateTex(file,source_ex)
 
     #On compile
@@ -343,7 +343,7 @@ def generateFiles(file : str,source_ex : str):
     #On convertit en png
     pdf2png(file)
 
-    # On concatène les png à concaténer
+    # On concatène les png \`{a} concaténer
     concat_png()
         
     #On copie les fichiers pdf, png, pdf-crop dans les bons dossiers
@@ -380,6 +380,7 @@ def generateFileName(source_ex : str)->str:
     centres = [
         'pondichery',
         'ameriquesud',
+        'amdusud',
         'ameriquenord',
         'amdunord',
         'asie',
@@ -402,6 +403,8 @@ def generateFileName(source_ex : str)->str:
         if (centre in cleanSource):
             if centre == 'amdunord':
                 lieu = 'ameriquenord'
+            elif centre == 'amdusud':
+                lieu = 'ameriquesud'                
             elif centre == 'wallis':
                 lieu = 'wallisfutuna'
             elif (centre == 'antilles' or centre =='antillesguyanne'):

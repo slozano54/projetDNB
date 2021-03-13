@@ -19,6 +19,7 @@
 \newcommand{\euro}{\eurologo{}}
 \usepackage{graphics,graphicx}
 \usepackage{pstricks,pst-plot,pst-tree,pstricks-add}
+\usepackage{pst-text}
 \usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -42,3 +43,18 @@
 %Tapuscrit : Denis Vergès
 %\frenchbsetup{StandardLists=true}
 
+\usepackage{tkz-tab,tkz-fct}%,tkz-tukey}
+\usepackage{xkeyval,ifthen}
+\usepackage{multicol,xcolor,framed}
+\usepackage{tkz-euclide}
+%\usetkzobj{all}
+\usepackage[tikz]{bclogo}
+\usetikzlibrary{babel,arrows,shadows,decorations.pathmorphing,decorations.markings,patterns}
+
+\usepackage{tikz} % arbre en proba
+\usetikzlibrary{trees} % arbre en proba
+\usepackage{forest} % arbre en proba
+\usetikzlibrary{positioning}
+ % Structure servant à avoir l'événement et la probabilité.
+\def\getEvene#1/#2\endget{$#1$}
+\def\getProba#1/#2\endget{$#2$}

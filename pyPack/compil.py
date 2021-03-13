@@ -163,11 +163,17 @@ def copyAllFiles(source : str):
     #On copie le fichier pdf ajusté
     os.system("cp ./tex_a_compiler/"+source+"-crop.pdf ./exercices_corrections_pdf_crop/"+source+"-crop.pdf" )
 
-    #On crée le dossier qui va accueillir les fichiers png
+    #On crée le dossier qui va accueillir les fichiers tex autonomes
     if not os.path.exists("./exercices_corrections_tex_autonome/"):
         os.mkdir("./exercices_corrections_tex_autonome/")
     #On copie le fichier tex
     os.system("cp ./tex_a_compiler/"+source+".tex ./exercices_corrections_tex_autonome/"+source+".tex" )
+
+    #On crée le dossier qui va accueillir les fichiers eps
+    if not os.path.exists("./exercices_corrections_eps/"):
+        os.mkdir("./exercices_corrections_eps/")
+    #On copie le fichier eps
+    os.system("cp ./tex_a_compiler/*.eps ./exercices_corrections_eps/" )
 
 def cleanPath(path):
     """

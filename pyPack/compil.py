@@ -392,7 +392,8 @@ def generateFileName(source_ex : str)->str:
         'caledonie',
         'wallis',
         'antillesguyane',
-        'antilles'        
+        'antilles',
+        'grece'        
     ]
     # On passe le nom du fichier en minuscules
     cleanSource = source_ex.lower()

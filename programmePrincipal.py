@@ -46,7 +46,7 @@ def main():
     for (dirpath, dirnames, filenames) in os.walk('./sujets_corrections_tex/'):        
         for source in filenames:
             #On ne traite que les sources pas les images ou le fichier .gitkeep
-            if (source.split('.')[-1] != 'eps' or source.split('.')[-1] != 'gitkeep'):
+            if (source.split('.')[-1] != 'eps' and source.split('.')[-1] != 'txt'):
                 # On supprime l'extension du fichier
                 source = '.'.join(source.split('.')[:-1])            
                 # On formatte le nom du fichier de sortie

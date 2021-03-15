@@ -53,6 +53,6 @@ Pour obtenir :
 
 * un fichier pdf ajusté et compilé dans le dossier **exercices_corrections_pdf_crop**
 
-* un fichier png ajusté dans le dossier **exercices_corrections_png_jpg**
+* un fichier png ajusté dans le dossier **exercices_corrections_png**
 
 * un fichier tex avec le code source de chaque exo ou corrigé dans le dossier **exercices_corrections_tex**

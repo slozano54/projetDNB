@@ -21,6 +21,48 @@ from datetime import datetime
 import pyPack.compil as compil
 import pyPack.html as html
 
+# Pour tester s'il manque des fichiers
+def isAnyBug():
+    """
+    Pour tester s'il y a eu des bugs de compilation.
+    On compare les fichiers du dossier **exercices_corrections_png** et du  dossier **exercices_corrections_tex**
+    """
+    pass
+
+    if (not os.path.exists("./exercices_corrections_png/")) or (not os.path.exists("./exercices_corrections_tex/")):
+        print("Les dossiers  pour les png et/ou les tex n'existent pas")
+    else:
+        #On lance la commande dans le répertoire adequat
+        os.chdir("exercices_corrections_png")
+        filenames = os.listdir("./")        
+        # On trie les png
+        pngfiles = []
+        for filename in filenames:
+            if (filename.split('.')[-1] == 'png'):
+                pngfiles.append(filename.split('.')[0])
+        
+        #On lance la commande dans le répertoire adequat
+        os.chdir("../exercices_corrections_tex")
+        filenames = os.listdir("./")        
+        # On trie les png
+        texfiles = []
+        for filename in filenames:
+            if (filename.split('.')[-1] == 'tex'):
+                texfiles.append(filename.split('.')[0])
+        print(pngfiles)
+        print(len(pngfiles))
+        print(texfiles)
+        print(len(texfiles))
+        #On teste déjà les cardinaux
+        if (len(pngfiles) != len(texfiles)):
+            print("BUG")
+            bugfiles = []
+            for texfile in texfiles:
+                if (texfile not in pngfiles):
+                    bugfiles.append(texfile)
+            print("Fichiers probématiques : ",bugfiles)
+
+ 
 # Script principal
 def main():
     # On récupère la date au début du traitement
@@ -84,3 +126,5 @@ def main():
 if __name__ == "__main__":
     os.system("clear")
     main()
+    os.system("clear")
+    isAnyBug()

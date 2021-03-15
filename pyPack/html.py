@@ -78,7 +78,7 @@ def main():
         Les fichiers HTML sont générés dans le dossier <b>pagesWeb</b><br><br>
         <a class="navButton" href="../exercices_corrections_pdf/" target="_blank"><span>voir les fichiers pdf</span></a>
         <a class="navButton" href="../exercices_corrections_pdf_crop/" target="_blank"><span>voir les fichiers pdf ajustés</span></a>
-        <a class="navButton" href="../exercices_corrections_png_jpg/" target="_blank"><span>voir les fichiers png ajustés</span></a>
+        <a class="navButton" href="../exercices_corrections_png/" target="_blank"><span>voir les fichiers png ajustés</span></a>
         <br>   
         <a class="navButton" href="https://www.overleaf.com/docs?snip_uri=https://mathslozano.fr/mathaleaProjetDNB/tex_a_compiler/dnb_2013_04_pondichery_1.tex&engine=latex_dvipdf" target="_blank"><span>compiler un fichier tex sur overleaf</span></a>        
         <a class="navButton" href="../tex_a_compiler/dnb_2013_04_pondichery_1.tex" target="_blank"><span>télécharger le fichier source tex </span></a>

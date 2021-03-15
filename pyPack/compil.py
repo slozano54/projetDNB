@@ -76,8 +76,8 @@ def pdf2png(source : str):
     """
     pass    
     #On crée le dossier qui va accueillir les fichiers png
-    if not os.path.exists("./exercices_corrections_png_jpg/"):
-        os.mkdir("./exercices_corrections_png_jpg/")
+    if not os.path.exists("./exercices_corrections_png/"):
+        os.mkdir("./exercices_corrections_png/")
     
     #On crée le dossier qui va accueillir les fichiers pdf
     if not os.path.exists("./exercices_corrections_pdf_crop/"):
@@ -157,8 +157,8 @@ def copyAllFiles(source : str):
     #os.system("cp ./tex_a_compiler/*.pdf ../exercices_corrections_pdf/" )
 
     #On copie le fichier png
-    #os.system("cp ./tex_a_compiler/"+source+".png ./exercices_corrections_png_jpg/"+source+".png" )
-    os.system("cp ./tex_a_compiler/*.png ./exercices_corrections_png_jpg/" )
+    #os.system("cp ./tex_a_compiler/"+source+".png ./exercices_corrections_png/"+source+".png" )
+    os.system("cp ./tex_a_compiler/*.png ./exercices_corrections_png/" )
 
     #On copie le fichier pdf ajusté
     os.system("cp ./tex_a_compiler/"+source+"-crop.pdf ./exercices_corrections_pdf_crop/"+source+"-crop.pdf" )
@@ -382,6 +382,7 @@ def generateFileName(source_ex : str)->str:
         'ameriquesud',
         'amdusud',
         'ameriquenord',
+        'ameriquedunord',
         'amdunord',
         'asie',
         'etrangers',
@@ -402,7 +403,7 @@ def generateFileName(source_ex : str)->str:
     # On récupère le lieu
     for centre in centres:
         if (centre in cleanSource):
-            if centre == 'amdunord':
+            if centre == 'amdunord' or centre == 'ameriquedunord':
                 lieu = 'ameriquenord'
             elif centre == 'amdusud':
                 lieu = 'ameriquesud'                

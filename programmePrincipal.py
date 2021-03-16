@@ -49,10 +49,10 @@ def isAnyBug():
         for filename in filenames:
             if (filename.split('.')[-1] == 'tex'):
                 texfiles.append(filename.split('.')[0])
-        print(pngfiles)
-        print(len(pngfiles))
-        print(texfiles)
-        print(len(texfiles))
+       # print(pngfiles)
+        print("nombre pngfiles : ",len(pngfiles))
+        #print(texfiles)
+        print("nombre texfiles : ",len(texfiles))
         #On teste déjà les cardinaux
         if (len(pngfiles) != len(texfiles)):
             print("BUG")
@@ -60,7 +60,9 @@ def isAnyBug():
             for texfile in texfiles:
                 if (texfile not in pngfiles):
                     bugfiles.append(texfile)
-            print("Fichiers probématiques : ",bugfiles)
+            print("Fichiers probématiques : ")
+            for bugfile in bugfiles:
+                print(bugfile)
 
  
 # Script principal

@@ -381,25 +381,26 @@ def generateFileName(source_ex : str)->str:
         'pondichery',
         'ameriquesud',
         'amdusud',
+        'amdusudsecours',
         'ameriquenord',
         'ameriquedunord',
         'amdunord',
-        'asie',
+        'asie',        
         'etrangers',
         'etranger',
-        'maroc',
+        'maroc',        
         'metropole',
         'polynesie',
         'caledonie',
         'wallis',
         'antillesguyane',
         'antilles',
-        'grece'        
+        'grece',                
     ]
     # On passe le nom du fichier en minuscules
     cleanSource = source_ex.lower()
-    # On supprime les underscores
-    cleanSource = re.sub('[_]', '', cleanSource)
+    # On supprime les underscores et les -
+    cleanSource = re.sub('[_-]', '', cleanSource)
     # On récupère le lieu
     for centre in centres:
         if (centre in cleanSource):
@@ -410,9 +411,12 @@ def generateFileName(source_ex : str)->str:
             elif centre == 'wallis':
                 lieu = 'wallisfutuna'
             elif (centre == 'antilles' or centre =='antillesguyanne'):
-                lieu = 'antillesguyanne'
-            elif (centre == 'maroc' or centre =='etranger' or centre =='etrangers'):
+                #lieu = 'antillesguyanne'
+                lieu = 'metropole'
+            elif (centre =='etranger' or centre =='etrangers'):
                 lieu = 'etrangers'
+            elif (centre == 'maroc'):
+                lieu ='etrangers_maroc'
             else:
                 lieu = centre
     if (lieu == ''):
@@ -436,7 +440,8 @@ if __name__ == "__main__":
     #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")   
     # gestion des couleurs   
     #cutTex2Ex("wallis","Brevet_Wallis_2_dec_2017")
-    concat_png()
+    #concat_png()
+    print(generateFileName('Brevet-Amerique-Sud-dec-2015'))
     
 
     # On évalue le temps de traitement

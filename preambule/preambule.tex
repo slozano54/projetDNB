@@ -6,6 +6,7 @@
 \renewcommand{\ttdefault}{lmtt}
 \usepackage{amsmath,amssymb,makeidx}
 \usepackage[normalem]{ulem}
+\usepackage{mathrsfs}
 \usepackage{diagbox}
 \usepackage{fancybox}
 \usepackage{tabularx,booktabs}
@@ -25,6 +26,9 @@
 \usepackage{pst-text}
 \usepackage{pst-node,pst-all}
 \usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\renewcommand{\pstEllipse}[5][]{% arc d'ellipse pour le sujet de Polynésie septembre 2013
+\psset{#1}
+\parametricplot{#4}{#5}{#2\space t cos mul #3\space t sin mul}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\D}{\mathbb{D}}

@@ -238,6 +238,9 @@ def cutTex2Ex(file : str,source : str)->list:
         if ("annexe" in source_lines[i].lower()):
             isAnnexe = True
     
+    # certaines lignes sont à supprimer des sources
+    linesNotTokeep = ["\\end{document}","\\newpage","textbf{Exercice","textbf{\\textsc{Exercice","textbf{EXERCICE","Maîtrise de la langue : 4 points"]
+    
     if (isAnnexe):
         print("\033[31m============================= ATTENTION =========================")
         print(" Ce sujet contient des annexes qu'il faut replacer manuellement ")
@@ -276,14 +279,14 @@ def cutTex2Ex(file : str,source : str)->list:
             myTex = open("./exercices_corrections_tex/"+file+"_"+str(i+1)+plus+".tex","w")       
             # On ajoute les lignes
             for j in range(indices[i],indices[i+1]):
-                # On ajoute les lignes sauf \end{document} ou \newpage
-                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                # On ajoute les lignes sauf \end{document} ou \newpage ou ...
+                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j] and "Maîtrise de la langue : 4 points" not in source_lines[j]):
                 #if ("\\end{document}" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
                     myTex.writelines(source_lines[j])
             myTex.close()
     else:
         #print("OK")
-        #On crée e dossier qui va accueillir les fichiers tex 
+        #On crée le dossier qui va accueillir les fichiers tex 
         if not os.path.exists("./exercices_corrections_tex/"):
             os.mkdir("./exercices_corrections_tex/")
         
@@ -294,7 +297,7 @@ def cutTex2Ex(file : str,source : str)->list:
             # On ajoute les lignes
             for j in range(indices[i],indices[i+1]):
                 # On ajoute les lignes sauf \end{document} ou \newpage
-                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
+                if ("\\end{document}" not in source_lines[j] and "\\newpage" not in source_lines[j] and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j] and "Maîtrise de la langue : 4 points" not in source_lines[j]):
                 #if ("\\end{document}" not in source_lines[j]  and "textbf{Exercice" not in source_lines[j] and "textbf{\\textsc{Exercice" not in source_lines[j]):
                     myTex.writelines(source_lines[j])
             myTex.close()

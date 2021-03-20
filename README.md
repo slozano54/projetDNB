@@ -63,7 +63,7 @@ Le programme est sur https://github.com/slozano54/projetDNB
 
 ================ A FAIRE =============
 
-* Supprimer “maitrise de la langue : 4 pts” des lignes des exos
+* ~~Supprimer “maitrise de la langue : 4 pts” des lignes des exos~~
 * Nettoyer le code
 * Factoriser
 * Séparer les routines

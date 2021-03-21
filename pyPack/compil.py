@@ -413,8 +413,8 @@ def generateFileName(source_ex : str)->str:
                 lieu = 'ameriquesud'                
             elif centre == 'wallis':
                 lieu = 'wallisfutuna'
-            elif (centre == 'antilles' or centre =='antillesguyanne'):
-                #lieu = 'antillesguyanne'
+            elif (centre == 'antilles' or centre =='antillesguyane'):
+                #lieu = 'antillesguyane'
                 lieu = 'metropole'
             elif (centre =='etranger' or centre =='etrangers'):
                 lieu = 'etrangers'

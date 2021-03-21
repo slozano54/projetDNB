@@ -72,18 +72,23 @@ Le programme est sur https://github.com/slozano54/projetDNB
 <ul>
 <li>Faire une checklist de préparation des fichiers avant passage à la moulinette
 <ul>
+<li>Renommer les fichiers sources des sujets avec les noms des lieux parmis ... en respectant ... avec le mois en lettres en respectant ...</li>
 <li>Remplacer les \section*{Exercice   \subsection*{Exercice  \textbf{\large{Exercice  \textbf{\textsc{Exercice ... etc ...</li>
-<li>Replacer les annexes aux bons endroits et supprimer les mots exercice etc du texte des annexes</li>
+<li>Replacer les annexes aux bons endroits et supprimer les mots "exercice" etc du texte des annexes</li>
 <li>Ajouter le lieu et le mois dans le nom du fichier de façon cohérente</li>
 <li>Vérifier le préambule et les paquets spéciaux</li>
 <li>Garder les fichiers modifier pour ne pas tout recommencer à chaque fois</li>
+<li>Placer tous ces fichiers et les images eps dans le dossier sujets_corrections_tex</li>
+<li>Lancer la moulinette</li>
+<li>Attention, Ajouter des sauts de lignes après \textbf{Exercice , à la fin du fichier, pas de lignes commentées , ...
+<li>Compiler les fichiers du dossier exercices_corrections_tex_autonome correspondant aux fichiers problématiques et adapter le préambule et le fichier source global</li>
 </ul>
 </li>
 </ul>
 
 * Si tout est OK message
 <ul>
-    <li>Si tout est OK faire en sorte d'avoir en sortie cette structure avec tous les fichiers découpés :
+    <li>Si tout est OK faire en sorte d'avoir en sortie cette structure avec tous les fichiers découpés pour la placer dans le repertoire du depot github des sujets et faire aussi une archive par années avec les fichiers sources globaux et le images :
     <ul>
         <li>année
         <ul>

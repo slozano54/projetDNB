@@ -69,6 +69,7 @@ Le programme est sur https://github.com/slozano54/projetDNB
 * Séparer les routines
 * Faire une fonction qui liste les fichiers manquants en comparant la liste des fichiers *.text et *.png
 * Essayer de croper à nouveau pour que les concaténations le soient aussi
+* Ajouter un hyperlien vers le dossier des images de l'année concernée https://coopmaths.fr/dnb/ dans chaque exo qui contient une image. QUESTION --> cliquable en png ? ATTENTION en repassant la moulinette à ne pas perdre les tags et à bien conserver les noms actuels des fichiers.
 <ul>
 <li>Faire une checklist de préparation des fichiers avant passage à la moulinette
 <ul>

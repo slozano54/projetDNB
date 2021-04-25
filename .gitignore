@@ -2,6 +2,9 @@
 # le dossier de documentation
 docs/pyPack
 
+# le dossier où sont copiés les images eps
+exercices_corrections_eps
+
 # le dossier où sont générés les PDFS
 exercices_corrections_pdf
 

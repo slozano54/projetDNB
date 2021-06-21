@@ -53,7 +53,7 @@ def main():
     indexHTML.writelines([
         """
         <h2>ACCUEIL</h2>\n
-        <p> Le projet consiste \`{a} récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP<br>
+        <p> Le projet consiste à récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP<br>
         Pour le moment le test se fait sur le premier exo du sujet de polynésie 2020<br><br>
         Pour générer la documentation il faut installer le paquet python <a href="https://pdoc3.github.io/pdoc/" target="_blank"> pdoc3</a>
         </p>
@@ -67,7 +67,7 @@ def main():
         <li>Télécharger cette <a href="https://github.com/slozano54/projetDNB/archive/master.zip"> archive zip</a></li>
         <li>Décompresser l'archive</li>
         <li>Déposer un sujet au format *.tex dans le dossier <b>sujets_corrections_tex</b></li>        
-        <li>Lancer le script python <b>programmePrincipal.py</b> \`{a} la racine du projet.</li>
+        <li>Lancer le script python <b>programmePrincipal.py</b> à la racine du projet.</li>
         <li>Sous <b>Visual Studio Code</b> lancer Live server et aller dans le dossier <b>PagesWeb</b> et lancer index.html</li>
         </ul>
         </p>          

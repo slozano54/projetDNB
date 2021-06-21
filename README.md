@@ -4,7 +4,7 @@
 Sébastien LOZANO
 
 ## Objectif
-Le projet consiste \`{a} récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP \`{a} partir de l'année 2013
+Le projet consiste à récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP à partir de l'année 2013
 
 Pour le moment le test se fait sur 1 sujet et 1 corrigé
 
@@ -23,7 +23,7 @@ La procédure a été testé sous **Linux** uniquement.
 * Cloner ce [dépot github](https://github.com/slozano54/projetDNB) ou télécharger [cette archive](https://github.com/slozano54/projetDNB/archive/master.zip).
 
 
-* \`{a} la racine du projet, lancer le script python **programmePrincipal.py**.
+* à la racine du projet, lancer le script python **programmePrincipal.py**.
 
 ```bash
 python3 programmePrincipal.py
@@ -122,7 +122,7 @@ Pour obtenir :
 
 * Un dossier **pagesWeb** avec une démo 
 
-* un fichier *.tex prêt \`{a} compiler dans le dossier **tex_a_compiler**
+* un fichier *.tex prêt à compiler dans le dossier **tex_a_compiler**
 
 * un fichier pdf compilé dans le dossier **exercices_corrections_pdf**
 

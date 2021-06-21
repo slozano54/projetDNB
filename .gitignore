@@ -25,7 +25,7 @@ exercices_corrections_tex_autonome
 # Les pagesWeb
 pagesWeb
 
-# toutes les extensions inutiles du dossier tex \`{a} compiler
+# toutes les extensions inutiles du dossier tex à compiler
 tex_a_compiler/*.aux
 tex_a_compiler/*.dvi
 tex_a_compiler/*.log

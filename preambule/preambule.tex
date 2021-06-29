@@ -25,7 +25,8 @@
 \usepackage{pst-eucl}  % permet de faire des dessins de géométrie simplement
 \usepackage{pst-text}
 \usepackage{pst-node,pst-all}
-\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+%\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[left=1.5cm, right=1.5cm, top=1cm, bottom=1cm]{geometry}
 \renewcommand{\pstEllipse}[5][]{% arc d'ellipse pour le sujet de Polynésie septembre 2013
 \psset{#1}
 \parametricplot{#4}{#5}{#2\space t cos mul #3\space t sin mul}}
@@ -167,3 +168,9 @@ Je refuse de décomposer zéro.
 \fi
 \endgroup
 }
+
+% pour les corrections LG
+\newcommand{\remarque}[1]{
+\begin{bclogo}[logo=\bctrombone,couleur=gray!5,ombre,epBord=0.8]{Remarque:}%
+    {#1}
+\end{bclogo}}

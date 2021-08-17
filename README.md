@@ -40,7 +40,7 @@ _Support/maintenance will be provided as time allows._
       <a href="#notes">Notes</a>
       <ul>
         <li><a href="#moulinette-ready">Moulinette Ready</a></li>
-        <li><a href="#to-update">À mettre à jour</a></li>
+        <li><a href="#to-update">To update</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>

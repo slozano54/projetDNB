@@ -208,4 +208,4 @@ Contributions are what make the open source community such an amazing place to b
 
 Sébastien LOZANO - Write me on github
 
-Project Link: [https://github.com/slozano54/projetDNB/](https://framagit.org/slozano54/listedoublementchainee)
+Project Link: [https://github.com/slozano54/projetDNB/](https://github.com/slozano54/projetDNB/)

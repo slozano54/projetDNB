@@ -5,8 +5,7 @@ _The project has reached a stable, usable state but is no longer being actively 
 
 _Support/maintenance will be provided as time allows._
 
-<style type="text/css">
-</style>
+
 <!-- PROJECT LOGO -->
 <p text-align="center">
   <a href="https://github.com/slozano54/projetDNB">
@@ -110,13 +109,13 @@ python3 programmePrincipal.py
 
 Le programme est sur https://github.com/slozano54/projetDNB
 
-================ A FAIRE =============
+================ À FAIRE =============
 
 * ~~Supprimer “maitrise de la langue : 4 pts” des lignes des exos~~
 * Nettoyer le code
 * Factoriser
 * Séparer les routines
-* Faire une fonction qui liste les fichiers manquants en comparant la liste des fichiers *.text et *.png
+* ~~Faire une fonction qui liste les fichiers manquants en comparant la liste des fichiers *.text et *.png~~
 * Essayer de croper à nouveau pour que les concaténations le soient aussi
 * Ajouter un hyperlien vers le dossier des images de l'année concernée https://coopmaths.fr/dnb/ dans chaque exo qui contient une image. QUESTION --> cliquable en png ? ATTENTION en repassant la moulinette à ne pas perdre les tags et à bien conserver les noms actuels des fichiers.
 <ul>
@@ -156,8 +155,6 @@ Le programme est sur https://github.com/slozano54/projetDNB
 
 
 ### À mettre à jour
-
-Cette version n'est qu'un brouillon, elle n'est pas finalisée
 
 Pour le moment il faut :
 

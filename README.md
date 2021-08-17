@@ -40,7 +40,7 @@ _Support/maintenance will be provided as time allows._
       <a href="#notes">Notes</a>
       <ul>
         <li><a href="#moulinette-ready">Moulinette Ready</a></li>
-        <li><a href="#a-mettre-a-jour">À mettre à jour</a></li>
+        <li><a href="#to-update">À mettre à jour</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -154,7 +154,7 @@ Le programme est sur https://github.com/slozano54/projetDNB
 </ul>
 
 
-### À mettre à jour
+### To update
 
 Pour le moment il faut :
 

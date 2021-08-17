@@ -1,12 +1,58 @@
-# PROJET DNB APMEP
+<!-- ![Work in progress](http://www.repostatus.org/badges/latest/wip.svg) -->
+![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)
 
-## Auteur 
-Sébastien LOZANO
+_The project has reached a stable, usable state but is no longer being actively developed;_
+
+_Support/maintenance will be provided as time allows._
+
+<style type="text/css">
+</style>
+<!-- PROJECT LOGO -->
+<p text-align="center">
+  <a href="https://github.com/slozano54/projetDNB">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h1 text-align="center">PROJET DNB APMEP</h1>
+  <h2 text-align="center"> Version initiale - MARS 2021</h2>
+  <h3 text-align="center">Auteur - Sébastien LOZANO</h3>
+
+  <p text-align="center">
+    <a href="https://github.com/slozano54/projetDNB">Explore the docs</a>
+    .    
+    <a href="https://github.com/slozano54/projetDNB/issues">Report Bug</a>    
+    .
+    <a href="https://github.com/slozano54/projetDNB/issues">Request Feature</a>
+  </p>
+</p>
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#objectif">Objectif</a>
+    </li>
+    <li>
+      <a href="#installation-et-utilisation">Installation et utilisation</a>
+    </li>
+    <li>
+      <a href="#notes">Notes</a>
+      <ul>
+        <li><a href="#moulinette-ready">Moulinette Ready</a></li>
+        <li><a href="#a-mettre-a-jour">À mettre à jour</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>    
+  </ol>
+</details>
 
 ## Objectif
-Le projet consiste à récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP à partir de l'année 2013
-
-Pour le moment le test se fait sur 1 sujet et 1 corrigé
+Le projet consistait à récupérer tous les exercices des sujets DNB en partage sur le site de l'APMEP à partir de l'année 2013
 
 La documentation a été générée avec le paquet **pdoc3**.
 
@@ -33,7 +79,10 @@ python3 programmePrincipal.py
     
 ## Notes
 
-### Moulinette Ready - un petit point documentation en guise de pense bête
+### Moulinette Ready 
+
+**Un petit point documentation en guise de pense bête**
+
 <ul>
 <li> Récupérer les fichiers *.tex et *.eps sur https://www.apmep.fr/-Brevet-290-sujets-tous-corriges-
 <ul>
@@ -132,3 +181,34 @@ Pour obtenir :
 
 * un fichier tex avec le code source de chaque exo ou corrigé dans le dossier **exercices_corrections_tex**
 
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+See the [open issues](https://github.com/slozano54/projetDNB/issues) for a list of proposed features (and known issues).
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+<!-- CONTACT -->
+## Contact
+
+Sébastien LOZANO - Write me on github
+
+Project Link: [https://github.com/slozano54/projetDNB/](https://framagit.org/slozano54/listedoublementchainee)

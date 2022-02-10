@@ -38,8 +38,11 @@ tex_a_compiler/*.tex
 # on ignore les zip
 *.zip
 
-#On ignore le dossier avec ce qui est finalisé
+#On ignore le dossier avec ce qui est finalisé pour le DNB
 0_ProjetBrevetGitHub
+
+#On ignore le dossier avec ce qui est finalisé pour le BAC
+0_ProjetBacGitHub
 
 #On ignore le dossier avec les sources modifiées
 0_ProjetBrevetLaTeX_sourcesDV

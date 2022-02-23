@@ -219,10 +219,20 @@ def cutTex2Ex(file : str,source : str)->list:
     # Un tableau pour les indices contenant le début des exos
     indices = []
 
+    # Un tableau avec les textes à chercher dans le code
+    strExs = [
+        "textbf{Exercice",
+        "textbf{\\textsc{Exercice",
+        "textbf{EXERCICE",
+        "textbf{\\large\\textsc{Exercice",
+        "textbf{\\large Exercice"
+    ]
     for i in range(len(source_lines)):
         # Selon les années la commande pour le style des exos n'est pas la même
-        if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i] or "textbf{EXERCICE" in source_lines[i]):
-            indices.append(i)
+        # if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i] or "textbf{EXERCICE" in source_lines[i] or "textbf{\\large\\textsc{Exercice" in source_lines[i]):
+        for strEx in strExs:
+            if (strEx in source_lines[i]):
+                indices.append(i)
     indices.append(len(source_lines))
 
     # On commence par voir s'il y a des annexes
@@ -354,7 +364,7 @@ def generateFiles(file : str,source_ex : str):
 
 def generateFileName(source_ex : str)->str:
     """
-    Générer le nom du fichier pour le découpage au format dnb_aaaa_mm_lieu    
+    Générer le nom du fichier pour le découpage au format dnb_aaaa_mm_lieu
     """
     pass
     aaaa = ''
@@ -375,7 +385,7 @@ def generateFileName(source_ex : str)->str:
     # On récupère le mois
     for month in months:
         if (month[0] in source_ex.lower()):
-            mm = month[1]
+            mm = month[1]        
     if (mm == ''):
         mm = 'bugMois'    
 
@@ -399,7 +409,11 @@ def generateFileName(source_ex : str)->str:
         'antillesguyane',
         'antilles',
         'grece',                
+        'sujet0', # pour le bac
+        'sujet1', # pour le bac
+        'sujet2'  # pour le bac
     ]
+
     # On passe le nom du fichier en minuscules
     cleanSource = source_ex.lower()
     # On supprime les underscores et les -
@@ -426,8 +440,11 @@ def generateFileName(source_ex : str)->str:
         lieu = 'bugLieu'
     
     # On forme le nom du fichier
-    filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
-
+    if ('brevet' in cleanSource):    
+        filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
+    if ('bac' in cleanSource):
+        filename = "bac_"+aaaa+"_"+mm+"_"+lieu
+    
     return filename
 
 if __name__ == "__main__":    
@@ -438,15 +455,17 @@ if __name__ == "__main__":
     # Test 
     #cutTex2Ex("Brevet_Polynesie_sept_2020_DV","Brevet_Polynesie_sept_2020_DV")
     #cutTex2Ex("Brevet_Amerique_Nord_juin_2013","Brevet_Amerique_Nord_juin_2013")
-    #print(generateFileName("Brevet_Polynesie_sept_2020_DV"))
-    #print(generateFileName("Brevet_Amerique_Nord_juin_2013"))
+    #print(generateFileName("Brevet_Polynesie_sept_2020_DV")
+    #print(generateFileName("Brevet_Amerique_Nord_juin_2013")
     #cutTex2Ex("Corrige_brevet_Amerique_Nord_mai_2013","Corrige_brevet_Amerique_Nord_mai_2013")   
     # gestion des couleurs   
     #cutTex2Ex("wallis","Brevet_Wallis_2_dec_2017")
     #concat_png()
     print(generateFileName('Brevet-Amerique-Sud-dec-2015'))
+    print(generateFileName('Bac-Amerique-Sud-dec-2015'))
+    print(generateFileName('Bac_sujet0_juin_2021_DV'))
+    print(generateFileName('Corrige_Bac_sujet0_juin_2021_DV'))    
     
-
     # On évalue le temps de traitement
     end_time = datetime.now()
     print("=============================================================================")

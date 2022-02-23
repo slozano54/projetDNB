@@ -22,11 +22,19 @@
 \newcommand{\euro}{\eurologo{}}
 \usepackage{graphics,graphicx}
 \usepackage{pstricks,pst-plot,pst-tree,pstricks-add}
+%%% POUR LE BAC %%%
+\usepackage{pst-func,pst-math,pst-bspline} 
+%%% FIN POUR LE BAC %%%
 \usepackage{pst-eucl}  % permet de faire des dessins de géométrie simplement
 \usepackage{pst-text}
 \usepackage{pst-node,pst-all}
 %\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage[left=1.5cm, right=1.5cm, top=1cm, bottom=1cm]{geometry}
+%%% POUR LE BAC %%%
+\usepackage{esvect}
+\newcommand{\vvt}[1]{\vv{\text{#1}}}
+\newcommand{\vectt}[1]{\overrightarrow{\,\mathstrut\text{#1}\,}}
+%%% FIN POUR LE BAC %%%
 \renewcommand{\pstEllipse}[5][]{% arc d'ellipse pour le sujet de Polynésie septembre 2013
 \psset{#1}
 \parametricplot{#4}{#5}{#2\space t cos mul #3\space t sin mul}}
@@ -50,6 +58,10 @@
 \usepackage[french]{babel}
 \usepackage[dvips]{hyperref}
 \usepackage[np]{numprint}
+%%% POUR LE BAC %%%
+\newcommand{\e}{\mathrm{\,e\,}}%     le e de l'exponentielle
+\newcommand{\ds}{\displaystyle}
+%%% FIN POUR LE BAC %%%
 %Tapuscrit : Denis Vergès
 %\frenchbsetup{StandardLists=true}
 

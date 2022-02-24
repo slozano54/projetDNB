@@ -219,7 +219,7 @@ def cutTex2Ex(file : str,source : str)->list:
     # Un tableau pour les indices contenant le début des exos
     indices = []
 
-    # Un tableau avec les textes à chercher dans le code
+    # Un tableau avec les textes à chercher dans le code pour repérer les exercices
     strExs = [
         "textbf{Exercice",
         "textbf{\\textsc{Exercice",
@@ -228,8 +228,7 @@ def cutTex2Ex(file : str,source : str)->list:
         "textbf{\\large Exercice"
     ]
     for i in range(len(source_lines)):
-        # Selon les années la commande pour le style des exos n'est pas la même
-        # if ("textbf{Exercice" in source_lines[i] or "textbf{\\textsc{Exercice" in source_lines[i] or "textbf{EXERCICE" in source_lines[i] or "textbf{\\large\\textsc{Exercice" in source_lines[i]):
+        # Selon les années la commande pour le style des exos n'est pas la même        
         for strEx in strExs:
             if (strEx in source_lines[i]):
                 indices.append(i)

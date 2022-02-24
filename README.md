@@ -122,6 +122,8 @@ Le programme est sur https://github.com/slozano54/projetDNB
 <li>Faire une checklist de préparation des fichiers avant passage à la moulinette
 <ul>
 <li>Renommer les fichiers sources des sujets avec les noms des lieux parmis ... en respectant ... avec le mois en lettres en respectant ...</li>
+<li>Les noms des fichiers, sujets et corrigés, pour le brevet doivent contenir **Brevet**</li>
+<li>Les noms des fichiers, sujets et corrigés, pour le baccalauréat doivent contenir **Bac**</li>
 <li>Remplacer les \section*{Exercice   \subsection*{Exercice  \textbf{\large{Exercice  \textbf{\textsc{Exercice ... etc ...</li>
 <li>Replacer les annexes aux bons endroits et supprimer les mots "exercice" etc du texte des annexes</li>
 <li>Ajouter le lieu et le mois dans le nom du fichier de façon cohérente</li>

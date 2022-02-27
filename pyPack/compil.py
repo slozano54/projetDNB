@@ -410,7 +410,8 @@ def generateFileName(source_ex : str)->str:
         'grece',                
         'sujet0', # pour le bac
         'sujet1', # pour le bac
-        'sujet2'  # pour le bac
+        'sujet2',  # pour le bac
+        'specimen1', # pourE3C
     ]
 
     # On passe le nom du fichier en minuscules
@@ -443,6 +444,8 @@ def generateFileName(source_ex : str)->str:
         filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
     if ('bac' in cleanSource):
         filename = "bac_"+aaaa+"_"+mm+"_"+lieu
+    if ('e3c' in cleanSource):
+        filename = "e3c_"+aaaa+"_"+mm+"_"+lieu
     
     return filename
 

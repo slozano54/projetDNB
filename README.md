@@ -12,7 +12,7 @@ _Support/maintenance will be provided as time allows._
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h1 text-align="center">PROJET DNB APMEP</h1>
+  <h1 text-align="center">PROJET DNB BAC E3C APMEP</h1>
   <h2 text-align="center"> Version initiale - MARS 2021</h2>
   <h3 text-align="center">Auteur - Sébastien LOZANO</h3>
 
@@ -124,6 +124,7 @@ Le programme est sur https://github.com/slozano54/projetDNB
 <li>Renommer les fichiers sources des sujets avec les noms des lieux parmis ... en respectant ... avec le mois en lettres en respectant ...</li>
 <li>Les noms des fichiers, sujets et corrigés, pour le brevet doivent contenir **Brevet**</li>
 <li>Les noms des fichiers, sujets et corrigés, pour le baccalauréat doivent contenir **Bac**</li>
+<li>Les noms des fichiers, sujets et corrigés, pour E3C doivent contenir **E3C**</li>
 <li>Remplacer les \section*{Exercice   \subsection*{Exercice  \textbf{\large{Exercice  \textbf{\textsc{Exercice ... etc ...</li>
 <li>Replacer les annexes aux bons endroits et supprimer les mots "exercice" etc du texte des annexes</li>
 <li>Ajouter le lieu et le mois dans le nom du fichier de façon cohérente</li>

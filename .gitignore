@@ -44,8 +44,14 @@ tex_a_compiler/*.tex
 #On ignore le dossier avec ce qui est finalisé pour le BAC
 0_ProjetBacGitHub
 
+#On ignore le dossier avec ce qui est finalisé pour le BAC
+0_ProjetE3cGitHub
+
 #On ignore le dossier avec les sources modifiées pour le DNB
 0_ProjetBrevetLaTeX_sourcesDV
 
 #On ignore le dossier avec les sources modifiées pour le BAC
 0_ProjetBacLaTeX_sourcesDV
+
+#On ignore le dossier avec les sources modifiées pour E3C
+0_ProjetE3cLaTeX_sourcesDV

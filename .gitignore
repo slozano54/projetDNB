@@ -1,4 +1,7 @@
 # On ignore certaines chose pour tester que ça ne marche pas que chez moi
+# Le cache python
+pyPack/__pycache__
+
 # le dossier de documentation
 docs/pyPack
 

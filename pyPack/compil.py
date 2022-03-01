@@ -376,6 +376,9 @@ def generateFileName(source_ex : str)->str:
         'sujet1', # pour le bac
         'sujet2',  # pour le bac
         'specimen1', # pourE3C
+        'specimen2', # pourE3C
+        'specimen3', # pourE3C
+        'specimen4', # pourE3C
     ]
 
     # On passe le nom du fichier en minuscules

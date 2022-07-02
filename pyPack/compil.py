@@ -407,8 +407,11 @@ def generateFileName(source_ex : str)->str:
         lieu = 'bugLieu'
     
     # On forme le nom du fichier
-    if ('brevet' in cleanSource):    
-        filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
+    if ('brevet' in cleanSource):
+        if 'mathalea' in cleanSource:
+            filename = "dnb_"+aaaa+"_"+mm+"_"+lieu+"_mathalea"
+        else:
+            filename = "dnb_"+aaaa+"_"+mm+"_"+lieu
     if ('bac' in cleanSource):
         filename = "bac_"+aaaa+"_"+mm+"_"+lieu
     if ('e3c' in cleanSource):

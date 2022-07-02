@@ -51,10 +51,10 @@ tex_a_compiler/*.tex
 0_ProjetE3cGitHub
 
 #On ignore le dossier avec les sources modifiées pour le DNB
-0_ProjetBrevetLaTeX_sourcesDV
+0_ProjetBrevetLaTeX_sources
 
 #On ignore le dossier avec les sources modifiées pour le BAC
-0_ProjetBacLaTeX_sourcesDV
+0_ProjetBacLaTeX_sources
 
 #On ignore le dossier avec les sources modifiées pour E3C
-0_ProjetE3cLaTeX_sourcesDV
+0_ProjetE3cLaTeX_sources

@@ -220,7 +220,8 @@ def cutTex2Ex(file : str,source : str)->list:
         "textbf{\\textsc{Exercice",
         "textbf{EXERCICE",
         "textbf{\\large\\textsc{Exercice",
-        "textbf{\\large Exercice"
+        "textbf{\\large Exercice",
+        "\\textbf{{\\large \\textsc{Exercice",
     ]
     for i in range(len(source_lines)):
         # Selon les années la commande pour le style des exos n'est pas la même        
